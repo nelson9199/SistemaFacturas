@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200718003209_initial.cs" />
+    <Compile Remove="Migrations\20200718003209_initial.Designer.cs" />
+    <Compile Remove="Migrations\20200718145943_ClienteFacturas.cs" />
+    <Compile Remove="Migrations\20200718145943_ClienteFacturas.Designer.cs" />
+    <Compile Remove="Migrations\20200718150752_ClienteFacturas.cs" />
+    <Compile Remove="Migrations\20200718150752_ClienteFacturas.Designer.cs" />
+    <Compile Remove="Migrations\20200718152500_ClienteFacturasSeedPrueba.cs" />
+    <Compile Remove="Migrations\20200718152500_ClienteFacturasSeedPrueba.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SimpleInjector" Version="5.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Entidades\Sistema.Entidades.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
