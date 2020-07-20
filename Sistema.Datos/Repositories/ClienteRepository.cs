@@ -61,7 +61,7 @@ namespace Sistema.Datos.Repositories
 
                     if (!existe)
                     {
-                        return respuesta = "No se encontró el cliente";
+                        return respuesta = "No se encontró el cliente con el Id dado";
                     }
 
                     context.Remove(new Cliente() { ClienteId = id });
@@ -139,6 +139,72 @@ namespace Sistema.Datos.Repositories
             {
                 throw ex;
             }
+        }
+
+        public async Task<string> Activar(int id)
+        {
+            string respuesta = string.Empty;
+
+            try
+            {
+
+                using (var context = new ApplicationDbContext())
+                {
+                    var clienteOn = await context.Clientes.FirstOrDefaultAsync(x => x.ClienteId == id);
+
+                    if (clienteOn == null)
+                    {
+                        return respuesta = "No se encontró el cliente con el Id dado";
+                    }
+
+                    clienteOn.Estado = true;
+
+                    var entrada = context.Attach(clienteOn);
+
+                    entrada.Property(x => x.Estado).IsModified = true;
+
+                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo activar wl cliente";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                respuesta = ex.Message;
+            }
+            return respuesta;
+        }
+
+        public async Task<string> Desactivar(int id)
+        {
+            string respuesta = string.Empty;
+
+            try
+            {
+
+                using (var context = new ApplicationDbContext())
+                {
+                    var clienteOf = await context.Clientes.FirstOrDefaultAsync(x => x.ClienteId == id);
+
+                    if (clienteOf == null)
+                    {
+                        return respuesta = "No se encontró el cliente con el Id dado";
+                    }
+
+                    clienteOf.Estado = false;
+
+                    var entrada = context.Attach(clienteOf);
+
+                    entrada.Property(x => x.Estado).IsModified = true;
+
+                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar wl cliente";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                respuesta = ex.Message;
+            }
+            return respuesta;
         }
     }
 }
