@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema.Negocio
+namespace Sistema.Datos.Services
 {
-    interface ICrudN<T>
+    public interface ICrud<T>
     {
         Task<List<T>> Listar();
         Task<string> Insertar(T objInsertar);
+        Task<string> Actualizar(T objActualizar);
         Task<string> Eliminar(int id);
     }
 }

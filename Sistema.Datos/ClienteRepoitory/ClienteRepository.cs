@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema.Datos.Repositories
+namespace Sistema.Datos.ClienteRepository
 {
-    public class ClienteRepository : ICrud<Cliente>
+    public class ClienteRepository : IClienteRepository<Cliente>
     {
         private readonly IMapperProvider mapperProvider;
         private IMapper mapper;

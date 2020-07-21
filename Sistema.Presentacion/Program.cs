@@ -1,11 +1,10 @@
 ﻿using SimpleInjector;
-using Sistema.Datos.Repositories;
+using Sistema.Datos.ClienteRepository;
 using Sistema.Datos.Services;
-using Sistema.Negocio;
+using Sistema.Entidades;
+using Sistema.Negocio.ClienteLogic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Sistema.Presentacion
@@ -32,9 +31,11 @@ namespace Sistema.Presentacion
 
             // Register your types, for instance:
             container.Register<FrmPrincipal>(Lifestyle.Singleton);
-            container.Register<IMapperProvider, MapperProvider>();
-            container.Register<ClienteRepository>();
-            container.Register<NCliente>();
+            container.Register<FrmCliente>(Lifestyle.Singleton);
+            container.Register<FrmImportadorAPlantilla>(Lifestyle.Singleton);
+            container.Register<IMapperProvider, MapperProvider>(Lifestyle.Singleton);
+            container.Register<IClienteRepository<Cliente>, ClienteRepository>(Lifestyle.Singleton);
+            container.Register<IClienteAccesRepo<Cliente>, NCliente>(Lifestyle.Singleton);
 
             // Optionally verify the container.
             container.Verify();
