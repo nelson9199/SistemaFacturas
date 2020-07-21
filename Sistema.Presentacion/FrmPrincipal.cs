@@ -29,7 +29,6 @@ namespace Sistema.Presentacion
         {
             this.WindowState = FormWindowState.Maximized;
             radDock1.AutoDetectMdiChildren = true;
-            radDock1.MdiChildrenDockType = DockType.ToolWindow;
         }
 
         private void radMenuItem2_Click(object sender, EventArgs e)
@@ -51,9 +50,22 @@ namespace Sistema.Presentacion
             {
                 frmImportador = new FrmImportadorAPlantilla();
             }
-            frmImportador.Dock = DockStyle.None;
+
             frmImportador.MdiParent = this;
             frmImportador.Show();
+
+        }
+
+        private void radMenuItem9_Click(object sender, EventArgs e)
+        {
+            FrmConvertidorXmlAExcel frmConvertidor = container.GetInstance<FrmConvertidorXmlAExcel>();
+            if (frmConvertidor.IsDisposed)
+            {
+                frmConvertidor = new FrmConvertidorXmlAExcel();
+            }
+
+            frmConvertidor.MdiParent = this;
+            frmConvertidor.Show();
         }
     }
 }

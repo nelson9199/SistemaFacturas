@@ -33,6 +33,7 @@ namespace Sistema.Presentacion
             container.Register<FrmPrincipal>(Lifestyle.Singleton);
             container.Register<FrmCliente>(Lifestyle.Singleton);
             container.Register<FrmImportadorAPlantilla>(Lifestyle.Singleton);
+            container.Register<FrmConvertidorXmlAExcel>(Lifestyle.Singleton);
             container.Register<IMapperProvider, MapperProvider>(Lifestyle.Singleton);
             container.Register<IClienteRepository<Cliente>, ClienteRepository>(Lifestyle.Singleton);
             container.Register<IClienteAccesRepo<Cliente>, NCliente>(Lifestyle.Singleton);

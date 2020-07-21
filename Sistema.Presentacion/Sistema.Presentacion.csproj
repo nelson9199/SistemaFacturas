@@ -322,6 +322,12 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConvertidorXmlAExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConvertidorXmlAExcel.Designer.cs">
+      <DependentUpon>FrmConvertidorXmlAExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmImportadorAPlantilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,6 +344,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConvertidorXmlAExcel.resx">
+      <DependentUpon>FrmConvertidorXmlAExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportadorAPlantilla.resx">
       <DependentUpon>FrmImportadorAPlantilla.cs</DependentUpon>

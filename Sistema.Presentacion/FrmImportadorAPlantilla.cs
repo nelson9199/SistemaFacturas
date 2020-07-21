@@ -31,50 +31,57 @@ namespace Sistema.Presentacion
             {
                 var file = openFileDialog1.FileName;
 
-                txtFiles.Text = file;
+                txtXml.Text = file;
             }
-        }
-
-        private void radTextBox1_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void radButton2_Click(object sender, EventArgs e)
         {
-            try
+            if (txtXml.Text == "" || txtPlantilla.Text == "")
             {
-                Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
-                Workbook excelWorkBook = xApp.Workbooks.Open(radTextBox2.Text, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-
-                var ds = new DataSet();
-                ds.ReadXmlSchema(txtFiles.Text);
-
-                XmlDocument xmlDoc = new XmlDocument();
-
-                xmlDoc.Load(txtFiles.Text);
-
-                string rootName = xmlDoc.FirstChild.NextSibling.Name;
-
-                XmlMap xmlMap1 = excelWorkBook.XmlMaps.Add(ds.GetXmlSchema(), rootName);
-
-                var importResult = excelWorkBook.XmlImport(txtFiles.Text, out xmlMap1, true, Type.Missing);
-
-                if (importResult == XlXmlImportResult.xlXmlImportValidationFailed)
-                {
-                    MensajeOk("Importacion Exsitosa");
-                }
-                else
-                {
-                    MensajeError("No se pudo realizar la exportacion");
-
-                    excelWorkBook.Close();
-                }
-
+                MensajeError("Debe seleccionar el Archivo Xml y la plantilla Excel ATS antes de hacer la importacion");
+                return;
             }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    this.SendToBack();
 
-                MessageBox.Show(ex.Message);
+                    Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
+                    Workbook excelWorkBook = xApp.Workbooks.Open(txtPlantilla.Text, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                    var ds = new DataSet();
+                    ds.ReadXmlSchema(txtXml.Text);
+
+                    XmlDocument xmlDoc = new XmlDocument();
+
+                    xmlDoc.Load(txtXml.Text);
+
+                    string rootName = xmlDoc.FirstChild.NextSibling.Name;
+
+                    XmlMap xmlMap1 = excelWorkBook.XmlMaps.Add(ds.GetXmlSchema(), rootName);
+
+                    var importResult = excelWorkBook.XmlImport(txtXml.Text, out xmlMap1, true, Type.Missing);
+
+                    if (importResult == XlXmlImportResult.xlXmlImportValidationFailed)
+                    {
+                        MensajeOk("Importacion Exsitosa. Cierre esta ventana una vez haya terminado las importaciones");
+                    }
+                    else
+                    {
+                        MensajeError("No se pudo realizar la exportacion");
+
+                        excelWorkBook.Close();
+                        xApp.Workbooks.Close();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -86,7 +93,7 @@ namespace Sistema.Presentacion
             {
                 var file = openFileDialog2.FileName;
 
-                radTextBox2.Text = file;
+                txtPlantilla.Text = file;
 
             }
         }

@@ -98,6 +98,7 @@
             this.radMenuItem9.Image = global::Sistema.Presentacion.Properties.Resources.table_import_icon;
             this.radMenuItem9.Name = "radMenuItem9";
             this.radMenuItem9.Text = "Importar Xml a nuevo Excel";
+            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
             // radMenuItem7
             // 
@@ -107,7 +108,7 @@
             // radCommandBar1
             // 
             this.radCommandBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radCommandBar1.Location = new System.Drawing.Point(0, 35);
+            this.radCommandBar1.Location = new System.Drawing.Point(0, 37);
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
@@ -208,15 +209,16 @@
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 83);
+            this.radDock1.Location = new System.Drawing.Point(0, 85);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
+            this.radDock1.Padding = new System.Windows.Forms.Padding(0);
             // 
             // 
             // 
             this.radDock1.RootElement.BorderHighlightColor = System.Drawing.Color.White;
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1263, 542);
+            this.radDock1.Size = new System.Drawing.Size(1263, 540);
             this.radDock1.SplitterWidth = 8;
             this.radDock1.TabIndex = 3;
             this.radDock1.TabStop = false;
@@ -253,7 +255,7 @@
             this.radMenuItem7});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(1263, 35);
+            this.radMenu1.Size = new System.Drawing.Size(1263, 37);
             this.radMenu1.TabIndex = 0;
             this.radMenu1.ThemeName = "Material";
             // 
