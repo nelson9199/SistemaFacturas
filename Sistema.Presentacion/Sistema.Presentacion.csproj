@@ -265,6 +265,7 @@
       <HintPath>..\lib\RCWF\2020.2.616.40\Telerik.WinControls.Themes.Material.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2020.2.616.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2020.2.616.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2020.2.616.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
@@ -334,6 +335,12 @@
     <Compile Include="FrmImportadorAPlantilla.Designer.cs">
       <DependentUpon>FrmImportadorAPlantilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLoading1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoading1.Designer.cs">
+      <DependentUpon>FrmLoading1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportadorAPlantilla.resx">
       <DependentUpon>FrmImportadorAPlantilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoading1.resx">
+      <DependentUpon>FrmLoading1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -395,31 +405,50 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cliente_m.png" />
+    <None Include="Resources\cliente_m.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Banned User.png" />
+    <None Include="Resources\Banned User.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\empleados_m.png" />
+    <None Include="Resources\empleados_m.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\group_key.png" />
+    <None Include="Resources\group_key.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\group_add.png" />
+    <None Include="Resources\group_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\import-icon.png" />
+    <None Include="Resources\import-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table-import-icon.png" />
+    <None Include="Resources\table-import-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner-1s-200px.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

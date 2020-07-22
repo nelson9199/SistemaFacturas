@@ -15,6 +15,7 @@ namespace Sistema.Presentacion
 {
     public partial class FrmPrincipal : Telerik.WinControls.UI.RadForm
     {
+        private FrmPrincipal inststancia = null;
         private readonly SimpleInjector.Container container;
         private readonly IClienteAccesRepo<Cliente> clienteAcces;
 
@@ -29,14 +30,16 @@ namespace Sistema.Presentacion
         {
             this.WindowState = FormWindowState.Maximized;
             radDock1.AutoDetectMdiChildren = true;
+
         }
+
 
         private void radMenuItem2_Click(object sender, EventArgs e)
         {
             FrmCliente frmCliente = container.GetInstance<FrmCliente>();
             if (frmCliente.IsDisposed)
             {
-                frmCliente = new FrmCliente(clienteAcces);
+                frmCliente = new FrmCliente(clienteAcces, container);
             }
             frmCliente.MdiParent = this;
             frmCliente.Show();
