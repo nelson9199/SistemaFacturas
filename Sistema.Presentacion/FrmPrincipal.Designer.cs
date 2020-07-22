@@ -30,40 +30,41 @@
         {
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.radWaitingBar3 = new Telerik.WinControls.UI.RadWaitingBar();
+            this.segmentedRingWaitingBarIndicatorElement3 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
             this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
             this.segmentedRingWaitingBarIndicatorElement1 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
             this.radWaitingBar2 = new Telerik.WinControls.UI.RadWaitingBar();
             this.segmentedRingWaitingBarIndicatorElement2 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
-            this.radWaitingBar3 = new Telerik.WinControls.UI.RadWaitingBar();
-            this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
-            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
-            this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             this.radMenu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +76,18 @@
             this.radMenuItem3.Name = "radMenuItem3";
             this.radMenuItem3.Text = "Accesos";
             // 
+            // radMenuItem4
+            // 
+            this.radMenuItem4.Image = global::Sistema.Presentacion.Properties.Resources.group_key;
+            this.radMenuItem4.Name = "radMenuItem4";
+            this.radMenuItem4.Text = "Roles";
+            // 
+            // radMenuItem5
+            // 
+            this.radMenuItem5.Image = global::Sistema.Presentacion.Properties.Resources.group_add;
+            this.radMenuItem5.Name = "radMenuItem5";
+            this.radMenuItem5.Text = "Usuarios";
+            // 
             // radMenuItem6
             // 
             this.radMenuItem6.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -82,6 +95,20 @@
             this.radMenuItem9});
             this.radMenuItem6.Name = "radMenuItem6";
             this.radMenuItem6.Text = "Herramientas";
+            // 
+            // radMenuItem8
+            // 
+            this.radMenuItem8.Image = global::Sistema.Presentacion.Properties.Resources.import_icon;
+            this.radMenuItem8.Name = "radMenuItem8";
+            this.radMenuItem8.Text = "Importar Xml a plantilla ATS Excel";
+            this.radMenuItem8.Click += new System.EventHandler(this.radMenuItem8_Click);
+            // 
+            // radMenuItem9
+            // 
+            this.radMenuItem9.Image = global::Sistema.Presentacion.Properties.Resources.table_import_icon;
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Importar Xml a nuevo Excel";
+            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
             // radMenuItem7
             // 
@@ -95,7 +122,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1263, 73);
+            this.radCommandBar1.Size = new System.Drawing.Size(1263, 48);
             this.radCommandBar1.TabIndex = 1;
             this.radCommandBar1.ThemeName = "Material";
             // 
@@ -119,6 +146,27 @@
             this.commandBarButton5});
             this.commandBarStripElement2.Name = "commandBarStripElement2";
             // 
+            // commandBarButton3
+            // 
+            this.commandBarButton3.DisplayName = "commandBarButton3";
+            this.commandBarButton3.Image = global::Sistema.Presentacion.Properties.Resources.import_icon;
+            this.commandBarButton3.Name = "commandBarButton3";
+            this.commandBarButton3.Text = "commandBarButton3";
+            // 
+            // commandBarButton4
+            // 
+            this.commandBarButton4.DisplayName = "commandBarButton4";
+            this.commandBarButton4.Image = global::Sistema.Presentacion.Properties.Resources.table_import_icon;
+            this.commandBarButton4.Name = "commandBarButton4";
+            this.commandBarButton4.Text = "commandBarButton4";
+            // 
+            // commandBarButton5
+            // 
+            this.commandBarButton5.DisplayName = "commandBarButton5";
+            this.commandBarButton5.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
+            this.commandBarButton5.Name = "commandBarButton5";
+            this.commandBarButton5.Text = "commandBarButton5";
+            // 
             // commandBarStripElement1
             // 
             this.commandBarStripElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -130,6 +178,27 @@
             this.commandBarStripElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarStripElement1.UseCompatibleTextRendering = false;
             // 
+            // commandBarButton1
+            // 
+            this.commandBarButton1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.commandBarButton1.DisplayName = "commandBarButton1";
+            this.commandBarButton1.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
+            this.commandBarButton1.Name = "commandBarButton1";
+            this.commandBarButton1.Text = "";
+            this.commandBarButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.commandBarButton1.UseCompatibleTextRendering = false;
+            // 
+            // commandBarButton2
+            // 
+            this.commandBarButton2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.commandBarButton2.DisplayName = "commandBarButton2";
+            this.commandBarButton2.Image = global::Sistema.Presentacion.Properties.Resources.Banned_User;
+            this.commandBarButton2.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.commandBarButton2.Name = "commandBarButton2";
+            this.commandBarButton2.Text = "commandBarButton2";
+            this.commandBarButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.commandBarButton2.UseCompatibleTextRendering = false;
+            // 
             // radMenuItem1
             // 
             this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -137,13 +206,20 @@
             this.radMenuItem1.Name = "radMenuItem1";
             this.radMenuItem1.Text = "Clientes";
             // 
+            // radMenuItem2
+            // 
+            this.radMenuItem2.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
+            this.radMenuItem2.Name = "radMenuItem2";
+            this.radMenuItem2.Text = "Clientes";
+            this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
+            // 
             // radDock1
             // 
             this.radDock1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.radDock1.Controls.Add(this.documentContainer1);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 110);
+            this.radDock1.Location = new System.Drawing.Point(0, 85);
             this.radDock1.MainDocumentContainer = this.documentContainer1;
             this.radDock1.Name = "radDock1";
             this.radDock1.Padding = new System.Windows.Forms.Padding(0);
@@ -152,7 +228,7 @@
             // 
             this.radDock1.RootElement.BorderHighlightColor = System.Drawing.Color.White;
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1263, 515);
+            this.radDock1.Size = new System.Drawing.Size(1263, 540);
             this.radDock1.SplitterWidth = 8;
             this.radDock1.TabIndex = 3;
             this.radDock1.TabStop = false;
@@ -194,6 +270,24 @@
             this.radMenu1.TabIndex = 0;
             this.radMenu1.ThemeName = "Material";
             // 
+            // radWaitingBar3
+            // 
+            this.radWaitingBar3.Location = new System.Drawing.Point(683, 26);
+            this.radWaitingBar3.Name = "radWaitingBar3";
+            this.radWaitingBar3.Size = new System.Drawing.Size(88, 88);
+            this.radWaitingBar3.TabIndex = 5;
+            this.radWaitingBar3.Text = "radWaitingBar3";
+            this.radWaitingBar3.WaitingIndicators.Add(this.segmentedRingWaitingBarIndicatorElement3);
+            this.radWaitingBar3.WaitingSpeed = 20;
+            this.radWaitingBar3.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
+            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar3.GetChildAt(0))).WaitingSpeed = 20;
+            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar3.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
+            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar3.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
+            // 
+            // segmentedRingWaitingBarIndicatorElement3
+            // 
+            this.segmentedRingWaitingBarIndicatorElement3.Name = "segmentedRingWaitingBarIndicatorElement3";
+            // 
             // radWaitingBar1
             // 
             this.radWaitingBar1.Location = new System.Drawing.Point(474, 177);
@@ -230,94 +324,6 @@
             // 
             this.segmentedRingWaitingBarIndicatorElement2.Name = "segmentedRingWaitingBarIndicatorElement2";
             // 
-            // radWaitingBar3
-            // 
-            this.radWaitingBar3.Location = new System.Drawing.Point(683, 26);
-            this.radWaitingBar3.Name = "radWaitingBar3";
-            this.radWaitingBar3.Size = new System.Drawing.Size(88, 88);
-            this.radWaitingBar3.TabIndex = 5;
-            this.radWaitingBar3.Text = "radWaitingBar3";
-            this.radWaitingBar3.WaitingSpeed = 20;
-            this.radWaitingBar3.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar3.GetChildAt(0))).WaitingSpeed = 20;
-            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar3.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar3.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
-            // 
-            // commandBarButton3
-            // 
-            this.commandBarButton3.DisplayName = "commandBarButton3";
-            this.commandBarButton3.Image = global::Sistema.Presentacion.Properties.Resources.import_icon;
-            this.commandBarButton3.Name = "commandBarButton3";
-            this.commandBarButton3.Text = "commandBarButton3";
-            // 
-            // commandBarButton4
-            // 
-            this.commandBarButton4.DisplayName = "commandBarButton4";
-            this.commandBarButton4.Image = global::Sistema.Presentacion.Properties.Resources.table_import_icon;
-            this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "commandBarButton4";
-            // 
-            // commandBarButton5
-            // 
-            this.commandBarButton5.DisplayName = "commandBarButton5";
-            this.commandBarButton5.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
-            this.commandBarButton5.Name = "commandBarButton5";
-            this.commandBarButton5.Text = "commandBarButton5";
-            // 
-            // radMenuItem2
-            // 
-            this.radMenuItem2.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
-            this.radMenuItem2.Name = "radMenuItem2";
-            this.radMenuItem2.Text = "Clientes";
-            this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
-            // 
-            // radMenuItem4
-            // 
-            this.radMenuItem4.Image = global::Sistema.Presentacion.Properties.Resources.group_key;
-            this.radMenuItem4.Name = "radMenuItem4";
-            this.radMenuItem4.Text = "Roles";
-            // 
-            // radMenuItem5
-            // 
-            this.radMenuItem5.Image = global::Sistema.Presentacion.Properties.Resources.group_add;
-            this.radMenuItem5.Name = "radMenuItem5";
-            this.radMenuItem5.Text = "Usuarios";
-            // 
-            // radMenuItem8
-            // 
-            this.radMenuItem8.Image = global::Sistema.Presentacion.Properties.Resources.import_icon;
-            this.radMenuItem8.Name = "radMenuItem8";
-            this.radMenuItem8.Text = "Importar Xml a plantilla ATS Excel";
-            this.radMenuItem8.Click += new System.EventHandler(this.radMenuItem8_Click);
-            // 
-            // radMenuItem9
-            // 
-            this.radMenuItem9.Image = global::Sistema.Presentacion.Properties.Resources.table_import_icon;
-            this.radMenuItem9.Name = "radMenuItem9";
-            this.radMenuItem9.Text = "Importar Xml a nuevo Excel";
-            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
-            // 
-            // commandBarButton1
-            // 
-            this.commandBarButton1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton1.DisplayName = "commandBarButton1";
-            this.commandBarButton1.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
-            this.commandBarButton1.Name = "commandBarButton1";
-            this.commandBarButton1.Text = "";
-            this.commandBarButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton1.UseCompatibleTextRendering = false;
-            // 
-            // commandBarButton2
-            // 
-            this.commandBarButton2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton2.DisplayName = "commandBarButton2";
-            this.commandBarButton2.Image = global::Sistema.Presentacion.Properties.Resources.Banned_User;
-            this.commandBarButton2.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.commandBarButton2.Name = "commandBarButton2";
-            this.commandBarButton2.Text = "commandBarButton2";
-            this.commandBarButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton2.UseCompatibleTextRendering = false;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,9 +347,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             this.radMenu1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,5 +385,6 @@
         private Telerik.WinControls.UI.RadWaitingBar radWaitingBar2;
         private Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement segmentedRingWaitingBarIndicatorElement2;
         private Telerik.WinControls.UI.RadWaitingBar radWaitingBar3;
+        private Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement segmentedRingWaitingBarIndicatorElement3;
     }
 }

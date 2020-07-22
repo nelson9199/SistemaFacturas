@@ -15,12 +15,12 @@ namespace Sistema.Presentacion
 {
     public partial class FrmPrincipal : Telerik.WinControls.UI.RadForm
     {
-        private FrmPrincipal inststancia = null;
         private readonly SimpleInjector.Container container;
         private readonly IClienteAccesRepo<Cliente> clienteAcces;
 
         public FrmPrincipal(SimpleInjector.Container container, IClienteAccesRepo<Cliente> clienteAcces)
         {
+            RadControl.EnableDpiScaling = false;
             InitializeComponent();
             this.container = container;
             this.clienteAcces = clienteAcces;
@@ -28,6 +28,7 @@ namespace Sistema.Presentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+
             this.WindowState = FormWindowState.Maximized;
             radDock1.AutoDetectMdiChildren = true;
 

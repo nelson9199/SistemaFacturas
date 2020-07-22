@@ -37,7 +37,7 @@
             // 
             this.radLabel1.AutoSize = false;
             this.radLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(27, 84);
+            this.radLabel1.Location = new System.Drawing.Point(55, 91);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(172, 49);
             this.radLabel1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(195, 175);
+            this.ClientSize = new System.Drawing.Size(251, 218);
             this.Controls.Add(this.radLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLoading1";

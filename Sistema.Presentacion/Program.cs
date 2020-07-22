@@ -37,6 +37,7 @@ namespace Sistema.Presentacion
             container.Register<IMapperProvider, MapperProvider>(Lifestyle.Singleton);
             container.Register<IClienteRepository<Cliente>, ClienteRepository>(Lifestyle.Singleton);
             container.Register<IClienteAccesRepo<Cliente>, NCliente>(Lifestyle.Singleton);
+            container.Register<Cliente>();
 
             // Optionally verify the container.
             container.Verify();
