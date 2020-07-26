@@ -29,9 +29,10 @@ namespace Sistema.Presentacion
         private readonly SimpleInjector.Container container;
 
         private string numFacAnt = "";
+        private string rutaFacAnt = "";
         private string RutaOrigen;
         private string RutaDestino;
-        private string Directorio = "D:\\sistemaFacturas\\";
+        private string Directorio = "D:\\Facturas\\";
 
         public FrmFacturaCliente1(IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo, SimpleInjector.Container container)
         {
@@ -386,7 +387,7 @@ namespace Sistema.Presentacion
                 {
                     if (File.Exists(Path.Combine(Directorio, txtRutaFac.Text)))
                     {
-                        MensajeError("Ya existe una factura con el mismo nombre de archivo guardada. Cargue un archivo con un nombre diferente");
+                        MessageBox.Show("Ya existe un archivo con el mismo nombre. Cargue una factura con nombre de archivo diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         return;
                     }
 
@@ -488,6 +489,7 @@ namespace Sistema.Presentacion
                 numFacAnt = gridFacturas.CurrentRow.Cells["NumeroFactura"].Value?.ToString();
                 dateFactura.Value = Convert.ToDateTime(gridFacturas.CurrentRow.Cells["FechaEmision"].Value?.ToString());
                 txtRutaFac.Text = gridFacturas.CurrentRow.Cells["ArchivoFactura"].Value?.ToString();
+                rutaFacAnt = gridFacturas.CurrentRow.Cells["ArchivoFactura"].Value?.ToString();
 
                 var rutaFile = Path.Combine(Directorio, txtRutaFac.Text);
 
@@ -533,18 +535,15 @@ namespace Sistema.Presentacion
                 }
                 else
                 {
-                    if (File.Exists(Path.Combine(Directorio, txtRutaFac.Text)))
+                    var filePath = Path.Combine(Directorio, txtRutaFac.Text);
+
+                    if (File.Exists(filePath) && txtRutaFac.Text != rutaFacAnt)
                     {
-                        MensajeError("Ya existe una factura con el mismo nombre de archivo guardada. Cargue un archivo con un nombre diferente");
+                        MessageBox.Show("Ya existe un archivo con el mismo nombre. Cargue una factura con nombre de archivo diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         return;
                     }
 
                     var factura = ObtenerDatosFacturas();
-
-                    if (File.Exists(Path.Combine(Directorio, txtRutaFac.Text)))
-                    {
-
-                    }
 
                     factura.FacturaId = Convert.ToInt32(txtIdFac.Text);
 
@@ -554,7 +553,10 @@ namespace Sistema.Presentacion
                     {
                         RutaDestino = Directorio + txtRutaFac.Text;
                         //El metodo Copy me permite copiar un file desde una ruta de origen a otro file nuevo en un ruta de destino
-                        File.Copy(RutaOrigen, RutaDestino);
+                        if (!(txtRutaFac.Text == rutaFacAnt))
+                        {
+                            File.Copy(RutaOrigen, RutaDestino);
+                        }
 
                         MensajeOk("Se actualizó de forma correcta el registro");
                         Limpiar();
@@ -597,6 +599,8 @@ namespace Sistema.Presentacion
 
                             if (respuesta.Equals("OK"))
                             {
+                                File.Delete(Path.Combine(Directorio, fila.Cells[8].Value?.ToString()));
+
                                 MensajeOk("Se elimió la factura con número: " + fila.Cells[5].Value?.ToString());
                             }
                         }
