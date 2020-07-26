@@ -109,7 +109,7 @@ namespace Sistema.Presentacion
                     x.Factura.ArchivoFactura
                 });
                 lblTotal.Text = "Total registros: " + gridFacturas.RowCount.ToString();
-                lblNomClientne.Text = "Facturas pertenecientes a " + NombreCliente;
+                lblNomClientne.Text = "Facturas pertenecientes a: " + NombreCliente;
 
                 if (gridFacturas.ColumnCount > 3)
                 {
@@ -537,7 +537,7 @@ namespace Sistema.Presentacion
                 {
                     var filePath = Path.Combine(Directorio, txtRutaFac.Text);
 
-                    if (File.Exists(filePath) && txtRutaFac.Text != rutaFacAnt)
+                    if (File.Exists(filePath) && RutaOrigen != "" && rutaFacAnt != txtRutaFac.Text)
                     {
                         MessageBox.Show("Ya existe un archivo con el mismo nombre. Cargue una factura con nombre de archivo diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         return;
@@ -553,8 +553,9 @@ namespace Sistema.Presentacion
                     {
                         RutaDestino = Directorio + txtRutaFac.Text;
                         //El metodo Copy me permite copiar un file desde una ruta de origen a otro file nuevo en un ruta de destino
-                        if (!(txtRutaFac.Text == rutaFacAnt))
+                        if (txtRutaFac.Text != rutaFacAnt)
                         {
+                            File.Delete(Path.Combine(Directorio, rutaFacAnt));
                             File.Copy(RutaOrigen, RutaDestino);
                         }
 
