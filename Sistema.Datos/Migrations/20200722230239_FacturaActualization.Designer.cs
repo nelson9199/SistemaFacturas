@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sistema.Datos;
 
 namespace Sistema.Datos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200722230239_FacturaActualization")]
+    partial class FacturaActualization
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,13 +121,6 @@ namespace Sistema.Datos.Migrations
                         .IsUnique();
 
                     b.ToTable("ClienteFacturas");
-
-                    b.HasData(
-                        new
-                        {
-                            ClienteId = 4,
-                            FacturaId = 1
-                        });
                 });
 
             modelBuilder.Entity("Sistema.Entidades.Factura", b =>
@@ -156,16 +151,6 @@ namespace Sistema.Datos.Migrations
                         .IsUnique();
 
                     b.ToTable("Facturas");
-
-                    b.HasData(
-                        new
-                        {
-                            FacturaId = 1,
-                            ArchivoFactura = "archivo",
-                            Estado = "Por pagar",
-                            FechaEmision = new DateTime(2020, 7, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            NumeroFactura = "001"
-                        });
                 });
 
             modelBuilder.Entity("Sistema.Entidades.Rol", b =>

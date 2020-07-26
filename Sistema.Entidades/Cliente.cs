@@ -41,6 +41,6 @@ namespace Sistema.Entidades
 
         public bool EstaBorrado { get; set; }
 
-        public List<ClienteFacturas> ClienteFacturas { get; set; }
+        public virtual List<ClienteFacturas> ClienteFacturas { get; set; }
     }
 }

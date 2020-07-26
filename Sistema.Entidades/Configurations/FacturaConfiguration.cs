@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sistema.Entidades.Configurations
 {
@@ -13,11 +11,7 @@ namespace Sistema.Entidades.Configurations
             builder.HasIndex(x => x.NumeroFactura)
                 .IsUnique(true);
 
-            builder.HasQueryFilter(x => x.EstaBorrado == false);
-
-            builder.Property(x => x.EstaBorrado)
-                .HasDefaultValue(false);
-
+            builder.HasData(new Factura() { FacturaId = 1, ArchivoFactura = "archivo", FechaEmision = DateTime.Today, NumeroFactura = "001", Estado = "Por pagar" });
         }
     }
 }

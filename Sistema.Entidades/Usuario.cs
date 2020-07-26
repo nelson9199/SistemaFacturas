@@ -31,6 +31,6 @@ namespace Sistema.Entidades
         [Column(TypeName = "nvarchar(50)")]
         public bool Estado { get; set; }
 
-        public Rol Rol { get; set; }
+        public virtual Rol Rol { get; set; }
     }
 }

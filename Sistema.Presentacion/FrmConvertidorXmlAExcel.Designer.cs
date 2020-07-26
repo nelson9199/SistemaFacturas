@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
+            this.txtFilePath = new Telerik.WinControls.UI.RadTextBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
+            this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFilePath)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radTextBox1
+            // txtFilePath
             // 
-            this.radTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radTextBox1.Location = new System.Drawing.Point(196, 95);
-            this.radTextBox1.Multiline = true;
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.ReadOnly = true;
+            this.txtFilePath.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtFilePath.Location = new System.Drawing.Point(196, 95);
+            this.txtFilePath.Multiline = true;
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.ReadOnly = true;
             // 
             // 
             // 
-            this.radTextBox1.RootElement.StretchVertically = true;
-            this.radTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.radTextBox1.Size = new System.Drawing.Size(508, 53);
-            this.radTextBox1.TabIndex = 0;
-            this.radTextBox1.ThemeName = "Material";
+            this.txtFilePath.RootElement.StretchVertically = true;
+            this.txtFilePath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtFilePath.Size = new System.Drawing.Size(508, 53);
+            this.txtFilePath.TabIndex = 0;
+            this.txtFilePath.ThemeName = "Material";
             // 
             // radButton1
             // 
@@ -76,14 +77,18 @@
             this.radButton2.ThemeName = "Material";
             this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Multiselect = true;
+            // 
             // FrmConvertidorXmlAExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 355);
+            this.ClientSize = new System.Drawing.Size(904, 357);
             this.Controls.Add(this.radButton2);
             this.Controls.Add(this.radButton1);
-            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.txtFilePath);
             this.Name = "FrmConvertidorXmlAExcel";
             // 
             // 
@@ -92,7 +97,7 @@
             this.Text = "Convertidor Xml a Excel";
             this.ThemeName = "Material";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmConvertidorXmlAExcel_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFilePath)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -103,9 +108,10 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private Telerik.WinControls.UI.RadTextBox txtFilePath;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadButton radButton2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
     }
 }

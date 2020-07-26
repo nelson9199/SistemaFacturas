@@ -9,7 +9,7 @@ namespace Sistema.Entidades
         public int ClienteId { get; set; }
         public int FacturaId { get; set; }
 
-        public Cliente Cliente { get; set; }
-        public Factura Factura { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Factura Factura { get; set; }
     }
 }

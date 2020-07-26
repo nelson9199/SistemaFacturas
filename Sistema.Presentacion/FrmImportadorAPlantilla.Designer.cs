@@ -67,7 +67,7 @@
             this.radButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButton1.Location = new System.Drawing.Point(134, 159);
             this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(203, 42);
+            this.radButton1.Size = new System.Drawing.Size(212, 42);
             this.radButton1.TabIndex = 0;
             this.radButton1.Text = "Cargar Archivo Xml";
             this.radButton1.ThemeName = "Material";
@@ -76,9 +76,9 @@
             // radButton2
             // 
             this.radButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radButton2.Location = new System.Drawing.Point(636, 159);
+            this.radButton2.Location = new System.Drawing.Point(638, 159);
             this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(213, 42);
+            this.radButton2.Size = new System.Drawing.Size(223, 42);
             this.radButton2.TabIndex = 0;
             this.radButton2.Text = "Cargar Plantilla ATS Excel";
             this.radButton2.ThemeName = "Material";
@@ -89,7 +89,7 @@
             this.radButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButton3.Location = new System.Drawing.Point(384, 207);
             this.radButton3.Name = "radButton3";
-            this.radButton3.Size = new System.Drawing.Size(203, 42);
+            this.radButton3.Size = new System.Drawing.Size(217, 42);
             this.radButton3.TabIndex = 0;
             this.radButton3.Text = "Realizar Exportacion";
             this.radButton3.ThemeName = "Material";
@@ -99,15 +99,9 @@
             // 
             this.txtPlantilla.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPlantilla.Location = new System.Drawing.Point(519, 93);
-            this.txtPlantilla.Multiline = true;
             this.txtPlantilla.Name = "txtPlantilla";
             this.txtPlantilla.ReadOnly = true;
-            // 
-            // 
-            // 
-            this.txtPlantilla.RootElement.StretchVertically = true;
-            this.txtPlantilla.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPlantilla.Size = new System.Drawing.Size(446, 48);
+            this.txtPlantilla.Size = new System.Drawing.Size(446, 41);
             this.txtPlantilla.TabIndex = 1;
             this.txtPlantilla.ThemeName = "Material";
             // 
@@ -115,15 +109,9 @@
             // 
             this.txtXml.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtXml.Location = new System.Drawing.Point(27, 93);
-            this.txtXml.Multiline = true;
             this.txtXml.Name = "txtXml";
             this.txtXml.ReadOnly = true;
-            // 
-            // 
-            // 
-            this.txtXml.RootElement.StretchVertically = true;
-            this.txtXml.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtXml.Size = new System.Drawing.Size(452, 48);
+            this.txtXml.Size = new System.Drawing.Size(452, 41);
             this.txtXml.TabIndex = 1;
             this.txtXml.ThemeName = "Material";
             // 

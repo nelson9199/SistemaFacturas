@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -13,6 +14,8 @@ namespace Sistema.Presentacion
 {
     public partial class FrmConvertidorXmlAExcel : Telerik.WinControls.UI.RadForm
     {
+        private List<string> rutas = new List<string>();
+
         public FrmConvertidorXmlAExcel()
         {
             InitializeComponent();
@@ -28,27 +31,38 @@ namespace Sistema.Presentacion
 
         private void radButton1_Click(object sender, EventArgs e)
         {
+            openFileDialog1.FileName = "";
             openFileDialog1.Filter = "Archivos xml (*.xml)|*.xml";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                var file = openFileDialog1.FileName;
+                txtFilePath.Text = "";
 
-                radTextBox1.Text = file;
+                foreach (var item in openFileDialog1.FileNames)
+                {
+                    rutas.Add(item);
+
+                    txtFilePath.Text += Path.GetFileName(item) + ",  ";
+                }
             }
         }
 
         private void radButton2_Click(object sender, EventArgs e)
         {
-            if (radTextBox1.Text == "")
+            if (txtFilePath.Text == "")
             {
                 MensajeError("Debe cargar un archivo Xml para poder exportar a Excel");
                 return;
             }
             else
             {
-                Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
-                Workbook excelWorkBook = xApp.Workbooks.OpenXML(radTextBox1.Text, Type.Missing, XlXmlLoadOption.xlXmlLoadImportToList);
+                foreach (var item in rutas)
+                {
+                    Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
+                    Workbook excelWorkBook = xApp.Workbooks.OpenXML(item, Type.Missing, XlXmlLoadOption.xlXmlLoadImportToList);
+                }
+
+                rutas.Clear();
             }
         }
 

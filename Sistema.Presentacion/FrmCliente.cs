@@ -1,12 +1,16 @@
 ﻿using Sistema.Entidades;
+using Sistema.Negocio.ClienteFacturaLogic;
 using Sistema.Negocio.ClienteLogic;
+using Sistema.Negocio.FacturaLogic;
 using Sistema.Presentacion.Helpers;
+using Sistema.Presentacion.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,18 +20,26 @@ using Telerik.WinControls.UI.Localization;
 
 namespace Sistema.Presentacion
 {
-    public partial class FrmCliente : Telerik.WinControls.UI.RadTabbedForm
+    public partial class FrmCliente : RadTabbedForm
     {
+        private string numDocAnt = string.Empty;
+        private string numRucAnt = string.Empty;
         private FrmLoading1 loading = null;
         private readonly IClienteAccesRepo<Cliente> clienteAcces;
         private readonly SimpleInjector.Container container;
+        private readonly IFormOpener formOpener;
+        private readonly IClienteFacturaAccesRepo clienteFacturaAcces;
+        private readonly IFacturaAccesRepo<Factura> facturaAccesRepo;
 
-        public FrmCliente(IClienteAccesRepo<Cliente> clienteAcces, SimpleInjector.Container container)
+        public FrmCliente(IClienteAccesRepo<Cliente> clienteAcces, SimpleInjector.Container container, IFormOpener formOpener, IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo)
         {
             InitializeComponent();
             this.AllowAero = false;
             this.clienteAcces = clienteAcces;
             this.container = container;
+            this.formOpener = formOpener;
+            this.clienteFacturaAcces = clienteFacturaAcces;
+            this.facturaAccesRepo = facturaAccesRepo;
         }
 
         private void MensajeError(string mensaje)
@@ -50,7 +62,7 @@ namespace Sistema.Presentacion
         {
             if (loading != null)
             {
-                loading.Close();
+                loading.Dispose();
             }
         }
 
@@ -116,7 +128,6 @@ namespace Sistema.Presentacion
             gridClientes.Columns[9].Width = 100;
             gridClientes.Columns[9].HeaderText = "Estado";
             gridClientes.Columns[9].ReadOnly = true;
-            gridClientes.Columns[9].AllowFiltering = false;
 
             gridClientes.Columns[10].IsVisible = false;
 
@@ -129,31 +140,44 @@ namespace Sistema.Presentacion
         {
             txtId.Clear();
             txtDoc.Clear();
+            txtPasaporte.Clear();
             txtPrimerApellido.Clear();
             txtPrimerNombre.Clear();
             txtSegundoApellido.Clear();
             txtSegundoNombre.Clear();
             txtRuc.Clear();
+
             btnInsertar.Visible = true;
             btnActualizar.Visible = false;
-
+            btnFacturas.Visible = false;
             gridClientes.Columns[0].IsVisible = false;
             btnActivar.Visible = false;
             btnDesactivar.Visible = false;
             btnEliminar.Visible = false;
             chkSeleccionar.Checked = false;
+            txtPasaporte.Visible = false;
+            txtDoc.Visible = true;
         }
 
         private Cliente ObtenerDatosCliente()
         {
             Cliente cliente = container.GetInstance<Cliente>();
 
-            cliente.PrimerNombre = txtPrimerNombre.Text;
-            cliente.SegundoNombre = txtSegundoNombre.Text;
-            cliente.PrimerApellido = txtPrimerApellido.Text;
-            cliente.SegundoApellido = txtSegundoApellido.Text;
-            cliente.TipoDocumento = dropTipoDocu.Text;
-            cliente.NumeroDocumento = txtDoc.Text;
+            cliente.PrimerNombre = txtPrimerNombre.Text.Trim();
+            cliente.SegundoNombre = txtSegundoNombre.Text.Trim();
+            cliente.PrimerApellido = txtPrimerApellido.Text.Trim();
+            cliente.SegundoApellido = txtSegundoApellido.Text.Trim();
+            cliente.TipoDocumento = dropTipoDocu.Text.Trim();
+
+            if (txtDoc.Visible == true)
+            {
+                cliente.NumeroDocumento = txtDoc.Text;
+            }
+            else if (txtPasaporte.Visible == true)
+            {
+                cliente.NumeroDocumento = txtPasaporte.Text;
+            }
+
             cliente.RUC = txtRuc.Text;
 
             return cliente;
@@ -200,16 +224,10 @@ namespace Sistema.Presentacion
 
         private async void FrmCliente_Load(object sender, EventArgs e)
         {
-            #region LayoutControlConfigurations     
-            layoutControlItem1.AllowDelete = false;
-            layoutControlItem1.AllowDrag = false;
-            layoutControlItem1.AllowDrop = false;
-            layoutControlItem1.AllowHide = false;
+            #region LayoutControlConfigurations    
 
-            layoutControlItem2.AllowDelete = false;
-            layoutControlItem2.AllowDrag = false;
-            layoutControlItem2.AllowDrop = false;
-            layoutControlItem2.AllowHide = false;
+            radLayoutControl1.AllowCustomize = false;
+
             #endregion
 
             radValidationProvider1.ValidationMode = Telerik.WinControls.UI.ValidationMode.Programmatically;
@@ -308,12 +326,246 @@ namespace Sistema.Presentacion
         {
             if (radTabbedFormControl1.SelectedTab == radTabbedFormControlTab1)
             {
-                radValidationProvider1.ValidationMode = Telerik.WinControls.UI.ValidationMode.None;
+                Limpiar();
+                radValidationProvider1.ValidationMode = ValidationMode.None;
             }
             if (radTabbedFormControl1.SelectedTab == radTabbedFormControlTab2)
             {
-                radValidationProvider1.ValidationMode = Telerik.WinControls.UI.ValidationMode.Programmatically;
+                radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
+            }
+        }
+
+        private void dropTipoDocu_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            if (dropTipoDocu.SelectedIndex == 2)
+            {
+                txtPasaporte.Visible = true;
+                txtDoc.Visible = false;
+                radValidationProvider1.SetValidationRule(txtPasaporte, radValidationProvider1.ValidationRules[0]);
+                radValidationProvider1.RemoveControlFromRules(txtDoc);
+            }
+            else if (dropTipoDocu.SelectedIndex == 1)
+            {
+                txtPasaporte.Visible = false;
+                txtDoc.Visible = true;
+                radValidationProvider1.RemoveControlFromRules(txtPasaporte);
+                radValidationProvider1.SetValidationRule(txtDoc, radValidationProvider1.ValidationRules[0]);
+                radValidationProvider1.SetValidationRule(txtDoc, radValidationProvider1.ValidationRules[3]);
+            }
+        }
+
+        private void gridClientes_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            try
+            {
+                Limpiar();
+                btnActualizar.Visible = true;
+                btnInsertar.Visible = false;
+                btnFacturas.Visible = true;
+
+                txtId.Text = gridClientes.CurrentRow.Cells["ClienteId"].Value?.ToString();
+                dropTipoDocu.Text = gridClientes.CurrentRow.Cells["TipoDocumento"].Value?.ToString();
+
+                if (dropTipoDocu.Text.Trim().Equals("Pasaporte"))
+                {
+                    txtPasaporte.Visible = true;
+                    txtDoc.Visible = false;
+
+                    txtPasaporte.Text = gridClientes.CurrentRow.Cells["NumeroDocumento"].Value?.ToString();
+                    numDocAnt = gridClientes.CurrentRow.Cells["NumeroDocumento"].Value?.ToString();
+
+                    radValidationProvider1.SetValidationRule(txtPasaporte, radValidationProvider1.ValidationRules[0]);
+                    radValidationProvider1.RemoveControlFromRules(txtDoc);
+                }
+                else if (dropTipoDocu.Text.Trim().Equals("Cédula"))
+                {
+                    radValidationProvider1.RemoveControlFromRules(txtPasaporte);
+                    radValidationProvider1.SetValidationRule(txtDoc, radValidationProvider1.ValidationRules[0]);
+                    radValidationProvider1.SetValidationRule(txtDoc, radValidationProvider1.ValidationRules[3]);
+
+                    txtDoc.Text = gridClientes.CurrentRow.Cells["NumeroDocumento"].Value?.ToString();
+                    numDocAnt = gridClientes.CurrentRow.Cells["NumeroDocumento"].Value?.ToString();
+
+                    txtPasaporte.Visible = false;
+                    txtDoc.Visible = true;
+                }
+                txtPrimerApellido.Text = gridClientes.CurrentRow.Cells["PrimerApellido"].Value?.ToString();
+                txtSegundoApellido.Text = gridClientes.CurrentRow.Cells["SegundoApellido"].Value?.ToString();
+                txtPrimerNombre.Text = gridClientes.CurrentRow.Cells["PrimerNombre"].Value?.ToString();
+                txtSegundoNombre.Text = gridClientes.CurrentRow.Cells["SegundoNombre"].Value?.ToString();
+                txtRuc.Text = gridClientes.CurrentRow.Cells["RUC"].Value?.ToString();
+                numRucAnt = gridClientes.CurrentRow.Cells["RUC"].Value?.ToString();
+
+                radTabbedFormControl1.SelectedTab = radTabbedFormControlTab2;
+
+            }
+            catch (Exception ex)
+            {
+                MensajeError(ex.Message);
+            }
+        }
+
+        private async void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var validaciones = ValidarCampos();
+
+                if (validaciones.Contains(false))
+                {
+                    return;
+                }
+                else
+                {
+                    string respuesta = string.Empty;
+
+                    var clienteUpdate = ObtenerDatosCliente();
+
+                    clienteUpdate.ClienteId = Convert.ToInt32(txtId.Text);
+
+                    respuesta = await clienteAcces.Actualizar(clienteUpdate, numDocAnt, numRucAnt);
+
+                    if (respuesta.Equals("OK"))
+                    {
+                        MensajeOk("Se actualizó de forma correcta el registro");
+                        Limpiar();
+                        await Listar();
+                        radTabbedFormControl1.SelectedTab = radTabbedFormControlTab1;
+                    }
+                    else
+                    {
+                        MensajeError(respuesta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult option;
+                option = MessageBox.Show("Realmente deseas eliminar el(los) registro(s)", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (option == DialogResult.OK)
+                {
+                    int clienteId;
+                    string respuesta;
+
+                    foreach (var fila in gridClientes.Rows)
+                    {
+                        if (Convert.ToBoolean(fila.Cells[0].Value))
+                        {
+                            clienteId = Convert.ToInt32(fila.Cells[1].Value);
+
+                            var facturaCliente = await clienteFacturaAcces.Listar(clienteId);
+
+                            foreach (var item in facturaCliente)
+                            {
+                                await facturaAccesRepo.Eliminar(item.FacturaId);
+                            }
+
+                            respuesta = await clienteAcces.Eliminar(clienteId);
+
+                            if (respuesta.Equals("OK"))
+                            {
+                                MensajeOk("Se elimino el cliente con documento de indentificación: " + fila.Cells[8].Value?.ToString());
+                            }
+                        }
+                    }
+                    await Listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeError(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private async void btnActivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult option;
+                option = MessageBox.Show("Realmente deseas activar el(los) registro(s)", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (option == DialogResult.OK)
+                {
+                    int clienteId;
+                    string respuesta;
+
+                    foreach (var fila in gridClientes.Rows)
+                    {
+                        if (Convert.ToBoolean(fila.Cells[0].Value))
+                        {
+                            clienteId = Convert.ToInt32(fila.Cells[1].Value);
+
+                            respuesta = await clienteAcces.Activar(clienteId);
+
+                            if (respuesta.Equals("OK"))
+                            {
+                                MensajeOk("Se Activo el cliente con documento de identificación: " + fila.Cells[7].Value?.ToString());
+                            }
+                        }
+                    }
+                    await Listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeError(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private async void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult option;
+                option = MessageBox.Show("Realmente deseas desactivar el(los) registro(s)", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (option == DialogResult.OK)
+                {
+                    int clienteId;
+                    string respuesta;
+
+                    foreach (var fila in gridClientes.Rows)
+                    {
+                        if (Convert.ToBoolean(fila.Cells[0].Value))
+                        {
+                            clienteId = Convert.ToInt32(fila.Cells[1].Value);
+
+                            respuesta = await clienteAcces.Desactivar(clienteId);
+
+                            if (respuesta.Equals("OK"))
+                            {
+                                MensajeOk("Se Desactivo el cliente con documento de identificación: " + fila.Cells[7].Value?.ToString());
+                            }
+                        }
+                    }
+                    await Listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeError(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnFacturas_Click(object sender, EventArgs e)
+        {
+            using (var form = container.GetInstance<FrmFacturaCliente1>())
+            {
+                form.ClienteId = Convert.ToInt32(txtId.Text);
+                form.NombreCliente = txtPrimerNombre.Text + " " + txtPrimerApellido.Text;
+                form.ShowDialog();
             }
         }
     }
 }
+

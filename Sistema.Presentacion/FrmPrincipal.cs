@@ -1,5 +1,8 @@
 ﻿using Sistema.Entidades;
+using Sistema.Negocio.ClienteFacturaLogic;
 using Sistema.Negocio.ClienteLogic;
+using Sistema.Negocio.FacturaLogic;
+using Sistema.Presentacion.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +19,13 @@ namespace Sistema.Presentacion
     public partial class FrmPrincipal : Telerik.WinControls.UI.RadForm
     {
         private readonly SimpleInjector.Container container;
-        private readonly IClienteAccesRepo<Cliente> clienteAcces;
+        private readonly IFormOpener formOpener;
 
-        public FrmPrincipal(SimpleInjector.Container container, IClienteAccesRepo<Cliente> clienteAcces)
+        public FrmPrincipal(SimpleInjector.Container container, IFormOpener formOpener)
         {
-            RadControl.EnableDpiScaling = false;
             InitializeComponent();
             this.container = container;
-            this.clienteAcces = clienteAcces;
+            this.formOpener = formOpener;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -37,11 +39,7 @@ namespace Sistema.Presentacion
 
         private void radMenuItem2_Click(object sender, EventArgs e)
         {
-            FrmCliente frmCliente = container.GetInstance<FrmCliente>();
-            if (frmCliente.IsDisposed)
-            {
-                frmCliente = new FrmCliente(clienteAcces, container);
-            }
+            FrmCliente frmCliente = formOpener.ShowModelessForm<FrmCliente>() as FrmCliente;
             frmCliente.MdiParent = this;
             frmCliente.Show();
 
@@ -49,11 +47,7 @@ namespace Sistema.Presentacion
 
         private void radMenuItem8_Click(object sender, EventArgs e)
         {
-            FrmImportadorAPlantilla frmImportador = container.GetInstance<FrmImportadorAPlantilla>();
-            if (frmImportador.IsDisposed)
-            {
-                frmImportador = new FrmImportadorAPlantilla();
-            }
+            FrmImportadorAPlantilla frmImportador = formOpener.ShowModelessForm<FrmImportadorAPlantilla>() as FrmImportadorAPlantilla;
 
             frmImportador.MdiParent = this;
             frmImportador.Show();
@@ -62,11 +56,7 @@ namespace Sistema.Presentacion
 
         private void radMenuItem9_Click(object sender, EventArgs e)
         {
-            FrmConvertidorXmlAExcel frmConvertidor = container.GetInstance<FrmConvertidorXmlAExcel>();
-            if (frmConvertidor.IsDisposed)
-            {
-                frmConvertidor = new FrmConvertidorXmlAExcel();
-            }
+            FrmConvertidorXmlAExcel frmConvertidor = formOpener.ShowModelessForm<FrmConvertidorXmlAExcel>() as FrmConvertidorXmlAExcel;
 
             frmConvertidor.MdiParent = this;
             frmConvertidor.Show();

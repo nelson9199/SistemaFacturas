@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -9,6 +10,9 @@ namespace Sistema.Presentacion
 {
     public partial class FrmImportadorAPlantilla : Telerik.WinControls.UI.RadForm
     {
+        private string xmlFile;
+        private string excelFile;
+
         public FrmImportadorAPlantilla()
         {
             InitializeComponent();
@@ -25,13 +29,15 @@ namespace Sistema.Presentacion
 
         private void radButton1_Click(object sender, EventArgs e)
         {
+            openFileDialog1.FileName = "";
+
             openFileDialog1.Filter = "Archivos xml (*.xml)|*.xml";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                var file = openFileDialog1.FileName;
+                xmlFile = openFileDialog1.FileName;
 
-                txtXml.Text = file;
+                txtXml.Text = Path.GetFileName(openFileDialog1.FileName);
             }
         }
 
@@ -49,20 +55,20 @@ namespace Sistema.Presentacion
                     this.SendToBack();
 
                     Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
-                    Workbook excelWorkBook = xApp.Workbooks.Open(txtPlantilla.Text, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                    Workbook excelWorkBook = xApp.Workbooks.Open(excelFile, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
                     var ds = new DataSet();
-                    ds.ReadXmlSchema(txtXml.Text);
+                    ds.ReadXmlSchema(xmlFile);
 
                     XmlDocument xmlDoc = new XmlDocument();
 
-                    xmlDoc.Load(txtXml.Text);
+                    xmlDoc.Load(xmlFile);
 
                     string rootName = xmlDoc.FirstChild.NextSibling.Name;
 
                     XmlMap xmlMap1 = excelWorkBook.XmlMaps.Add(ds.GetXmlSchema(), rootName);
 
-                    var importResult = excelWorkBook.XmlImport(txtXml.Text, out xmlMap1, true, Type.Missing);
+                    var importResult = excelWorkBook.XmlImport(xmlFile, out xmlMap1, true, Type.Missing);
 
                     if (importResult == XlXmlImportResult.xlXmlImportValidationFailed)
                     {
@@ -87,14 +93,15 @@ namespace Sistema.Presentacion
 
         private void radButton3_Click(object sender, EventArgs e)
         {
+            openFileDialog2.FileName = "";
+
             openFileDialog2.Filter = "Archivos Excel(*.xls, *.xlsx)|*.xls;*.xlsx";
 
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
-                var file = openFileDialog2.FileName;
+                excelFile = openFileDialog2.FileName;
 
-                txtPlantilla.Text = file;
-
+                txtPlantilla.Text = Path.GetFileName(openFileDialog2.FileName);
             }
         }
 

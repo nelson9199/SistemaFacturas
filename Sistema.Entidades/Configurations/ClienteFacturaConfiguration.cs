@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sistema.Entidades.Configurations
 {
@@ -14,6 +11,8 @@ namespace Sistema.Entidades.Configurations
 
             builder.HasIndex(x => x.FacturaId)
                 .IsUnique(true);
+
+            builder.HasData(new ClienteFacturas() { ClienteId = 4, FacturaId = 1 });
 
         }
     }
