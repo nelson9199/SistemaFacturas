@@ -221,7 +221,7 @@
             gridViewCommandColumn4});
             this.gridFacturas.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.gridFacturas.Name = "gridFacturas";
-            this.gridFacturas.Size = new System.Drawing.Size(1168, 458);
+            this.gridFacturas.Size = new System.Drawing.Size(1168, 444);
             this.gridFacturas.TabIndex = 3;
             this.gridFacturas.ThemeName = "MaterialTeal";
             this.gridFacturas.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridFacturas_CellFormatting);
@@ -230,7 +230,7 @@
             // 
             // toggleFiltrar
             // 
-            this.toggleFiltrar.Location = new System.Drawing.Point(102, 4);
+            this.toggleFiltrar.Location = new System.Drawing.Point(100, 4);
             this.toggleFiltrar.Name = "toggleFiltrar";
             this.toggleFiltrar.Size = new System.Drawing.Size(40, 20);
             this.toggleFiltrar.TabIndex = 11;
@@ -250,7 +250,7 @@
             // lblNomClientne
             // 
             this.lblNomClientne.AutoSize = true;
-            this.lblNomClientne.Location = new System.Drawing.Point(792, 3);
+            this.lblNomClientne.Location = new System.Drawing.Point(781, 3);
             this.lblNomClientne.Name = "lblNomClientne";
             this.lblNomClientne.Size = new System.Drawing.Size(135, 22);
             this.lblNomClientne.TabIndex = 12;
@@ -259,7 +259,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 521);
+            this.lblTotal.Location = new System.Drawing.Point(50, 506);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(133, 22);
             this.lblTotal.TabIndex = 5;
@@ -267,7 +267,7 @@
             // 
             // chkSeleccionar
             // 
-            this.chkSeleccionar.Location = new System.Drawing.Point(225, 522);
+            this.chkSeleccionar.Location = new System.Drawing.Point(222, 508);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(101, 19);
             this.chkSeleccionar.TabIndex = 6;
@@ -277,9 +277,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(356, 520);
+            this.btnEliminar.Location = new System.Drawing.Point(351, 506);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(106, 24);
+            this.btnEliminar.Size = new System.Drawing.Size(104, 23);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.ThemeName = "MaterialTeal";
@@ -288,27 +288,27 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.AssociatedControl = this.gridFacturas;
-            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1174, 464);
+            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1174, 450);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Text = "";
             // 
             // layoutControlLabelItem2
             // 
-            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(144, 0, 644, 26);
+            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(142, 0, 635, 26);
             this.layoutControlLabelItem2.DrawText = false;
             this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.AssociatedControl = this.toggleFiltrar;
-            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(98, 0, 46, 26);
+            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(96, 0, 46, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Text = "layoutControlItem2";
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AssociatedControl = this.label2;
-            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(46, 0, 52, 26);
+            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(46, 0, 50, 26);
             this.layoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Text = "layoutControlItem3";
@@ -322,27 +322,27 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.AssociatedControl = this.lblNomClientne;
-            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(788, 0, 340, 26);
+            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(777, 0, 335, 26);
             this.layoutControlItem4.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Text = "layoutControlItem4";
             // 
             // layoutControlLabelItem6
             // 
-            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(1128, 0, 46, 26);
+            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(1112, 0, 62, 26);
             this.layoutControlLabelItem6.DrawText = false;
             this.layoutControlLabelItem6.Name = "layoutControlLabelItem6";
             // 
             // layoutControlLabelItem7
             // 
-            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(464, 516, 710, 30);
+            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(457, 502, 717, 29);
             this.layoutControlLabelItem7.DrawText = false;
             this.layoutControlLabelItem7.Name = "layoutControlLabelItem7";
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AssociatedControl = this.lblTotal;
-            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(46, 516, 129, 30);
+            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(46, 502, 126, 29);
             this.layoutControlItem5.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Text = "layoutControlItem5";
@@ -350,7 +350,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.AssociatedControl = this.chkSeleccionar;
-            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(221, 516, 131, 30);
+            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(218, 502, 129, 29);
             this.layoutControlItem6.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Text = "layoutControlItem6";
@@ -358,31 +358,31 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.AssociatedControl = this.btnEliminar;
-            this.layoutControlItem7.Bounds = new System.Drawing.Rectangle(352, 516, 112, 30);
+            this.layoutControlItem7.Bounds = new System.Drawing.Rectangle(347, 502, 110, 29);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Text = "layoutControlItem7";
             // 
             // layoutControlLabelItem9
             // 
-            this.layoutControlLabelItem9.Bounds = new System.Drawing.Rectangle(0, 516, 46, 30);
+            this.layoutControlLabelItem9.Bounds = new System.Drawing.Rectangle(0, 502, 46, 29);
             this.layoutControlLabelItem9.DrawText = false;
             this.layoutControlLabelItem9.Name = "layoutControlLabelItem9";
             // 
             // layoutControlLabelItem11
             // 
-            this.layoutControlLabelItem11.Bounds = new System.Drawing.Rectangle(175, 516, 46, 30);
+            this.layoutControlLabelItem11.Bounds = new System.Drawing.Rectangle(172, 502, 46, 29);
             this.layoutControlLabelItem11.DrawText = false;
             this.layoutControlLabelItem11.Name = "layoutControlLabelItem11";
             // 
             // layoutControlLabelItem12
             // 
-            this.layoutControlLabelItem12.Bounds = new System.Drawing.Rectangle(0, 490, 1174, 26);
+            this.layoutControlLabelItem12.Bounds = new System.Drawing.Rectangle(0, 476, 1174, 26);
             this.layoutControlLabelItem12.DrawText = false;
             this.layoutControlLabelItem12.Name = "layoutControlLabelItem12";
             // 
             // layoutControlLabelItem13
             // 
-            this.layoutControlLabelItem13.Bounds = new System.Drawing.Rectangle(0, 546, 1174, 26);
+            this.layoutControlLabelItem13.Bounds = new System.Drawing.Rectangle(0, 531, 1174, 41);
             this.layoutControlLabelItem13.DrawText = false;
             this.layoutControlLabelItem13.Name = "layoutControlLabelItem13";
             // 
