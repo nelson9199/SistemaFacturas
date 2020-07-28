@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn5 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn6 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.Windows.Documents.Spreadsheet.Model.Workbook workbook1 = new Telerik.Windows.Documents.Spreadsheet.Model.Workbook();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule1 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule3 = new Telerik.WinControls.UI.RadValidationRule();
             this.txtNumFactura = new Telerik.WinControls.UI.RadTextBox();
             this.txtRutaFac = new Telerik.WinControls.UI.RadTextBox();
             this.tabForm = new Telerik.WinControls.UI.RadTabbedFormControl();
@@ -118,23 +118,23 @@
             // 
             // txtNumFactura
             // 
-            this.txtNumFactura.Location = new System.Drawing.Point(255, 16);
+            this.txtNumFactura.Location = new System.Drawing.Point(255, 18);
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(291, 41);
             this.txtNumFactura.TabIndex = 1;
             this.txtNumFactura.ThemeName = "MaterialTeal";
-            this.radValidationProvider1.SetValidationRule(this.txtNumFactura, radValidationRule1);
+            this.radValidationProvider1.SetValidationRule(this.txtNumFactura, radValidationRule3);
             this.txtNumFactura.TextChanging += new Telerik.WinControls.TextChangingEventHandler(this.txtNumFactura_TextChanging);
             // 
             // txtRutaFac
             // 
             this.txtRutaFac.Enabled = false;
-            this.txtRutaFac.Location = new System.Drawing.Point(543, 104);
+            this.txtRutaFac.Location = new System.Drawing.Point(544, 102);
             this.txtRutaFac.Name = "txtRutaFac";
             this.txtRutaFac.Size = new System.Drawing.Size(351, 41);
             this.txtRutaFac.TabIndex = 3;
             this.txtRutaFac.ThemeName = "MaterialTeal";
-            this.radValidationProvider1.SetValidationRule(this.txtRutaFac, radValidationRule1);
+            this.radValidationProvider1.SetValidationRule(this.txtRutaFac, radValidationRule3);
             // 
             // tabForm
             // 
@@ -146,7 +146,7 @@
             this.tabForm.MaximizeButton = false;
             this.tabForm.MinimizeButton = false;
             this.tabForm.Name = "tabForm";
-            this.tabForm.SelectedTab = this.tabListado;
+            this.tabForm.SelectedTab = this.tabManteniminento;
             this.tabForm.ShowNewTabButton = false;
             this.tabForm.ShowTabCloseButton = false;
             this.tabForm.Size = new System.Drawing.Size(1195, 629);
@@ -199,29 +199,29 @@
             // 
             // gridFacturas
             // 
-            this.gridFacturas.Location = new System.Drawing.Point(4, 31);
+            this.gridFacturas.Location = new System.Drawing.Point(4, 30);
             // 
             // 
             // 
             this.gridFacturas.MasterTemplate.AllowAddNewRow = false;
             this.gridFacturas.MasterTemplate.AllowColumnReorder = false;
-            gridViewCheckBoxColumn1.HeaderText = "Seleccionar";
-            gridViewCheckBoxColumn1.Name = "seleccionar";
-            gridViewCommandColumn1.DefaultText = "Abrir";
-            gridViewCommandColumn1.HeaderText = "";
-            gridViewCommandColumn1.Name = "abrir";
-            gridViewCommandColumn1.UseDefaultText = true;
-            gridViewCommandColumn2.DefaultText = "Guardar Como";
-            gridViewCommandColumn2.HeaderText = "";
-            gridViewCommandColumn2.Name = "guardarComo";
-            gridViewCommandColumn2.UseDefaultText = true;
+            gridViewCheckBoxColumn3.HeaderText = "Seleccionar";
+            gridViewCheckBoxColumn3.Name = "seleccionar";
+            gridViewCommandColumn5.DefaultText = "Abrir";
+            gridViewCommandColumn5.HeaderText = "";
+            gridViewCommandColumn5.Name = "abrir";
+            gridViewCommandColumn5.UseDefaultText = true;
+            gridViewCommandColumn6.DefaultText = "Guardar Como";
+            gridViewCommandColumn6.HeaderText = "";
+            gridViewCommandColumn6.Name = "guardarComo";
+            gridViewCommandColumn6.UseDefaultText = true;
             this.gridFacturas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewCheckBoxColumn1,
-            gridViewCommandColumn1,
-            gridViewCommandColumn2});
-            this.gridFacturas.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gridViewCheckBoxColumn3,
+            gridViewCommandColumn5,
+            gridViewCommandColumn6});
+            this.gridFacturas.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.gridFacturas.Name = "gridFacturas";
-            this.gridFacturas.Size = new System.Drawing.Size(1185, 475);
+            this.gridFacturas.Size = new System.Drawing.Size(1168, 461);
             this.gridFacturas.TabIndex = 3;
             this.gridFacturas.ThemeName = "MaterialTeal";
             this.gridFacturas.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridFacturas_CellFormatting);
@@ -230,9 +230,9 @@
             // 
             // toggleFiltrar
             // 
-            this.toggleFiltrar.Location = new System.Drawing.Point(100, 4);
+            this.toggleFiltrar.Location = new System.Drawing.Point(98, 4);
             this.toggleFiltrar.Name = "toggleFiltrar";
-            this.toggleFiltrar.Size = new System.Drawing.Size(40, 21);
+            this.toggleFiltrar.Size = new System.Drawing.Size(40, 20);
             this.toggleFiltrar.TabIndex = 11;
             this.toggleFiltrar.ThemeName = "MaterialTeal";
             this.toggleFiltrar.Value = false;
@@ -241,7 +241,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 4);
+            this.label2.Location = new System.Drawing.Point(50, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 22);
             this.label2.TabIndex = 10;
@@ -250,7 +250,7 @@
             // lblNomClientne
             // 
             this.lblNomClientne.AutoSize = true;
-            this.lblNomClientne.Location = new System.Drawing.Point(781, 4);
+            this.lblNomClientne.Location = new System.Drawing.Point(770, 3);
             this.lblNomClientne.Name = "lblNomClientne";
             this.lblNomClientne.Size = new System.Drawing.Size(135, 22);
             this.lblNomClientne.TabIndex = 12;
@@ -259,7 +259,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 538);
+            this.lblTotal.Location = new System.Drawing.Point(50, 523);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(133, 22);
             this.lblTotal.TabIndex = 5;
@@ -267,7 +267,7 @@
             // 
             // chkSeleccionar
             // 
-            this.chkSeleccionar.Location = new System.Drawing.Point(222, 540);
+            this.chkSeleccionar.Location = new System.Drawing.Point(219, 524);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(101, 19);
             this.chkSeleccionar.TabIndex = 6;
@@ -277,9 +277,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(351, 538);
+            this.btnEliminar.Location = new System.Drawing.Point(346, 523);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(104, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(102, 21);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.ThemeName = "MaterialTeal";
@@ -288,61 +288,61 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.AssociatedControl = this.gridFacturas;
-            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 27, 1191, 481);
+            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1174, 467);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Text = "";
             // 
             // layoutControlLabelItem2
             // 
-            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(142, 0, 635, 27);
+            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(140, 0, 626, 26);
             this.layoutControlLabelItem2.DrawText = false;
             this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.AssociatedControl = this.toggleFiltrar;
-            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(96, 0, 46, 27);
+            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(94, 0, 46, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Text = "layoutControlItem2";
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AssociatedControl = this.label2;
-            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(46, 0, 50, 27);
+            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(46, 0, 48, 26);
             this.layoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Text = "layoutControlItem3";
             // 
             // layoutControlLabelItem4
             // 
-            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(0, 0, 46, 27);
+            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(0, 0, 46, 26);
             this.layoutControlLabelItem4.DrawText = false;
             this.layoutControlLabelItem4.Name = "layoutControlLabelItem4";
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.AssociatedControl = this.lblNomClientne;
-            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(777, 0, 335, 27);
+            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(766, 0, 330, 26);
             this.layoutControlItem4.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Text = "layoutControlItem4";
             // 
             // layoutControlLabelItem6
             // 
-            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(1112, 0, 79, 27);
+            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(1096, 0, 78, 26);
             this.layoutControlLabelItem6.DrawText = false;
             this.layoutControlLabelItem6.Name = "layoutControlLabelItem6";
             // 
             // layoutControlLabelItem7
             // 
-            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(457, 534, 734, 29);
+            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(450, 519, 724, 27);
             this.layoutControlLabelItem7.DrawText = false;
             this.layoutControlLabelItem7.Name = "layoutControlLabelItem7";
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.AssociatedControl = this.lblTotal;
-            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(46, 534, 126, 29);
+            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(46, 519, 123, 27);
             this.layoutControlItem5.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Text = "layoutControlItem5";
@@ -350,7 +350,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.AssociatedControl = this.chkSeleccionar;
-            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(218, 534, 129, 29);
+            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(215, 519, 127, 27);
             this.layoutControlItem6.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Text = "layoutControlItem6";
@@ -358,31 +358,31 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.AssociatedControl = this.btnEliminar;
-            this.layoutControlItem7.Bounds = new System.Drawing.Rectangle(347, 534, 110, 29);
+            this.layoutControlItem7.Bounds = new System.Drawing.Rectangle(342, 519, 108, 27);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Text = "layoutControlItem7";
             // 
             // layoutControlLabelItem9
             // 
-            this.layoutControlLabelItem9.Bounds = new System.Drawing.Rectangle(0, 534, 46, 29);
+            this.layoutControlLabelItem9.Bounds = new System.Drawing.Rectangle(0, 519, 46, 27);
             this.layoutControlLabelItem9.DrawText = false;
             this.layoutControlLabelItem9.Name = "layoutControlLabelItem9";
             // 
             // layoutControlLabelItem11
             // 
-            this.layoutControlLabelItem11.Bounds = new System.Drawing.Rectangle(172, 534, 46, 29);
+            this.layoutControlLabelItem11.Bounds = new System.Drawing.Rectangle(169, 519, 46, 27);
             this.layoutControlLabelItem11.DrawText = false;
             this.layoutControlLabelItem11.Name = "layoutControlLabelItem11";
             // 
             // layoutControlLabelItem12
             // 
-            this.layoutControlLabelItem12.Bounds = new System.Drawing.Rectangle(0, 508, 1191, 26);
+            this.layoutControlLabelItem12.Bounds = new System.Drawing.Rectangle(0, 493, 1174, 26);
             this.layoutControlLabelItem12.DrawText = false;
             this.layoutControlLabelItem12.Name = "layoutControlLabelItem12";
             // 
             // layoutControlLabelItem13
             // 
-            this.layoutControlLabelItem13.Bounds = new System.Drawing.Rectangle(0, 563, 1191, 26);
+            this.layoutControlLabelItem13.Bounds = new System.Drawing.Rectangle(0, 546, 1174, 26);
             this.layoutControlLabelItem13.DrawText = false;
             this.layoutControlLabelItem13.Name = "layoutControlLabelItem13";
             // 
@@ -510,7 +510,7 @@
             // 
             this.dateFactura.CalendarSize = new System.Drawing.Size(290, 320);
             this.dateFactura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFactura.Location = new System.Drawing.Point(263, 107);
+            this.dateFactura.Location = new System.Drawing.Point(267, 104);
             this.dateFactura.Name = "dateFactura";
             this.dateFactura.Size = new System.Drawing.Size(205, 28);
             this.dateFactura.TabIndex = 2;
@@ -522,7 +522,7 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(732, 16);
+            this.txtEstado.Location = new System.Drawing.Point(731, 18);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(295, 41);
             this.txtEstado.TabIndex = 1;
@@ -617,14 +617,14 @@
             // 
             // radValidationProvider1
             // 
-            radValidationRule1.Controls.Add(this.txtNumFactura);
-            radValidationRule1.Controls.Add(this.txtRutaFac);
-            radValidationRule1.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
-            radValidationRule1.ToolTipText = "No puede dejar vacio este campo";
-            radValidationRule1.ToolTipTitle = "Validación Fallida";
-            radValidationRule1.Value = "";
+            radValidationRule3.Controls.Add(this.txtNumFactura);
+            radValidationRule3.Controls.Add(this.txtRutaFac);
+            radValidationRule3.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
+            radValidationRule3.ToolTipText = "No puede dejar vacio este campo";
+            radValidationRule3.ToolTipTitle = "Validación Fallida";
+            radValidationRule3.Value = "";
             this.radValidationProvider1.ValidationRules.AddRange(new Telerik.WinControls.Data.FilterDescriptor[] {
-            radValidationRule1});
+            radValidationRule3});
             // 
             // FrmFacturaCliente1
             // 

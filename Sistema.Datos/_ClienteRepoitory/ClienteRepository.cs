@@ -17,7 +17,7 @@ namespace Sistema.Datos.ClienteRepository
         public ClienteRepository(IMapperProvider mapperProvider)
         {
             this.mapperProvider = mapperProvider;
-            mapper = mapperProvider.GetMapper();
+            mapper = this.mapperProvider.GetMapper();
         }
 
         public async Task<string> Actualizar(Cliente objActualizar)
@@ -163,7 +163,7 @@ namespace Sistema.Datos.ClienteRepository
 
                     entrada.Property(x => x.Estado).IsModified = true;
 
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo activar wl cliente";
+                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo activar al cliente";
                 }
             }
             catch (Exception ex)
@@ -196,7 +196,7 @@ namespace Sistema.Datos.ClienteRepository
 
                     entrada.Property(x => x.Estado).IsModified = true;
 
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar wl cliente";
+                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar al cliente";
                 }
             }
             catch (Exception ex)

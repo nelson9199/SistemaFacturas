@@ -22,30 +22,40 @@ namespace Sistema.Negocio.ClienteLogic
 
         public async Task<string> Actualizar(Cliente objActualizar, string numDocAnt, string rucAnt)
         {
-            if ((numDocAnt.Equals(objActualizar.NumeroDocumento) && !rucAnt.Equals(objActualizar.RUC)) ||
-                (!numDocAnt.Equals(objActualizar.NumeroDocumento) && rucAnt.Equals(objActualizar.RUC)) ||
-                (numDocAnt.Equals(objActualizar.NumeroDocumento) && rucAnt.Equals(objActualizar.RUC)))
-            {
+            bool existeNumDoc = await clienteRepository.ExisteNumDocumento(objActualizar.NumeroDocumento);
+            bool exsiteRuc = await clienteRepository.ExisteRUC(objActualizar.RUC);
 
+            if (numDocAnt.Equals(objActualizar.NumeroDocumento) && rucAnt.Equals(objActualizar.RUC))
+            {
                 return await clienteRepository.Actualizar(objActualizar);
             }
-            else
+            if (!numDocAnt.Equals(objActualizar.NumeroDocumento) && rucAnt.Equals(objActualizar.RUC))
             {
-                bool existeNumDoc = await clienteRepository.ExisteNumDocumento(objActualizar.NumeroDocumento);
-                bool exsiteRuc = await clienteRepository.ExisteRUC(objActualizar.RUC);
-
                 if (existeNumDoc == true)
                 {
                     return "Ya existe un cliente con el mismo número de documento de identificacion";
                 }
+                return await clienteRepository.Actualizar(objActualizar);
+            }
+            if (numDocAnt.Equals(objActualizar.NumeroDocumento) && !rucAnt.Equals(objActualizar.RUC))
+            {
                 if (exsiteRuc == true)
                 {
                     return "Ya existe un cliente con el mismo número de RUC";
                 }
-
                 return await clienteRepository.Actualizar(objActualizar);
             }
 
+            if (existeNumDoc == true)
+            {
+                return "Ya existe un cliente con el mismo número de documento de identificacion";
+            }
+            if (exsiteRuc == true)
+            {
+                return "Ya existe un cliente con el mismo número de RUC";
+            }
+
+            return await clienteRepository.Actualizar(objActualizar);
         }
 
         public async Task<string> Desactivar(int id)

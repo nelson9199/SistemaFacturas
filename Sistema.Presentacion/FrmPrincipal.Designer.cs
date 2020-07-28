@@ -50,21 +50,11 @@
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
-            this.radWaitingBar3 = new Telerik.WinControls.UI.RadWaitingBar();
-            this.segmentedRingWaitingBarIndicatorElement3 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
-            this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
-            this.segmentedRingWaitingBarIndicatorElement1 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
-            this.radWaitingBar2 = new Telerik.WinControls.UI.RadWaitingBar();
-            this.segmentedRingWaitingBarIndicatorElement2 = new Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
-            this.radMenu1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,12 +71,14 @@
             this.radMenuItem4.Image = global::Sistema.Presentacion.Properties.Resources.group_key;
             this.radMenuItem4.Name = "radMenuItem4";
             this.radMenuItem4.Text = "Roles";
+            this.radMenuItem4.Click += new System.EventHandler(this.radMenuItem4_Click);
             // 
             // radMenuItem5
             // 
             this.radMenuItem5.Image = global::Sistema.Presentacion.Properties.Resources.group_add;
             this.radMenuItem5.Name = "radMenuItem5";
             this.radMenuItem5.Text = "Usuarios";
+            this.radMenuItem5.Click += new System.EventHandler(this.radMenuItem5_Click);
             // 
             // radMenuItem6
             // 
@@ -247,6 +239,7 @@
             // 
             // documentContainer1
             // 
+            this.documentContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentContainer1.Name = "documentContainer1";
             // 
             // 
@@ -258,7 +251,6 @@
             // 
             // radMenu1
             // 
-            this.radMenu1.Controls.Add(this.radWaitingBar3);
             this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem1,
             this.radMenuItem3,
@@ -269,60 +261,6 @@
             this.radMenu1.Size = new System.Drawing.Size(1263, 37);
             this.radMenu1.TabIndex = 0;
             this.radMenu1.ThemeName = "Material";
-            // 
-            // radWaitingBar3
-            // 
-            this.radWaitingBar3.Location = new System.Drawing.Point(683, 26);
-            this.radWaitingBar3.Name = "radWaitingBar3";
-            this.radWaitingBar3.Size = new System.Drawing.Size(88, 88);
-            this.radWaitingBar3.TabIndex = 5;
-            this.radWaitingBar3.Text = "radWaitingBar3";
-            this.radWaitingBar3.WaitingIndicators.Add(this.segmentedRingWaitingBarIndicatorElement3);
-            this.radWaitingBar3.WaitingSpeed = 20;
-            this.radWaitingBar3.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar3.GetChildAt(0))).WaitingSpeed = 20;
-            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar3.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar3.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
-            // 
-            // segmentedRingWaitingBarIndicatorElement3
-            // 
-            this.segmentedRingWaitingBarIndicatorElement3.Name = "segmentedRingWaitingBarIndicatorElement3";
-            // 
-            // radWaitingBar1
-            // 
-            this.radWaitingBar1.Location = new System.Drawing.Point(474, 177);
-            this.radWaitingBar1.Name = "radWaitingBar1";
-            this.radWaitingBar1.Size = new System.Drawing.Size(88, 88);
-            this.radWaitingBar1.TabIndex = 0;
-            this.radWaitingBar1.Text = "radWaitingBar1";
-            this.radWaitingBar1.WaitingIndicators.Add(this.segmentedRingWaitingBarIndicatorElement1);
-            this.radWaitingBar1.WaitingSpeed = 20;
-            this.radWaitingBar1.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar1.GetChildAt(0))).WaitingSpeed = 20;
-            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
-            // 
-            // segmentedRingWaitingBarIndicatorElement1
-            // 
-            this.segmentedRingWaitingBarIndicatorElement1.Name = "segmentedRingWaitingBarIndicatorElement1";
-            // 
-            // radWaitingBar2
-            // 
-            this.radWaitingBar2.Location = new System.Drawing.Point(464, 214);
-            this.radWaitingBar2.Name = "radWaitingBar2";
-            this.radWaitingBar2.Size = new System.Drawing.Size(88, 88);
-            this.radWaitingBar2.TabIndex = 0;
-            this.radWaitingBar2.Text = "radWaitingBar2";
-            this.radWaitingBar2.WaitingIndicators.Add(this.segmentedRingWaitingBarIndicatorElement2);
-            this.radWaitingBar2.WaitingSpeed = 20;
-            this.radWaitingBar2.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar2.GetChildAt(0))).WaitingSpeed = 20;
-            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar2.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.SegmentedRing;
-            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar2.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
-            // 
-            // segmentedRingWaitingBarIndicatorElement2
-            // 
-            this.segmentedRingWaitingBarIndicatorElement2.Name = "segmentedRingWaitingBarIndicatorElement2";
             // 
             // FrmPrincipal
             // 
@@ -346,10 +284,6 @@
             this.radDock1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
-            this.radMenu1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -380,11 +314,6 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem9;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton5;
-        private Telerik.WinControls.UI.RadWaitingBar radWaitingBar1;
-        private Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement segmentedRingWaitingBarIndicatorElement1;
-        private Telerik.WinControls.UI.RadWaitingBar radWaitingBar2;
-        private Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement segmentedRingWaitingBarIndicatorElement2;
-        private Telerik.WinControls.UI.RadWaitingBar radWaitingBar3;
-        private Telerik.WinControls.UI.SegmentedRingWaitingBarIndicatorElement segmentedRingWaitingBarIndicatorElement3;
+
     }
 }

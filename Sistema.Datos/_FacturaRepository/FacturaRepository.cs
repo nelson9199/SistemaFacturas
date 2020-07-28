@@ -18,7 +18,7 @@ namespace Sistema.Datos.FacturaRepository
         public FacturaRepository(IMapperProvider mapperProvider)
         {
             this.mapperProvider = mapperProvider;
-            mapper = mapperProvider.GetMapper();
+            mapper = this.mapperProvider.GetMapper();
         }
 
         public async Task<string> Actualizar(Factura objActualizar)

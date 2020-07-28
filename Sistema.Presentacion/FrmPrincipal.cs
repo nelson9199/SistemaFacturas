@@ -61,5 +61,21 @@ namespace Sistema.Presentacion
             frmConvertidor.MdiParent = this;
             frmConvertidor.Show();
         }
+
+        private void radMenuItem4_Click(object sender, EventArgs e)
+        {
+            FrmRol frmRol = formOpener.ShowModelessForm<FrmRol>() as FrmRol;
+
+            frmRol.MdiParent = this;
+            frmRol.Show();
+        }
+
+        private void radMenuItem5_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmUsuario = formOpener.ShowModelessForm<FrmUsuario>() as FrmUsuario;
+
+            frmUsuario.MdiParent = this;
+            frmUsuario.Show();
+        }
     }
 }

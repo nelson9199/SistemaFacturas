@@ -19,6 +19,9 @@ namespace Sistema.Entidades.Configurations
 
             builder.HasIndex(x => x.Nombre)
                 .IsUnique(true);
+
+            builder.HasData(new Rol() { RolId = 1, Nombre = "Administrador", Descripcion = "Tiene Acceso a todas las funcionalidades del sistema" },
+                            new Rol() { RolId = 2, Nombre = "Usuario Común", Descripcion = "Solo tiene acceso a lectura de datos y a las herramientas de conversión del sistema" });
         }
     }
 }

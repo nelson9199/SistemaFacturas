@@ -6,19 +6,16 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Telerik.WinControls.UI;
 
 namespace Sistema.Presentacion
 {
-    public partial class FrmLoading1 : RadForm
+    public partial class FrmUsuario : Telerik.WinControls.UI.RadTabbedForm
     {
-        public FrmLoading1()
+        public FrmUsuario()
         {
             InitializeComponent();
-        }
 
-        private void FrmLoading1_Load(object sender, EventArgs e)
-        {
+            this.AllowAero = false;
         }
     }
 }

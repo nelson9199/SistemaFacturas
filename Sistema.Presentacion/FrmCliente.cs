@@ -53,7 +53,7 @@ namespace Sistema.Presentacion
 
         private void ShowLoading()
         {
-            loading = new FrmLoading1();
+            loading = new FrmLoading1(); ;
             loading.Show();
             loading.BringToFront();
         }

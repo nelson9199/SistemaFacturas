@@ -21,6 +21,7 @@ namespace Sistema.Entidades.Configurations
             builder.HasOne(x => x.Rol)
                 .WithMany(x => x.Usuarios)
                 .OnDelete(DeleteBehavior.SetNull);
+
         }
     }
 }

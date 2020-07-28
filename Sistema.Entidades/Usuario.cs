@@ -28,6 +28,9 @@ namespace Sistema.Entidades
         public string Email { get; set; }
         [Required]
         public string Clave { get; set; }
+        [Required]
+        public string Salt { get; set; }
+
         [Column(TypeName = "nvarchar(50)")]
         public bool Estado { get; set; }
 
