@@ -83,7 +83,7 @@ namespace Sistema.Presentacion
         {
             gridClientes.AllowCellContextMenu = false;
             gridClientes.EnableFiltering = false;
-            gridClientes.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridClientes.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
 
             gridClientes.Columns[0].Width = 100;
             gridClientes.Columns[0].AllowFiltering = false;
@@ -230,7 +230,7 @@ namespace Sistema.Presentacion
 
             #endregion
 
-            radValidationProvider1.ValidationMode = Telerik.WinControls.UI.ValidationMode.Programmatically;
+            radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
 
             Limpiar();
 
@@ -320,19 +320,6 @@ namespace Sistema.Presentacion
         private void txtNumDocu_TextChanging(object sender, TextChangingEventArgs e)
         {
             e.Cancel = !IsNumber(e.NewValue);
-        }
-
-        private void radTabbedFormControl1_SelectedTabChanged(object sender, EventArgs e)
-        {
-            if (radTabbedFormControl1.SelectedTab == radTabbedFormControlTab1)
-            {
-                Limpiar();
-                radValidationProvider1.ValidationMode = ValidationMode.None;
-            }
-            if (radTabbedFormControl1.SelectedTab == radTabbedFormControlTab2)
-            {
-                radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
-            }
         }
 
         private void dropTipoDocu_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)

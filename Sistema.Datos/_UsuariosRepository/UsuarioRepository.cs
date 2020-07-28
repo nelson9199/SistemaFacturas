@@ -226,13 +226,13 @@ namespace Sistema.Datos._UsuariosRepository
             return respuesta;
         }
 
-        public async Task<List<object>> Listar()
+        public async Task<List<Usuario>> Listar()
         {
             try
             {
                 using (var context = new ApplicationDbContext())
                 {
-                    return await context.Usuarios.Include(x => x.Rol).Select(x => new { x.UsuarioId, x.RolId, Rol = x.Rol.Nombre, x.Nombre, x.TipoDocumento, x.NumeroDocumento, x.Direccion, x.Telefono, x.Email }).ToListAsync<object>();
+                    return await context.Usuarios.Include(x => x.Rol).ToListAsync();
                 }
             }
             catch (Exception ex)

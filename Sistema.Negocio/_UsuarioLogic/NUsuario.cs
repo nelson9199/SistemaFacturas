@@ -84,7 +84,7 @@ namespace Sistema.Negocio._UsuarioLogic
             return await usuarioRepository.Insertar(objInsertar);
         }
 
-        public async Task<List<object>> Listar()
+        public async Task<List<Usuario>> Listar()
         {
             return await usuarioRepository.Listar();
         }

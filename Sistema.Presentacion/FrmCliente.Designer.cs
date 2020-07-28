@@ -45,7 +45,6 @@
             this.txtPasaporte = new Telerik.WinControls.UI.RadTextBox();
             this.dropTipoDocu = new Telerik.WinControls.UI.RadDropDownList();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
-            this.materialBlueGreyTheme1 = new Telerik.WinControls.Themes.MaterialBlueGreyTheme();
             this.radTabbedFormControlTab2 = new Telerik.WinControls.UI.RadTabbedFormControlTab();
             this.btnActualizar = new Telerik.WinControls.UI.RadButton();
             this.txtId = new Telerik.WinControls.UI.RadTextBox();
@@ -252,7 +251,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(47, 0);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(102, 36);
+            this.txtId.Size = new System.Drawing.Size(102, 41);
             this.txtId.TabIndex = 6;
             this.txtId.ThemeName = "Material";
             this.radValidationProvider1.SetValidationRule(this.txtId, null);
@@ -446,7 +445,7 @@
             this.gridClientes.MasterTemplate.EnablePaging = true;
             this.gridClientes.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gridClientes.Name = "gridClientes";
-            this.gridClientes.Size = new System.Drawing.Size(1314, 401);
+            this.gridClientes.Size = new System.Drawing.Size(1297, 399);
             this.gridClientes.TabIndex = 3;
             this.gridClientes.ThemeName = "Material";
             this.gridClientes.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridClientes_CellDoubleClick);
@@ -454,7 +453,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 463);
+            this.lblTotal.Location = new System.Drawing.Point(50, 462);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(133, 22);
             this.lblTotal.TabIndex = 4;
@@ -462,7 +461,7 @@
             // 
             // chkSeleccionar
             // 
-            this.chkSeleccionar.Location = new System.Drawing.Point(214, 465);
+            this.chkSeleccionar.Location = new System.Drawing.Point(212, 464);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(101, 19);
             this.chkSeleccionar.TabIndex = 5;
@@ -472,9 +471,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(309, 463);
+            this.btnEliminar.Location = new System.Drawing.Point(313, 461);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(115, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(106, 25);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.ThemeName = "Material";
@@ -482,9 +481,9 @@
             // 
             // btnActivar
             // 
-            this.btnActivar.Location = new System.Drawing.Point(476, 463);
+            this.btnActivar.Location = new System.Drawing.Point(471, 461);
             this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(113, 23);
+            this.btnActivar.Size = new System.Drawing.Size(111, 25);
             this.btnActivar.TabIndex = 7;
             this.btnActivar.Text = "Activar";
             this.btnActivar.ThemeName = "Material";
@@ -492,9 +491,9 @@
             // 
             // btnDesactivar
             // 
-            this.btnDesactivar.Location = new System.Drawing.Point(641, 463);
+            this.btnDesactivar.Location = new System.Drawing.Point(634, 461);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(121, 23);
+            this.btnDesactivar.Size = new System.Drawing.Size(119, 25);
             this.btnDesactivar.TabIndex = 8;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.ThemeName = "Material";
@@ -522,7 +521,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.AssociatedControl = this.gridClientes;
-            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1320, 407);
+            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1303, 405);
             this.layoutControlItem1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Text = "";
@@ -531,7 +530,7 @@
             // 
             // layoutControlLabelItem1
             // 
-            this.layoutControlLabelItem1.Bounds = new System.Drawing.Rectangle(138, 0, 1182, 26);
+            this.layoutControlLabelItem1.Bounds = new System.Drawing.Rectangle(138, 0, 1165, 26);
             this.layoutControlLabelItem1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem1.DrawText = false;
             this.layoutControlLabelItem1.Name = "layoutControlLabelItem1";
@@ -540,7 +539,7 @@
             // 
             // layoutControlLabelItem2
             // 
-            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(764, 459, 556, 29);
+            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(755, 457, 548, 31);
             this.layoutControlLabelItem2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem2.DrawText = false;
             this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
@@ -550,7 +549,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.AssociatedControl = this.lblTotal;
-            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(46, 459, 118, 29);
+            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(46, 457, 116, 31);
             this.layoutControlItem2.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -560,7 +559,7 @@
             // 
             // layoutControlLabelItem3
             // 
-            this.layoutControlLabelItem3.Bounds = new System.Drawing.Rectangle(0, 459, 46, 29);
+            this.layoutControlLabelItem3.Bounds = new System.Drawing.Rectangle(0, 457, 46, 31);
             this.layoutControlLabelItem3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem3.DrawText = false;
             this.layoutControlLabelItem3.Name = "layoutControlLabelItem3";
@@ -569,7 +568,7 @@
             // 
             // layoutControlLabelItem4
             // 
-            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(164, 459, 46, 29);
+            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(162, 457, 46, 31);
             this.layoutControlLabelItem4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem4.DrawText = false;
             this.layoutControlLabelItem4.Name = "layoutControlLabelItem4";
@@ -579,7 +578,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.AssociatedControl = this.chkSeleccionar;
-            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(210, 459, 95, 29);
+            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(208, 457, 101, 31);
             this.layoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -590,7 +589,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.AssociatedControl = this.btnEliminar;
-            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(305, 459, 121, 29);
+            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(309, 457, 112, 31);
             this.layoutControlItem4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Text = "layoutControlItem4";
@@ -600,7 +599,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.AssociatedControl = this.btnActivar;
-            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(472, 459, 119, 29);
+            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(467, 457, 117, 31);
             this.layoutControlItem5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Text = "layoutControlItem5";
@@ -610,7 +609,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.AssociatedControl = this.btnDesactivar;
-            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(637, 459, 127, 29);
+            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(630, 457, 125, 31);
             this.layoutControlItem6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Text = "layoutControlItem6";
@@ -619,7 +618,7 @@
             // 
             // layoutControlLabelItem6
             // 
-            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(426, 459, 46, 29);
+            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(421, 457, 46, 31);
             this.layoutControlLabelItem6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem6.DrawText = false;
             this.layoutControlLabelItem6.Name = "layoutControlLabelItem6";
@@ -628,7 +627,7 @@
             // 
             // layoutControlLabelItem7
             // 
-            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(591, 459, 46, 29);
+            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(584, 457, 46, 31);
             this.layoutControlLabelItem7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem7.DrawText = false;
             this.layoutControlLabelItem7.Name = "layoutControlLabelItem7";
@@ -637,7 +636,7 @@
             // 
             // layoutControlLabelItem8
             // 
-            this.layoutControlLabelItem8.Bounds = new System.Drawing.Rectangle(0, 433, 1320, 26);
+            this.layoutControlLabelItem8.Bounds = new System.Drawing.Rectangle(0, 431, 1303, 26);
             this.layoutControlLabelItem8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem8.DrawText = false;
             this.layoutControlLabelItem8.Name = "layoutControlLabelItem8";
@@ -676,7 +675,7 @@
             // 
             // layoutControlLabelItem5
             // 
-            this.layoutControlLabelItem5.Bounds = new System.Drawing.Rectangle(0, 488, 1320, 43);
+            this.layoutControlLabelItem5.Bounds = new System.Drawing.Rectangle(0, 488, 1303, 26);
             this.layoutControlLabelItem5.DrawText = false;
             this.layoutControlLabelItem5.Name = "layoutControlLabelItem5";
             // 
@@ -687,7 +686,6 @@
             this.radTabbedFormControl1.Controls.Add(this.radTabbedFormControlTab2);
             this.radTabbedFormControl1.ItemDragMode = Telerik.WinControls.UI.TabItemDragMode.None;
             this.radTabbedFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.radTabbedFormControl1.MaximizeButton = false;
             this.radTabbedFormControl1.MinimizeButton = false;
             this.radTabbedFormControl1.Name = "radTabbedFormControl1";
             this.radTabbedFormControl1.SelectedTab = this.radTabbedFormControlTab1;
@@ -700,7 +698,6 @@
             this.radTabbedFormControl1.TabSpacing = -1;
             this.radTabbedFormControl1.Text = "Clientes";
             this.radTabbedFormControl1.ThemeName = "Material";
-            this.radTabbedFormControl1.SelectedTabChanged += new System.EventHandler(this.radTabbedFormControl1_SelectedTabChanged);
             // 
             // radValidationProvider1
             // 
@@ -739,6 +736,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 571);
             this.Controls.Add(this.radTabbedFormControl1);
+            this.MaximizeBox = false;
             this.Name = "FrmCliente";
             // 
             // 
@@ -784,7 +782,6 @@
 
         #endregion
         private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
-        private Telerik.WinControls.Themes.MaterialBlueGreyTheme materialBlueGreyTheme1;
         private System.Windows.Forms.Label label5;
         private Telerik.WinControls.UI.RadTextBox txtSegundoApellido;
         private System.Windows.Forms.Label label7;

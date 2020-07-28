@@ -110,11 +110,6 @@ namespace Sistema.Presentacion
                 });
                 lblTotal.Text = "Total registros: " + gridFacturas.RowCount.ToString();
                 lblNomClientne.Text = "Facturas pertenecientes a: " + NombreCliente;
-
-                if (gridFacturas.ColumnCount > 3)
-                {
-                    EstilosGirdView();
-                }
             }
             catch (Exception ex)
             {
@@ -363,14 +358,6 @@ namespace Sistema.Presentacion
         private void txtNumFactura_TextChanging(object sender, TextChangingEventArgs e)
         {
             e.Cancel = !IsNumber(e.NewValue);
-        }
-
-        private void tabForm_SelectedTabChanged(object sender, EventArgs e)
-        {
-            if (tabForm.SelectedTab == tabListado)
-            {
-                Limpiar();
-            }
         }
 
         private async void btnInsertar_Click(object sender, EventArgs e)
