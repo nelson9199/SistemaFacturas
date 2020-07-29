@@ -531,6 +531,14 @@ namespace Sistema.Presentacion
                 form.ShowDialog();
             }
         }
+
+        private void radTabbedFormControl1_SelectedTabChanged(object sender, EventArgs e)
+        {
+            if (radTabbedFormControl1.SelectedTab == radTabbedFormControlTab1)
+            {
+                Limpiar();
+            }
+        }
     }
 }
 

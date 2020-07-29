@@ -24,13 +24,13 @@ namespace Sistema.Negocio._UsuarioLogic
         public async Task<string> Actualizar(Usuario objActualizar, string numDocuAnt, string emailAnt)
         {
             bool existeNumDoc = await usuarioRepository.ExisteNumDocumento(objActualizar.NumeroDocumento);
-            bool exsiteEmail = await usuarioRepository.ExisteEmail(objActualizar.Email);
+            bool exsiteUsername = await usuarioRepository.ExisteUsername(objActualizar.Username);
 
-            if (numDocuAnt.Equals(objActualizar.NumeroDocumento) && emailAnt.Equals(objActualizar.Email))
+            if (numDocuAnt.Equals(objActualizar.NumeroDocumento) && emailAnt.Equals(objActualizar.Username))
             {
                 return await usuarioRepository.Actualizar(objActualizar);
             }
-            if (!numDocuAnt.Equals(objActualizar.NumeroDocumento) && emailAnt.Equals(objActualizar.Email))
+            if (!numDocuAnt.Equals(objActualizar.NumeroDocumento) && emailAnt.Equals(objActualizar.Username))
             {
                 if (existeNumDoc == true)
                 {
@@ -38,11 +38,11 @@ namespace Sistema.Negocio._UsuarioLogic
                 }
                 return await usuarioRepository.Actualizar(objActualizar);
             }
-            if (numDocuAnt.Equals(objActualizar.NumeroDocumento) && !emailAnt.Equals(objActualizar.Email))
+            if (numDocuAnt.Equals(objActualizar.NumeroDocumento) && !emailAnt.Equals(objActualizar.Username))
             {
-                if (exsiteEmail == true)
+                if (exsiteUsername == true)
                 {
-                    return "Ya existe un usuario con el mismo email registrado. Porfavor ingrese otro email";
+                    return "Ya existe un usuario con el mismo nombre de usuario registrado. Porfavor ingrese otro nombre";
                 }
                 return await usuarioRepository.Actualizar(objActualizar);
             }
@@ -51,9 +51,9 @@ namespace Sistema.Negocio._UsuarioLogic
             {
                 return "Ya existe un usuario con el mismo número de documento de identificacion";
             }
-            if (exsiteEmail == true)
+            if (exsiteUsername == true)
             {
-                return "Ya existe un usuario con el mismo email registrado. Porfavor ingrese otro email";
+                return "Ya existe un usuario con el mismo nombre de usuario registrado. Porfavor ingrese otro nombre";
             }
             return await usuarioRepository.Actualizar(objActualizar);
         }
@@ -71,15 +71,15 @@ namespace Sistema.Negocio._UsuarioLogic
         public async Task<string> Insertar(Usuario objInsertar)
         {
             bool existeNumDoc = await usuarioRepository.ExisteNumDocumento(objInsertar.NumeroDocumento);
-            bool exsiteEmail = await usuarioRepository.ExisteEmail(objInsertar.Email);
+            bool exsiteUsername = await usuarioRepository.ExisteUsername(objInsertar.Username);
 
             if (existeNumDoc == true)
             {
                 return "Ya existe un usuario con el mismo número de documento de identificacion";
             }
-            if (exsiteEmail == true)
+            if (exsiteUsername == true)
             {
-                return "Ya existe un usuario con el mismo email registrado. Porfavor ingrese otro email";
+                return "Ya existe un usuario con el mismo nombre de usuario registrado. Porfavor ingrese otro nombre";
             }
             return await usuarioRepository.Insertar(objInsertar);
         }
@@ -89,9 +89,9 @@ namespace Sistema.Negocio._UsuarioLogic
             return await usuarioRepository.Listar();
         }
 
-        public async Task<bool> ValidarPassword(string email, string password)
+        public async Task<bool> ValidarPassword(string username, string password)
         {
-            return await usuarioRepository.ValidarPassword(email, password);
+            return await usuarioRepository.ValidarPassword(username, password);
         }
     }
 }

@@ -77,7 +77,7 @@ namespace Sistema.Presentacion
                     usuario.Nombre,
                     usuario.TipoDocumento,
                     usuario.NumeroDocumento,
-                    usuario.Email,
+                    usuario.Username,
                     usuario.Direccion,
                     usuario.Telefono,
                     usuario.Estado
@@ -132,7 +132,7 @@ namespace Sistema.Presentacion
                 gridUsuarios.Columns[6].TextAlignment = ContentAlignment.MiddleCenter;
 
                 gridUsuarios.Columns[7].Width = 200;
-                gridUsuarios.Columns[7].HeaderText = "Email";
+                gridUsuarios.Columns[7].HeaderText = "Usuario";
                 gridUsuarios.Columns[7].ReadOnly = true;
                 gridUsuarios.Columns[7].TextAlignment = ContentAlignment.MiddleCenter;
 
@@ -159,7 +159,7 @@ namespace Sistema.Presentacion
         {
             txtClave.Clear();
             txtDireccion.Clear();
-            txtEmail.Clear();
+            txtUsuario.Clear();
             txtNombre.Clear();
             txtNumDoc.Clear();
             txtTelefono.Clear();
@@ -185,7 +185,7 @@ namespace Sistema.Presentacion
 
             usuario.Clave = txtClave.Text.Trim();
             usuario.Direccion = txtDireccion.Text.Trim();
-            usuario.Email = txtEmail.Text.Trim();
+            usuario.Username = txtUsuario.Text.Trim();
             usuario.Nombre = txtNombre.Text.Trim();
             usuario.RolId = Convert.ToInt32(dropRoles.SelectedValue);
             usuario.Telefono = txtTelefono.Text.Trim();
@@ -261,8 +261,6 @@ namespace Sistema.Presentacion
             #endregion
 
             radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
-
-            txtEmail.MaskType = MaskType.EMail;
 
             Limpiar();
 
@@ -398,7 +396,7 @@ namespace Sistema.Presentacion
 
                 txtDireccion.Text = gridUsuarios.CurrentRow.Cells["Direccion"].Value?.ToString();
 
-                txtEmail.Text = gridUsuarios.CurrentRow.Cells["Email"].Value?.ToString();
+                txtUsuario.Text = gridUsuarios.CurrentRow.Cells["Email"].Value?.ToString();
                 emailAnt = gridUsuarios.CurrentRow.Cells["Email"].Value?.ToString();
 
                 txtTelefono.Text = gridUsuarios.CurrentRow.Cells["Telefono"].Value?.ToString();
@@ -593,6 +591,14 @@ namespace Sistema.Presentacion
             catch (Exception ex)
             {
                 MensajeError(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void tabForm_SelectedTabChanged(object sender, EventArgs e)
+        {
+            if (tabForm.SelectedTab == tabListado)
+            {
+                Limpiar();
             }
         }
     }

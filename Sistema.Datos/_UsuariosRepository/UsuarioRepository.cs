@@ -151,14 +151,14 @@ namespace Sistema.Datos._UsuariosRepository
             return respuesta;
         }
 
-        public async Task<bool> ExisteEmail(string email)
+        public async Task<bool> ExisteUsername(string username)
         {
             try
             {
 
-                bool emailExiste = await context.Usuarios.AnyAsync(x => x.Email == email);
+                bool usernameExiste = await context.Usuarios.AnyAsync(x => x.Username == username);
 
-                return emailExiste;
+                return usernameExiste;
 
             }
             catch (Exception ex)
@@ -225,11 +225,11 @@ namespace Sistema.Datos._UsuariosRepository
             }
         }
 
-        public async Task<bool> ValidarPassword(string email, string password)
+        public async Task<bool> ValidarPassword(string username, string password)
         {
             try
             {
-                var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.Email == email);
+                var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.Username == username);
 
                 var saltedhasedPassword = protector.SaltAndHashPassword(password, usuario.Salt);
 

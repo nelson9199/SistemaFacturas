@@ -13,7 +13,7 @@ namespace Sistema.Datos._UsuariosRepository
         Task<string> Actualizar(T objActualizar);
         Task<string> Eliminar(int id);
         Task<bool> ExisteNumDocumento(string numDocumento);
-        Task<bool> ExisteEmail(string email);
+        Task<bool> ExisteUsername(string username);
         Task<bool> ValidarPassword(string username, string password);
     }
 }

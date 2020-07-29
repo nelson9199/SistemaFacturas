@@ -25,7 +25,7 @@ namespace Sistema.Entidades
         public string Telefono { get; set; }
         [Required]
         [StringLength(100)]
-        public string Email { get; set; }
+        public string Username { get; set; }
         [Required]
         public string Clave { get; set; }
         [Required]
