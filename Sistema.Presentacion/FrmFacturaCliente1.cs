@@ -591,6 +591,10 @@ namespace Sistema.Presentacion
 
                                 MensajeOk("Se elimió la factura con número: " + fila.Cells[5].Value?.ToString());
                             }
+                            else
+                            {
+                                MensajeError(respuesta);
+                            }
                         }
                     }
                     await Listar();

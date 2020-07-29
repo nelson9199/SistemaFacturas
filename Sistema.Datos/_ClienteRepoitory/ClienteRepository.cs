@@ -54,11 +54,11 @@ namespace Sistema.Datos.ClienteRepository
 
             try
             {
-                var cliente = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
+                var cliente = await context.Clientes.FirstOrDefaultAsync(x => x.ClienteId == id);
 
                 if (cliente == null)
                 {
-                    return respuesta = "No se encontró el usuario con el Id dado";
+                    return respuesta = "No se encontró el cliente con el Id dado";
                 }
 
                 context.Entry(cliente).State = EntityState.Deleted;

@@ -12,5 +12,7 @@ namespace Sistema.Datos.FacturaRepository
         Task<bool> ExisteCodigoFactura(string numFactura);
 
         Factura ObtenerIdUltimaFactura();
+
+        Task<Factura> ObtenerFacturaPorId(int id);
     }
 }

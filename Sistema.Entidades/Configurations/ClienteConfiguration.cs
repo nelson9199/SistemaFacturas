@@ -11,11 +11,6 @@ namespace Sistema.Entidades.Configurations
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {
-            builder.HasQueryFilter(x => x.EstaBorrado == false);
-
-            builder.Property(x => x.EstaBorrado)
-                .HasDefaultValue(false);
-
             builder.HasIndex(x => x.NumeroDocumento)
                 .IsUnique(true);
 

@@ -55,6 +55,11 @@ namespace Sistema.Negocio.FacturaLogic
             return await facturaRepository.Listar();
         }
 
+        public async Task<Factura> ObtenerFacturaPorId(int id)
+        {
+            return await facturaRepository.ObtenerFacturaPorId(id);
+        }
+
         public Factura ObtenerIdUltimaFactura()
         {
             return facturaRepository.ObtenerIdUltimaFactura();

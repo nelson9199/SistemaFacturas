@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Sistema.Datos
 {
     public class ApplicationDbContext : DbContext
@@ -28,19 +31,6 @@ namespace Sistema.Datos
             modelBuilder.ApplyConfiguration(new FacturaConfiguration());
             modelBuilder.ApplyConfiguration(new ClienteFacturaConfiguration());
 
-        }
-
-        public override int SaveChanges()
-        {
-            foreach (var item in ChangeTracker.Entries()
-                 .Where(e => e.State == EntityState.Deleted &&
-                 e.Metadata.GetProperties().Any(x => x.Name == "EstaBorrado")))
-            {
-                item.State = EntityState.Unchanged;
-                item.CurrentValues["EstaBorrado"] = true;
-            }
-
-            return base.SaveChanges();
         }
 
         public DbSet<Rol> Roles { get; set; }

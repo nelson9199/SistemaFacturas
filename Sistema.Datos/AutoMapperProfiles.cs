@@ -12,7 +12,6 @@ namespace Sistema.Datos
         {
             CreateMap<Cliente, Cliente>()
                 .ForMember(x => x.ClienteFacturas, memberOptions: x => x.Ignore())
-                .ForMember(x => x.EstaBorrado, memberOptions: x => x.Ignore())
                 .ForMember(x => x.Estado, memberOptions: x => x.Ignore());
 
             CreateMap<Factura, Factura>()

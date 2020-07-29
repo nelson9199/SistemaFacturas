@@ -30,6 +30,7 @@ namespace Sistema.Presentacion
         private readonly IFormOpener formOpener;
         private readonly IClienteFacturaAccesRepo clienteFacturaAcces;
         private readonly IFacturaAccesRepo<Factura> facturaAccesRepo;
+        private string Directorio = "D:\\Facturas\\";
 
         public FrmCliente(IClienteAccesRepo<Cliente> clienteAcces, SimpleInjector.Container container, IFormOpener formOpener, IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo)
         {
@@ -130,8 +131,6 @@ namespace Sistema.Presentacion
             gridClientes.Columns[9].ReadOnly = true;
 
             gridClientes.Columns[10].IsVisible = false;
-
-            gridClientes.Columns[11].IsVisible = false;
 
             RadGridLocalizationProvider.CurrentProvider = new MySpanishRadGridLocalizationProvider();
         }
@@ -427,6 +426,8 @@ namespace Sistema.Presentacion
 
                             foreach (var item in facturaCliente)
                             {
+                                var facturaAEliminar = await facturaAccesRepo.ObtenerFacturaPorId(item.FacturaId);
+                                File.Delete(Path.Combine(Directorio, facturaAEliminar.ArchivoFactura));
                                 await facturaAccesRepo.Eliminar(item.FacturaId);
                             }
 
@@ -435,6 +436,10 @@ namespace Sistema.Presentacion
                             if (respuesta.Equals("OK"))
                             {
                                 MensajeOk("Se elimino el cliente con documento de indentificación: " + fila.Cells[8].Value?.ToString());
+                            }
+                            else
+                            {
+                                MensajeError(respuesta);
                             }
                         }
                     }

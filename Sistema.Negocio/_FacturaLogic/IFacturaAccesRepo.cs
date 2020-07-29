@@ -12,5 +12,7 @@ namespace Sistema.Negocio.FacturaLogic
         Task<string> Actualizar(T objActualizar, string numFacAnt);
 
         Factura ObtenerIdUltimaFactura();
+
+        Task<Factura> ObtenerFacturaPorId(int id);
     }
 }

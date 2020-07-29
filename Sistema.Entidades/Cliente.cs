@@ -39,8 +39,6 @@ namespace Sistema.Entidades
         [Column(TypeName = "nvarchar(50)")]
         public bool Estado { get; set; }
 
-        public bool EstaBorrado { get; set; }
-
         public virtual List<ClienteFacturas> ClienteFacturas { get; set; }
     }
 }

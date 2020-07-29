@@ -57,11 +57,11 @@ namespace Sistema.Datos.FacturaRepository
 
             try
             {
-                var factura = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
+                var factura = await context.Facturas.FirstOrDefaultAsync(x => x.FacturaId == id);
 
                 if (factura == null)
                 {
-                    return respuesta = "No se encontró el usuario con el Id dado";
+                    return respuesta = "No se encontró la factura con el Id dado";
                 }
 
                 context.Entry(factura).State = EntityState.Deleted;
@@ -112,6 +112,19 @@ namespace Sistema.Datos.FacturaRepository
             {
                 return await context.Facturas.ToListAsync();
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<Factura> ObtenerFacturaPorId(int id)
+        {
+            try
+            {
+                return await context.Facturas.FirstOrDefaultAsync(x => x.FacturaId == id);
             }
             catch (Exception ex)
             {
