@@ -239,7 +239,6 @@
             // 
             // documentContainer1
             // 
-            this.documentContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentContainer1.Name = "documentContainer1";
             // 
             // 
@@ -264,8 +263,7 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1263, 625);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radCommandBar1);

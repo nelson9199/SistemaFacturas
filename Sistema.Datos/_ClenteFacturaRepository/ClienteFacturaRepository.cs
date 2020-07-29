@@ -9,17 +9,22 @@ namespace Sistema.Datos.ClenteFacturaRepository
 {
     public class ClienteFacturaRepository : IClienteFacturaRepository
     {
+        private readonly ApplicationDbContext context;
+
+        public ClienteFacturaRepository(ApplicationDbContext context)
+        {
+            this.context = context;
+        }
+
         public async Task<string> Insertar(ClienteFacturas objInsertar)
         {
             string respuesta = string.Empty;
 
             try
             {
-                using (var context = new ApplicationDbContext())
-                {
-                    context.Add(objInsertar);
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro en Cliente Facturas";
-                }
+                context.Add(objInsertar);
+                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro en Cliente Facturas";
+
             }
             catch (Exception ex)
             {
@@ -32,11 +37,9 @@ namespace Sistema.Datos.ClenteFacturaRepository
         {
             try
             {
-                using (var context = new ApplicationDbContext())
-                {
-                    return await context.ClienteFacturas.Where(x => x.ClienteId == clienteId)
-                        .Include(x => x.Factura).ToListAsync();
-                }
+                return await context.ClienteFacturas.Where(x => x.ClienteId == clienteId)
+                    .Include(x => x.Factura).ToListAsync();
+
             }
             catch (Exception ex)
             {

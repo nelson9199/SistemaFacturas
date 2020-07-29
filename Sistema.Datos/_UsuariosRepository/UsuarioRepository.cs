@@ -16,12 +16,14 @@ namespace Sistema.Datos._UsuariosRepository
     {
         private readonly IMapperProvider mapperProvider;
         private readonly IProtector protector;
+        private readonly ApplicationDbContext context;
         private IMapper mapper;
 
-        public UsuarioRepository(IMapperProvider mapperProvider, IProtector protector)
+        public UsuarioRepository(IMapperProvider mapperProvider, IProtector protector, ApplicationDbContext context)
         {
             this.mapperProvider = mapperProvider;
             this.protector = protector;
+            this.context = context;
             this.mapper = this.mapperProvider.GetMapper();
         }
 
@@ -32,23 +34,20 @@ namespace Sistema.Datos._UsuariosRepository
             try
             {
 
-                using (var context = new ApplicationDbContext())
+                var usuarioOn = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
+
+                if (usuarioOn == null)
                 {
-                    var usuarioOn = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
-
-                    if (usuarioOn == null)
-                    {
-                        return respuesta = "No se encontró el usuario con el Id dado";
-                    }
-
-                    usuarioOn.Estado = true;
-
-                    var entrada = context.Attach(usuarioOn);
-
-                    entrada.Property(x => x.Estado).IsModified = true;
-
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo activar al usuario";
+                    return respuesta = "No se encontró el usuario con el Id dado";
                 }
+
+                usuarioOn.Estado = true;
+
+                var entrada = context.Attach(usuarioOn);
+
+                entrada.Property(x => x.Estado).IsModified = true;
+
+                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo activar al usuario";
             }
             catch (Exception ex)
             {
@@ -64,36 +63,33 @@ namespace Sistema.Datos._UsuariosRepository
 
             try
             {
-                using (var context = new ApplicationDbContext())
+                var usuarioDb = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == objActualizar.UsuarioId);
+
+                if (usuarioDb == null)
                 {
-                    var usuarioDb = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == objActualizar.UsuarioId);
-
-                    if (usuarioDb == null)
-                    {
-                        return "No se encontró el usuario a actualizar";
-                    }
-
-                    var entrada = mapper.Map(objActualizar, usuarioDb);
-
-                    if (objActualizar.Clave != null)
-                    {
-                        //gerar un salt random
-                        var rng = RandomNumberGenerator.Create();
-                        var saltBytes = new byte[32];
-                        rng.GetBytes(saltBytes);
-                        var saltText = Convert.ToBase64String(saltBytes);
-
-                        //generar el password salteado y hasheado
-                        var saltedAndHashedPassword = protector.SaltAndHashPassword(objActualizar.Clave, saltText);
-
-                        entrada.Clave = saltedAndHashedPassword;
-                        entrada.Salt = saltText;
-                    }
-
-                    context.Entry(entrada).State = EntityState.Modified;
-
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo actualizar el registro";
+                    return "No se encontró el usuario a actualizar";
                 }
+
+                var entrada = mapper.Map(objActualizar, usuarioDb);
+
+                if (objActualizar.Clave != "")
+                {
+                    //gerar un salt random
+                    var rng = RandomNumberGenerator.Create();
+                    var saltBytes = new byte[32];
+                    rng.GetBytes(saltBytes);
+                    var saltText = Convert.ToBase64String(saltBytes);
+
+                    //generar el password salteado y hasheado
+                    var saltedAndHashedPassword = protector.SaltAndHashPassword(objActualizar.Clave, saltText);
+
+                    entrada.Clave = saltedAndHashedPassword;
+                    entrada.Salt = saltText;
+                }
+
+                context.Entry(entrada).State = EntityState.Modified;
+
+                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo actualizar el registro";
             }
             catch (Exception ex)
             {
@@ -108,24 +104,20 @@ namespace Sistema.Datos._UsuariosRepository
 
             try
             {
+                var usuariOf = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
 
-                using (var context = new ApplicationDbContext())
+                if (usuariOf == null)
                 {
-                    var usuariOf = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
-
-                    if (usuariOf == null)
-                    {
-                        return respuesta = "No se encontró el usuario con el Id dado";
-                    }
-
-                    usuariOf.Estado = false;
-
-                    var entrada = context.Attach(usuariOf);
-
-                    entrada.Property(x => x.Estado).IsModified = true;
-
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar al usuario";
+                    return respuesta = "No se encontró el usuario con el Id dado";
                 }
+
+                usuariOf.Estado = false;
+
+                var entrada = context.Attach(usuariOf);
+
+                entrada.Property(x => x.Estado).IsModified = true;
+
+                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar al usuario";
             }
             catch (Exception ex)
             {
@@ -141,18 +133,16 @@ namespace Sistema.Datos._UsuariosRepository
 
             try
             {
-                using (var context = new ApplicationDbContext())
+                var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId == id);
+
+                if (usuario == null)
                 {
-                    var existe = await context.Usuarios.AnyAsync(x => x.UsuarioId == id);
-
-                    if (!existe)
-                    {
-                        return respuesta = "No se encontró el usuario con el Id dado";
-                    }
-
-                    context.Remove(new Cliente() { ClienteId = id });
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo borrar el registro";
+                    return respuesta = "No se encontró el usuario con el Id dado";
                 }
+
+                context.Entry(usuario).State = EntityState.Deleted;
+                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo borrar el registro";
+
             }
             catch (Exception ex)
             {
@@ -165,12 +155,11 @@ namespace Sistema.Datos._UsuariosRepository
         {
             try
             {
-                using (var context = new ApplicationDbContext())
-                {
-                    bool emailExiste = await context.Usuarios.AnyAsync(x => x.Email == email);
 
-                    return emailExiste;
-                }
+                bool emailExiste = await context.Usuarios.AnyAsync(x => x.Email == email);
+
+                return emailExiste;
+
             }
             catch (Exception ex)
             {
@@ -183,11 +172,10 @@ namespace Sistema.Datos._UsuariosRepository
         {
             try
             {
-                using (var context = new ApplicationDbContext())
-                {
-                    bool extiste = await context.Usuarios.AnyAsync(x => x.NumeroDocumento == numDocumento);
-                    return extiste;
-                }
+
+                bool extiste = await context.Usuarios.AnyAsync(x => x.NumeroDocumento == numDocumento);
+                return extiste;
+
             }
             catch (Exception ex)
             {
@@ -213,11 +201,9 @@ namespace Sistema.Datos._UsuariosRepository
                 objInsertar.Clave = saltedAndHashedPassword;
                 objInsertar.Salt = saltText;
 
-                using (var context = new ApplicationDbContext())
-                {
-                    context.Add(objInsertar);
-                    respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro";
-                }
+                context.Add(objInsertar);
+                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro";
+
             }
             catch (Exception ex)
             {
@@ -230,10 +216,7 @@ namespace Sistema.Datos._UsuariosRepository
         {
             try
             {
-                using (var context = new ApplicationDbContext())
-                {
-                    return await context.Usuarios.Include(x => x.Rol).ToListAsync();
-                }
+                return await context.Usuarios.Include(x => x.Rol).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -246,16 +229,13 @@ namespace Sistema.Datos._UsuariosRepository
         {
             try
             {
-                using (var context = new ApplicationDbContext())
+                var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.Email == email);
+
+                var saltedhasedPassword = protector.SaltAndHashPassword(password, usuario.Salt);
+
+                if (saltedhasedPassword == usuario.Clave)
                 {
-                    var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.Email == email);
-
-                    var saltedhasedPassword = protector.SaltAndHashPassword(password, usuario.Salt);
-
-                    if (saltedhasedPassword == usuario.Clave)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
             catch (Exception ex)

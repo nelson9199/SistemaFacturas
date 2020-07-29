@@ -32,9 +32,9 @@
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.radLayoutControl1 = new Telerik.WinControls.UI.RadLayoutControl();
             this.gridRoles = new Telerik.WinControls.UI.RadGridView();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.layoutControlItem1 = new Telerik.WinControls.UI.LayoutControlItem();
             this.layoutControlLabelItem2 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.layoutControlItem2 = new Telerik.WinControls.UI.LayoutControlItem();
             this.layoutControlLabelItem3 = new Telerik.WinControls.UI.LayoutControlLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.radLayoutControl1)).BeginInit();
@@ -77,6 +77,15 @@
             this.gridRoles.TabIndex = 4;
             this.gridRoles.ThemeName = "Material";
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(50, 339);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(133, 22);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "Total Registros:";
+            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.AssociatedControl = this.gridRoles;
@@ -89,15 +98,6 @@
             this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(183, 336, 373, 26);
             this.layoutControlLabelItem2.DrawText = false;
             this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 339);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(133, 22);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "Total Registros:";
             // 
             // layoutControlItem2
             // 
@@ -115,8 +115,7 @@
             // 
             // FrmRol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(558, 364);
             this.Controls.Add(this.radLayoutControl1);
             this.MaximizeBox = false;

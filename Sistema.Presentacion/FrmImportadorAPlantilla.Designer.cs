@@ -78,7 +78,7 @@
             this.radButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButton2.Location = new System.Drawing.Point(638, 159);
             this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(223, 42);
+            this.radButton2.Size = new System.Drawing.Size(239, 42);
             this.radButton2.TabIndex = 0;
             this.radButton2.Text = "Cargar Plantilla ATS Excel";
             this.radButton2.ThemeName = "Material";
@@ -101,7 +101,7 @@
             this.txtPlantilla.Location = new System.Drawing.Point(519, 93);
             this.txtPlantilla.Name = "txtPlantilla";
             this.txtPlantilla.ReadOnly = true;
-            this.txtPlantilla.Size = new System.Drawing.Size(446, 41);
+            this.txtPlantilla.Size = new System.Drawing.Size(446, 36);
             this.txtPlantilla.TabIndex = 1;
             this.txtPlantilla.ThemeName = "Material";
             // 
@@ -111,14 +111,13 @@
             this.txtXml.Location = new System.Drawing.Point(27, 93);
             this.txtXml.Name = "txtXml";
             this.txtXml.ReadOnly = true;
-            this.txtXml.Size = new System.Drawing.Size(452, 41);
+            this.txtXml.Size = new System.Drawing.Size(452, 36);
             this.txtXml.TabIndex = 1;
             this.txtXml.ThemeName = "Material";
             // 
             // FrmImportadorAPlantilla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(991, 310);
             this.Controls.Add(this.txtXml);

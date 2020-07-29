@@ -23,6 +23,7 @@ namespace Sistema.Presentacion
 
         public FrmPrincipal(SimpleInjector.Container container, IFormOpener formOpener)
         {
+            RadControl.EnableDpiScaling = false;
             InitializeComponent();
             this.container = container;
             this.formOpener = formOpener;

@@ -93,6 +93,16 @@ namespace Sistema.Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap esconder__1_ {
+            get {
+                object obj = ResourceManager.GetObject("esconder (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group_add {
             get {
                 object obj = ResourceManager.GetObject("group_add", resourceCulture);
@@ -126,6 +136,26 @@ namespace Sistema.Presentacion.Properties {
         internal static System.Drawing.Bitmap interfaz__1_ {
             get {
                 object obj = ResourceManager.GetObject("interfaz (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo {
+            get {
+                object obj = ResourceManager.GetObject("ojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ojo (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

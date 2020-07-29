@@ -128,10 +128,10 @@ namespace Sistema.Presentacion
                 gridFacturas.Columns[0].Width = 100;
                 gridFacturas.Columns[0].AllowFiltering = false;
 
-                gridFacturas.Columns[1].Width = 132;
+                gridFacturas.Columns[1].Width = 150;
                 gridFacturas.Columns[1].TextAlignment = ContentAlignment.MiddleCenter;
 
-                gridFacturas.Columns[2].Width = 132;
+                gridFacturas.Columns[2].Width = 150;
                 gridFacturas.Columns[2].TextAlignment = ContentAlignment.MiddleCenter;
 
 

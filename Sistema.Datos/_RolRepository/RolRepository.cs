@@ -9,14 +9,20 @@ namespace Sistema.Datos.RolRepository
 {
     public class RolRepository : IRolRepository
     {
+        private readonly ApplicationDbContext context;
+
+        public RolRepository(ApplicationDbContext context)
+        {
+            this.context = context;
+        }
+
         public async Task<List<Rol>> Listar()
         {
             try
             {
-                using (var context = new ApplicationDbContext())
-                {
-                    return await context.Roles.ToListAsync();
-                }
+
+                return await context.Roles.ToListAsync();
+
             }
             catch (Exception ex)
             {

@@ -1,5 +1,7 @@
 ﻿using SimpleInjector;
 using SimpleInjector.Diagnostics;
+using SimpleInjector.Lifestyles;
+using Sistema.Datos;
 using Sistema.Datos._UsuariosRepository;
 using Sistema.Datos.ClenteFacturaRepository;
 using Sistema.Datos.ClienteRepository;
@@ -40,7 +42,7 @@ namespace Sistema.Presentacion
             container = new Container();
 
             // Register your types, for instance:
-            container.Register<FrmPrincipal>(Lifestyle.Singleton);
+            container.Register<FrmPrincipal>();
             container.Register<FrmCliente>();
             container.Register<FrmImportadorAPlantilla>();
             container.Register<FrmConvertidorXmlAExcel>();
@@ -48,39 +50,42 @@ namespace Sistema.Presentacion
             container.Register<FrmRol>();
             container.Register<FrmUsuario>();
 
-            var registration = container.GetRegistration(typeof(FrmCliente)).Registration;
-            registration.SuppressDiagnosticWarning(
-                DiagnosticType.DisposableTransientComponent,
-                "Winforms registration supression.");
+            Registration registration1 = container.GetRegistration(typeof(FrmPrincipal)).Registration;
 
-            var registration2 = container.GetRegistration(typeof(FrmImportadorAPlantilla)).Registration;
-            registration2.SuppressDiagnosticWarning(
-                DiagnosticType.DisposableTransientComponent,
-                "Winforms registration supression.");
+            registration1.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
+            Registration registration2 = container.GetRegistration(typeof(FrmCliente)).Registration;
 
-            var registration3 = container.GetRegistration(typeof(FrmConvertidorXmlAExcel)).Registration;
-            registration3.SuppressDiagnosticWarning(
-                DiagnosticType.DisposableTransientComponent,
-                "Winforms registration supression.");
+            registration2.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
 
-            var registration4 = container.GetRegistration(typeof(FrmFacturaCliente1)).Registration;
-            registration4.SuppressDiagnosticWarning(
-                DiagnosticType.DisposableTransientComponent,
-                "Winforms registration supression.");
+            Registration registration3 = container.GetRegistration(typeof(FrmFacturaCliente1)).Registration;
 
-            var registration5 = container.GetRegistration(typeof(FrmRol)).Registration;
-            registration5.SuppressDiagnosticWarning(
-                DiagnosticType.DisposableTransientComponent,
-                "Winforms registration supression.");
+            registration3.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
+            Registration registration4 = container.GetRegistration(typeof(FrmConvertidorXmlAExcel)).Registration;
 
-            var registration6 = container.GetRegistration(typeof(FrmUsuario)).Registration;
-            registration6.SuppressDiagnosticWarning(
-                DiagnosticType.DisposableTransientComponent,
-                "Winforms registration supression.");
+            registration4.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
+            Registration registration5 = container.GetRegistration(typeof(FrmRol)).Registration;
+
+            registration5.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
+            Registration registration6 = container.GetRegistration(typeof(FrmUsuario)).Registration;
+
+            registration6.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
+            Registration registration7 = container.GetRegistration(typeof(FrmImportadorAPlantilla)).Registration;
+
+            registration7.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent,
+                "WindowsFroms needs");
+
 
             container.Register<IMapperProvider, MapperProvider>(Lifestyle.Singleton);
 
-            container.Register<IProtector, Protector>();
+            container.Register<IProtector, Protector>(Lifestyle.Singleton);
+
+            container.Register<ApplicationDbContext>(Lifestyle.Singleton);
 
             container.Register<IClienteRepository<Cliente>, ClienteRepository>(Lifestyle.Singleton);
             container.Register<IClienteAccesRepo<Cliente>, NCliente>(Lifestyle.Singleton);
@@ -94,8 +99,8 @@ namespace Sistema.Presentacion
             container.Register<IRolRepository, RolRepository>(Lifestyle.Singleton);
             container.Register<IRolAccessRepo, NRol>(Lifestyle.Singleton);
 
-            container.Register<IUsuarioRepository<Usuario>, UsuarioRepository>();
-            container.Register<IUsuarioAccessRepo<Usuario>, NUsuario>();
+            container.Register<IUsuarioRepository<Usuario>, UsuarioRepository>(Lifestyle.Singleton);
+            container.Register<IUsuarioAccessRepo<Usuario>, NUsuario>(Lifestyle.Singleton);
 
             container.Register<Cliente>();
             container.Register<Factura>();

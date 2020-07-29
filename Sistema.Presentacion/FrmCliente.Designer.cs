@@ -122,8 +122,9 @@
             // 
             // txtDoc
             // 
+            this.txtDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDoc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoc.Location = new System.Drawing.Point(948, 189);
+            this.txtDoc.Location = new System.Drawing.Point(944, 205);
             this.txtDoc.Mask = "9999999999";
             this.txtDoc.MaskType = Telerik.WinControls.UI.MaskType.Standard;
             this.txtDoc.Name = "txtDoc";
@@ -136,8 +137,9 @@
             // 
             // txtRuc
             // 
+            this.txtRuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtRuc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRuc.Location = new System.Drawing.Point(551, 283);
+            this.txtRuc.Location = new System.Drawing.Point(537, 291);
             this.txtRuc.Mask = "9999999999999";
             this.txtRuc.MaskType = Telerik.WinControls.UI.MaskType.Standard;
             this.txtRuc.Name = "txtRuc";
@@ -150,8 +152,9 @@
             // 
             // txtPrimerApellido
             // 
+            this.txtPrimerApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerApellido.Location = new System.Drawing.Point(890, 41);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(886, 39);
             this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(413, 46);
@@ -163,8 +166,9 @@
             // 
             // txtPrimerNombre
             // 
+            this.txtPrimerNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerNombre.Location = new System.Drawing.Point(213, 41);
+            this.txtPrimerNombre.Location = new System.Drawing.Point(213, 39);
             this.txtPrimerNombre.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(389, 46);
@@ -176,11 +180,12 @@
             // 
             // txtPasaporte
             // 
+            this.txtPasaporte.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPasaporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasaporte.Location = new System.Drawing.Point(946, 187);
+            this.txtPasaporte.Location = new System.Drawing.Point(946, 194);
             this.txtPasaporte.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Size = new System.Drawing.Size(360, 46);
+            this.txtPasaporte.Size = new System.Drawing.Size(353, 46);
             this.txtPasaporte.TabIndex = 2;
             this.txtPasaporte.ThemeName = "Material";
             this.radValidationProvider1.SetValidationRule(this.txtPasaporte, radValidationRule1);
@@ -190,6 +195,7 @@
             // 
             // dropTipoDocu
             // 
+            this.dropTipoDocu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dropTipoDocu.AutoSize = false;
             this.dropTipoDocu.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             radListDataItem1.Text = "Seleccionar (*)";
@@ -198,7 +204,7 @@
             this.dropTipoDocu.Items.Add(radListDataItem1);
             this.dropTipoDocu.Items.Add(radListDataItem2);
             this.dropTipoDocu.Items.Add(radListDataItem3);
-            this.dropTipoDocu.Location = new System.Drawing.Point(240, 201);
+            this.dropTipoDocu.Location = new System.Drawing.Point(240, 210);
             this.dropTipoDocu.Name = "dropTipoDocu";
             this.dropTipoDocu.Size = new System.Drawing.Size(319, 38);
             this.dropTipoDocu.TabIndex = 3;
@@ -209,10 +215,10 @@
             // 
             // radTabbedFormControlTab2
             // 
+            this.radTabbedFormControlTab2.Controls.Add(this.btnActualizar);
             this.radTabbedFormControlTab2.Controls.Add(this.txtDoc);
             this.radTabbedFormControlTab2.Controls.Add(this.txtRuc);
             this.radTabbedFormControlTab2.Controls.Add(this.dropTipoDocu);
-            this.radTabbedFormControlTab2.Controls.Add(this.btnActualizar);
             this.radTabbedFormControlTab2.Controls.Add(this.txtId);
             this.radTabbedFormControlTab2.Controls.Add(this.label9);
             this.radTabbedFormControlTab2.Controls.Add(this.btnFacturas);
@@ -233,12 +239,13 @@
             this.radTabbedFormControlTab2.Location = new System.Drawing.Point(1, 37);
             this.radTabbedFormControlTab2.Name = "radTabbedFormControlTab2";
             this.radTabbedFormControlTab2.Padding = new System.Windows.Forms.Padding(40, 60, 40, 40);
-            this.radTabbedFormControlTab2.Size = new System.Drawing.Size(1322, 533);
+            this.radTabbedFormControlTab2.Size = new System.Drawing.Size(1322, 496);
             this.radTabbedFormControlTab2.Text = "Mantenimiento";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(435, 423);
+            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnActualizar.Location = new System.Drawing.Point(405, 431);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(212, 43);
             this.btnActualizar.TabIndex = 8;
@@ -259,8 +266,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(570, 357);
+            this.label9.Location = new System.Drawing.Point(516, 375);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(290, 22);
             this.label9.TabIndex = 4;
@@ -268,7 +276,8 @@
             // 
             // btnFacturas
             // 
-            this.btnFacturas.Location = new System.Drawing.Point(1036, 333);
+            this.btnFacturas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFacturas.Location = new System.Drawing.Point(983, 354);
             this.btnFacturas.Name = "btnFacturas";
             this.btnFacturas.Size = new System.Drawing.Size(211, 43);
             this.btnFacturas.TabIndex = 10;
@@ -278,7 +287,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(734, 423);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.Location = new System.Drawing.Point(705, 431);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(212, 43);
             this.btnCancelar.TabIndex = 9;
@@ -288,7 +298,8 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(435, 423);
+            this.btnInsertar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnInsertar.Location = new System.Drawing.Point(405, 431);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(212, 43);
             this.btnInsertar.TabIndex = 8;
@@ -298,8 +309,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(718, 201);
+            this.label5.Location = new System.Drawing.Point(714, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 22);
             this.label5.TabIndex = 0;
@@ -307,8 +319,9 @@
             // 
             // txtSegundoApellido
             // 
+            this.txtSegundoApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(890, 111);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(886, 119);
             this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(413, 46);
@@ -320,8 +333,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(718, 130);
+            this.label7.Location = new System.Drawing.Point(714, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 22);
             this.label7.TabIndex = 0;
@@ -329,8 +343,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(718, 60);
+            this.label6.Location = new System.Drawing.Point(714, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 22);
             this.label6.TabIndex = 0;
@@ -338,8 +353,9 @@
             // 
             // txtSegundoNombre
             // 
+            this.txtSegundoNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.Location = new System.Drawing.Point(206, 111);
+            this.txtSegundoNombre.Location = new System.Drawing.Point(206, 114);
             this.txtSegundoNombre.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(396, 46);
@@ -351,8 +367,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 130);
+            this.label4.Location = new System.Drawing.Point(43, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 22);
             this.label4.TabIndex = 0;
@@ -360,8 +377,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 210);
+            this.label1.Location = new System.Drawing.Point(43, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 22);
             this.label1.TabIndex = 0;
@@ -369,8 +387,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(472, 287);
+            this.label8.Location = new System.Drawing.Point(458, 304);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 22);
             this.label8.TabIndex = 0;
@@ -378,8 +397,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 60);
+            this.label3.Location = new System.Drawing.Point(43, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 22);
             this.label3.TabIndex = 0;
@@ -390,7 +410,7 @@
             this.radTabbedFormControlTab1.Controls.Add(this.radLayoutControl1);
             this.radTabbedFormControlTab1.Location = new System.Drawing.Point(1, 37);
             this.radTabbedFormControlTab1.Name = "radTabbedFormControlTab1";
-            this.radTabbedFormControlTab1.Size = new System.Drawing.Size(1322, 533);
+            this.radTabbedFormControlTab1.Size = new System.Drawing.Size(1322, 496);
             this.radTabbedFormControlTab1.Text = "Listado";
             // 
             // radLayoutControl1
@@ -424,7 +444,7 @@
             this.layoutControlLabelItem5});
             this.radLayoutControl1.Location = new System.Drawing.Point(0, 0);
             this.radLayoutControl1.Name = "radLayoutControl1";
-            this.radLayoutControl1.Size = new System.Drawing.Size(1322, 533);
+            this.radLayoutControl1.Size = new System.Drawing.Size(1322, 496);
             this.radLayoutControl1.TabIndex = 0;
             this.radLayoutControl1.ThemeName = "Material";
             // 
@@ -445,7 +465,7 @@
             this.gridClientes.MasterTemplate.EnablePaging = true;
             this.gridClientes.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gridClientes.Name = "gridClientes";
-            this.gridClientes.Size = new System.Drawing.Size(1297, 399);
+            this.gridClientes.Size = new System.Drawing.Size(1314, 381);
             this.gridClientes.TabIndex = 3;
             this.gridClientes.ThemeName = "Material";
             this.gridClientes.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridClientes_CellDoubleClick);
@@ -453,7 +473,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 462);
+            this.lblTotal.Location = new System.Drawing.Point(50, 443);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(133, 22);
             this.lblTotal.TabIndex = 4;
@@ -461,7 +481,7 @@
             // 
             // chkSeleccionar
             // 
-            this.chkSeleccionar.Location = new System.Drawing.Point(212, 464);
+            this.chkSeleccionar.Location = new System.Drawing.Point(224, 445);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(101, 19);
             this.chkSeleccionar.TabIndex = 5;
@@ -471,9 +491,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(313, 461);
+            this.btnEliminar.Location = new System.Drawing.Point(334, 443);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(106, 25);
+            this.btnEliminar.Size = new System.Drawing.Size(108, 23);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.ThemeName = "Material";
@@ -481,9 +501,9 @@
             // 
             // btnActivar
             // 
-            this.btnActivar.Location = new System.Drawing.Point(471, 461);
+            this.btnActivar.Location = new System.Drawing.Point(494, 443);
             this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(111, 25);
+            this.btnActivar.Size = new System.Drawing.Size(103, 23);
             this.btnActivar.TabIndex = 7;
             this.btnActivar.Text = "Activar";
             this.btnActivar.ThemeName = "Material";
@@ -491,9 +511,9 @@
             // 
             // btnDesactivar
             // 
-            this.btnDesactivar.Location = new System.Drawing.Point(634, 461);
+            this.btnDesactivar.Location = new System.Drawing.Point(649, 443);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(119, 25);
+            this.btnDesactivar.Size = new System.Drawing.Size(106, 23);
             this.btnDesactivar.TabIndex = 8;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.ThemeName = "Material";
@@ -521,7 +541,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.AssociatedControl = this.gridClientes;
-            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1303, 405);
+            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1320, 387);
             this.layoutControlItem1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Text = "";
@@ -530,7 +550,7 @@
             // 
             // layoutControlLabelItem1
             // 
-            this.layoutControlLabelItem1.Bounds = new System.Drawing.Rectangle(138, 0, 1165, 26);
+            this.layoutControlLabelItem1.Bounds = new System.Drawing.Rectangle(138, 0, 1182, 26);
             this.layoutControlLabelItem1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem1.DrawText = false;
             this.layoutControlLabelItem1.Name = "layoutControlLabelItem1";
@@ -539,7 +559,7 @@
             // 
             // layoutControlLabelItem2
             // 
-            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(755, 457, 548, 31);
+            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(757, 439, 563, 29);
             this.layoutControlLabelItem2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem2.DrawText = false;
             this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
@@ -549,7 +569,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.AssociatedControl = this.lblTotal;
-            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(46, 457, 116, 31);
+            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(46, 439, 128, 29);
             this.layoutControlItem2.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -559,7 +579,7 @@
             // 
             // layoutControlLabelItem3
             // 
-            this.layoutControlLabelItem3.Bounds = new System.Drawing.Rectangle(0, 457, 46, 31);
+            this.layoutControlLabelItem3.Bounds = new System.Drawing.Rectangle(0, 439, 46, 29);
             this.layoutControlLabelItem3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem3.DrawText = false;
             this.layoutControlLabelItem3.Name = "layoutControlLabelItem3";
@@ -568,7 +588,7 @@
             // 
             // layoutControlLabelItem4
             // 
-            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(162, 457, 46, 31);
+            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(174, 439, 46, 29);
             this.layoutControlLabelItem4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem4.DrawText = false;
             this.layoutControlLabelItem4.Name = "layoutControlLabelItem4";
@@ -578,7 +598,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.AssociatedControl = this.chkSeleccionar;
-            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(208, 457, 101, 31);
+            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(220, 439, 110, 29);
             this.layoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
             this.layoutControlItem3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -589,7 +609,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.AssociatedControl = this.btnEliminar;
-            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(309, 457, 112, 31);
+            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(330, 439, 114, 29);
             this.layoutControlItem4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Text = "layoutControlItem4";
@@ -599,7 +619,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.AssociatedControl = this.btnActivar;
-            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(467, 457, 117, 31);
+            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(490, 439, 109, 29);
             this.layoutControlItem5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Text = "layoutControlItem5";
@@ -609,7 +629,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.AssociatedControl = this.btnDesactivar;
-            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(630, 457, 125, 31);
+            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(645, 439, 112, 29);
             this.layoutControlItem6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Text = "layoutControlItem6";
@@ -618,7 +638,7 @@
             // 
             // layoutControlLabelItem6
             // 
-            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(421, 457, 46, 31);
+            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(444, 439, 46, 29);
             this.layoutControlLabelItem6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem6.DrawText = false;
             this.layoutControlLabelItem6.Name = "layoutControlLabelItem6";
@@ -627,7 +647,7 @@
             // 
             // layoutControlLabelItem7
             // 
-            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(584, 457, 46, 31);
+            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(599, 439, 46, 29);
             this.layoutControlLabelItem7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem7.DrawText = false;
             this.layoutControlLabelItem7.Name = "layoutControlLabelItem7";
@@ -636,7 +656,7 @@
             // 
             // layoutControlLabelItem8
             // 
-            this.layoutControlLabelItem8.Bounds = new System.Drawing.Rectangle(0, 431, 1303, 26);
+            this.layoutControlLabelItem8.Bounds = new System.Drawing.Rectangle(0, 413, 1320, 26);
             this.layoutControlLabelItem8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.layoutControlLabelItem8.DrawText = false;
             this.layoutControlLabelItem8.Name = "layoutControlLabelItem8";
@@ -675,7 +695,7 @@
             // 
             // layoutControlLabelItem5
             // 
-            this.layoutControlLabelItem5.Bounds = new System.Drawing.Rectangle(0, 488, 1303, 26);
+            this.layoutControlLabelItem5.Bounds = new System.Drawing.Rectangle(0, 468, 1320, 26);
             this.layoutControlLabelItem5.DrawText = false;
             this.layoutControlLabelItem5.Name = "layoutControlLabelItem5";
             // 
@@ -692,7 +712,7 @@
             this.radTabbedFormControl1.ShowItemToolTips = false;
             this.radTabbedFormControl1.ShowNewTabButton = false;
             this.radTabbedFormControl1.ShowTabCloseButton = false;
-            this.radTabbedFormControl1.Size = new System.Drawing.Size(1324, 571);
+            this.radTabbedFormControl1.Size = new System.Drawing.Size(1324, 534);
             this.radTabbedFormControl1.TabHeight = 32;
             this.radTabbedFormControl1.TabIndex = 0;
             this.radTabbedFormControl1.TabSpacing = -1;
@@ -732,9 +752,8 @@
             // 
             // FrmCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 571);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1324, 534);
             this.Controls.Add(this.radTabbedFormControl1);
             this.MaximizeBox = false;
             this.Name = "FrmCliente";

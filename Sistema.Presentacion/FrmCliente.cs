@@ -171,33 +171,16 @@ namespace Sistema.Presentacion
 
             if (txtDoc.Visible == true)
             {
-                cliente.NumeroDocumento = txtDoc.Text;
+                cliente.NumeroDocumento = txtDoc.Text.Trim();
             }
             else if (txtPasaporte.Visible == true)
             {
-                cliente.NumeroDocumento = txtPasaporte.Text;
+                cliente.NumeroDocumento = txtPasaporte.Text.Trim();
             }
 
-            cliente.RUC = txtRuc.Text;
+            cliente.RUC = txtRuc.Text.Trim();
 
             return cliente;
-        }
-
-        private bool IsNumber(string text)
-        {
-            bool res = true;
-            try
-            {
-                if (!string.IsNullOrEmpty(text) && ((text.Length != 1) || (text != "-")))
-                {
-                    decimal d = decimal.Parse(text, CultureInfo.CurrentCulture);
-                }
-            }
-            catch
-            {
-                res = false;
-            }
-            return res;
         }
 
         private List<bool> ValidarCampos()
@@ -310,16 +293,6 @@ namespace Sistema.Presentacion
                 btnDesactivar.Visible = false;
                 btnEliminar.Visible = false;
             }
-        }
-
-        private void txtRuc_TextChanging(object sender, TextChangingEventArgs e)
-        {
-            e.Cancel = !IsNumber(e.NewValue);
-        }
-
-        private void txtNumDocu_TextChanging(object sender, TextChangingEventArgs e)
-        {
-            e.Cancel = !IsNumber(e.NewValue);
         }
 
         private void dropTipoDocu_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
