@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -225,18 +226,30 @@ namespace Sistema.Datos._UsuariosRepository
             }
         }
 
-        public async Task<bool> ValidarPassword(string username, string password)
+        public async Task<(Usuario, string)> Login(string username, string password)
         {
             try
             {
-                var usuario = await context.Usuarios.FirstOrDefaultAsync(x => x.Username == username);
+                var usuario = await context.Usuarios.Include(x => x.Rol).FirstOrDefaultAsync(x => x.Username == username);
 
-                var saltedhasedPassword = protector.SaltAndHashPassword(password, usuario.Salt);
-
-                if (saltedhasedPassword == usuario.Clave)
+                if (usuario == null)
                 {
-                    return true;
+                    return (null, "No existe");
                 }
+                else
+                {
+                    var saltedhasedPassword = protector.SaltAndHashPassword(password, usuario.Salt);
+
+                    if (saltedhasedPassword == usuario.Clave)
+                    {
+                        return (usuario, "Inicion de Sesión Exitoso");
+                    }
+                    else
+                    {
+                        return (null, "clave Wrong");
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -244,7 +257,6 @@ namespace Sistema.Datos._UsuariosRepository
                 throw ex;
             }
 
-            return false;
         }
     }
 }

@@ -13,6 +13,6 @@ namespace Sistema.Negocio._UsuarioLogic
         Task<string> Insertar(T objInsertar);
         Task<string> Actualizar(T objActualizar, string numDocuAnt, string emailAnt);
         Task<string> Eliminar(int id);
-        Task<bool> ValidarPassword(string username, string password);
+        Task<(T, string)> Login(string username, string password);
     }
 }

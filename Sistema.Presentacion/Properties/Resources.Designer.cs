@@ -63,6 +63,16 @@ namespace Sistema.Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Apps_Computer_Login_icon {
+            get {
+                object obj = ResourceManager.GetObject("Apps-Computer-Login-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Banned_User {
             get {
                 object obj = ResourceManager.GetObject("Banned User", resourceCulture);

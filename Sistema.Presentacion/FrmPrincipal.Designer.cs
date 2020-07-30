@@ -29,42 +29,45 @@
         private void InitializeComponent()
         {
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
-            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuItemAccesos = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuItemHerramienta = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuItemSalir = new Telerik.WinControls.UI.RadMenuItem();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
+            this.cBClientes = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
-            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuItemCliente = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
-            this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
+            this.documentContainer2 = new Telerik.WinControls.UI.Docking.DocumentContainer();
+            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
+            this.stLabelStatus = new Telerik.WinControls.UI.RadLabelElement();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radMenuItem3
+            // menuItemAccesos
             // 
-            this.radMenuItem3.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuItemAccesos.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem4,
             this.radMenuItem5});
-            this.radMenuItem3.Name = "radMenuItem3";
-            this.radMenuItem3.Text = "Accesos";
+            this.menuItemAccesos.Name = "menuItemAccesos";
+            this.menuItemAccesos.Text = "Accesos";
             // 
             // radMenuItem4
             // 
@@ -80,13 +83,13 @@
             this.radMenuItem5.Text = "Usuarios";
             this.radMenuItem5.Click += new System.EventHandler(this.radMenuItem5_Click);
             // 
-            // radMenuItem6
+            // menuItemHerramienta
             // 
-            this.radMenuItem6.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuItemHerramienta.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem8,
             this.radMenuItem9});
-            this.radMenuItem6.Name = "radMenuItem6";
-            this.radMenuItem6.Text = "Herramientas";
+            this.menuItemHerramienta.Name = "menuItemHerramienta";
+            this.menuItemHerramienta.Text = "Herramientas";
             // 
             // radMenuItem8
             // 
@@ -102,10 +105,11 @@
             this.radMenuItem9.Text = "Importar Xml a nuevo Excel";
             this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
-            // radMenuItem7
+            // menuItemSalir
             // 
-            this.radMenuItem7.Name = "radMenuItem7";
-            this.radMenuItem7.Text = "Salir";
+            this.menuItemSalir.Name = "menuItemSalir";
+            this.menuItemSalir.Text = "Salir";
+            this.menuItemSalir.Click += new System.EventHandler(this.menuItemSalir_Click);
             // 
             // radCommandBar1
             // 
@@ -135,7 +139,7 @@
             this.commandBarStripElement2.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton3,
             this.commandBarButton4,
-            this.commandBarButton5});
+            this.cBClientes});
             this.commandBarStripElement2.Name = "commandBarStripElement2";
             // 
             // commandBarButton3
@@ -152,12 +156,12 @@
             this.commandBarButton4.Name = "commandBarButton4";
             this.commandBarButton4.Text = "commandBarButton4";
             // 
-            // commandBarButton5
+            // cBClientes
             // 
-            this.commandBarButton5.DisplayName = "commandBarButton5";
-            this.commandBarButton5.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
-            this.commandBarButton5.Name = "commandBarButton5";
-            this.commandBarButton5.Text = "commandBarButton5";
+            this.cBClientes.DisplayName = "commandBarButton5";
+            this.cBClientes.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
+            this.cBClientes.Name = "cBClientes";
+            this.cBClientes.Text = "commandBarButton5";
             // 
             // commandBarStripElement1
             // 
@@ -191,12 +195,12 @@
             this.commandBarButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton2.UseCompatibleTextRendering = false;
             // 
-            // radMenuItem1
+            // menuItemCliente
             // 
-            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuItemCliente.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem2});
-            this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "Clientes";
+            this.menuItemCliente.Name = "menuItemCliente";
+            this.menuItemCliente.Text = "Clientes";
             // 
             // radMenuItem2
             // 
@@ -205,14 +209,27 @@
             this.radMenuItem2.Text = "Clientes";
             this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
             // 
+            // radMenu1
+            // 
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuItemCliente,
+            this.menuItemAccesos,
+            this.menuItemHerramienta,
+            this.menuItemSalir});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(1263, 37);
+            this.radMenu1.TabIndex = 0;
+            this.radMenu1.ThemeName = "Material";
+            // 
             // radDock1
             // 
             this.radDock1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.radDock1.Controls.Add(this.documentContainer1);
+            this.radDock1.Controls.Add(this.documentContainer2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
             this.radDock1.Location = new System.Drawing.Point(0, 85);
-            this.radDock1.MainDocumentContainer = this.documentContainer1;
+            this.radDock1.MainDocumentContainer = this.documentContainer2;
             this.radDock1.Name = "radDock1";
             this.radDock1.Padding = new System.Windows.Forms.Padding(0);
             // 
@@ -222,7 +239,7 @@
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
             this.radDock1.Size = new System.Drawing.Size(1263, 540);
             this.radDock1.SplitterWidth = 8;
-            this.radDock1.TabIndex = 3;
+            this.radDock1.TabIndex = 5;
             this.radDock1.TabStop = false;
             this.radDock1.ThemeName = "Material";
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radDock1.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.White;
@@ -237,34 +254,39 @@
             ((Telerik.WinControls.UI.StripViewItemContainer)(this.radDock1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             ((Telerik.WinControls.UI.StripViewItemContainer)(this.radDock1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             // 
-            // documentContainer1
+            // documentContainer2
             // 
-            this.documentContainer1.Name = "documentContainer1";
+            this.documentContainer2.Name = "documentContainer2";
             // 
             // 
             // 
-            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            this.documentContainer1.SplitterWidth = 8;
-            this.documentContainer1.ThemeName = "Material";
+            this.documentContainer2.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.documentContainer2.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
+            this.documentContainer2.SplitterWidth = 8;
+            this.documentContainer2.ThemeName = "Material";
             // 
-            // radMenu1
+            // radStatusStrip1
             // 
-            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem1,
-            this.radMenuItem3,
-            this.radMenuItem6,
-            this.radMenuItem7});
-            this.radMenu1.Location = new System.Drawing.Point(0, 0);
-            this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(1263, 37);
-            this.radMenu1.TabIndex = 0;
-            this.radMenu1.ThemeName = "Material";
+            this.radStatusStrip1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.stLabelStatus});
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 600);
+            this.radStatusStrip1.Name = "radStatusStrip1";
+            this.radStatusStrip1.Size = new System.Drawing.Size(1263, 25);
+            this.radStatusStrip1.TabIndex = 6;
+            this.radStatusStrip1.ThemeName = "Material";
+            // 
+            // stLabelStatus
+            // 
+            this.stLabelStatus.Name = "stLabelStatus";
+            this.radStatusStrip1.SetSpring(this.stLabelStatus, false);
+            this.stLabelStatus.Text = "Desarrollado por X-Development";
+            this.stLabelStatus.TextWrap = true;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1263, 625);
+            this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radCommandBar1);
             this.Controls.Add(this.radMenu1);
@@ -276,12 +298,14 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Escritorio";
             this.ThemeName = "Material";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).EndInit();
             this.radDock1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentContainer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,11 +315,11 @@
         #endregion
 
         private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
+        private Telerik.WinControls.UI.RadMenuItem menuItemAccesos;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
+        private Telerik.WinControls.UI.RadMenuItem menuItemHerramienta;
+        private Telerik.WinControls.UI.RadMenuItem menuItemSalir;
         private Telerik.WinControls.UI.RadCommandBar radCommandBar1;
         private Telerik.WinControls.UI.CommandBarRowElement commandBarRowElement1;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
@@ -303,15 +327,16 @@
         private Telerik.WinControls.UI.CommandBarButton commandBarButton1;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton2;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadMenuItem menuItemCliente;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadMenu radMenu1;
-        private Telerik.WinControls.UI.Docking.RadDock radDock1;
-        private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem9;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton5;
-
+        private Telerik.WinControls.UI.CommandBarButton cBClientes;
+        private Telerik.WinControls.UI.Docking.RadDock radDock1;
+        private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer2;
+        private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
+        private Telerik.WinControls.UI.RadLabelElement stLabelStatus;
     }
 }

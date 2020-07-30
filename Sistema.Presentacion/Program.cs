@@ -33,7 +33,7 @@ namespace Sistema.Presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
-            Application.Run(container.GetInstance<FrmPrincipal>());
+            Application.Run(container.GetInstance<FrmLogin>());
         }
 
         private static void Bootstrap()
@@ -49,6 +49,7 @@ namespace Sistema.Presentacion
             container.Register<FrmFacturaCliente1>();
             container.Register<FrmRol>();
             container.Register<FrmUsuario>();
+            container.Register<FrmLogin>(Lifestyle.Singleton);
 
             Registration registration1 = container.GetRegistration(typeof(FrmPrincipal)).Registration;
 

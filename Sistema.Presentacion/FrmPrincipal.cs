@@ -9,7 +9,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI.Docking;
@@ -20,6 +22,12 @@ namespace Sistema.Presentacion
     {
         private readonly SimpleInjector.Container container;
         private readonly IFormOpener formOpener;
+
+        public int IdUsuario { get; set; }
+        public int? IdRol { get; set; }
+        public string Nombre { get; set; }
+        public string Rol { get; set; }
+        public bool Estado { get; set; }
 
         public FrmPrincipal(SimpleInjector.Container container, IFormOpener formOpener)
         {
@@ -35,6 +43,21 @@ namespace Sistema.Presentacion
             this.WindowState = FormWindowState.Maximized;
             radDock1.AutoDetectMdiChildren = true;
 
+            stLabelStatus.Text = "Desarrollado por X-Development, Usuario: " + this.Nombre;
+            MessageBox.Show("Bienvenido: " + this.Nombre, "Sistema de Gestion de Facturas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (Thread.CurrentPrincipal.IsInRole("Administrador"))
+            {
+                cBClientes.Enabled = true;
+                menuItemAccesos.Enabled = true;
+                menuItemCliente.Enabled = true;
+            }
+            else if (Thread.CurrentPrincipal.IsInRole("Usuario Común"))
+            {
+                cBClientes.Enabled = false;
+                menuItemAccesos.Enabled = false;
+                menuItemCliente.Enabled = false;
+            }
         }
 
 
@@ -77,6 +100,22 @@ namespace Sistema.Presentacion
 
             frmUsuario.MdiParent = this;
             frmUsuario.Show();
+        }
+
+        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult option;
+            option = MessageBox.Show("¿Desea salir del sistema?", "Sistema de gestión de Facturas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (option == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void menuItemSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

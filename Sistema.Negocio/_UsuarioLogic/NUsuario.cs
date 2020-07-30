@@ -89,9 +89,9 @@ namespace Sistema.Negocio._UsuarioLogic
             return await usuarioRepository.Listar();
         }
 
-        public async Task<bool> ValidarPassword(string username, string password)
+        public async Task<(Usuario, string)> Login(string username, string password)
         {
-            return await usuarioRepository.ValidarPassword(username, password);
+            return await usuarioRepository.Login(username, password);
         }
     }
 }

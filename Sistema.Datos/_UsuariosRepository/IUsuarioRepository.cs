@@ -14,6 +14,6 @@ namespace Sistema.Datos._UsuariosRepository
         Task<string> Eliminar(int id);
         Task<bool> ExisteNumDocumento(string numDocumento);
         Task<bool> ExisteUsername(string username);
-        Task<bool> ValidarPassword(string username, string password);
+        Task<(T, string)> Login(string username, string password);
     }
 }
