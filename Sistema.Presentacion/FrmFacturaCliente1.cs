@@ -32,7 +32,7 @@ namespace Sistema.Presentacion
         private string rutaFacAnt = "";
         private string RutaOrigen;
         private string RutaDestino;
-        private string Directorio = "D:\\Facturas\\";
+        public static string Directorio = "";
 
         public FrmFacturaCliente1(IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo, SimpleInjector.Container container)
         {
@@ -148,7 +148,7 @@ namespace Sistema.Presentacion
                 gridFacturas.Columns[6].ReadOnly = true;
                 gridFacturas.Columns[6].TextAlignment = ContentAlignment.MiddleCenter;
 
-                gridFacturas.Columns[7].Width = 250;
+                gridFacturas.Columns[7].Width = 120;
                 gridFacturas.Columns[7].HeaderText = "Estado";
                 gridFacturas.Columns[7].ReadOnly = true;
                 gridFacturas.Columns[7].TextAlignment = ContentAlignment.MiddleCenter;
@@ -210,15 +210,8 @@ namespace Sistema.Presentacion
 
         }
 
-
         private async void FrmFacturaCliente1_Load(object sender, EventArgs e)
         {
-            #region LayoutControlConfigurations    
-
-            radLayoutControl1.AllowCustomize = false;
-
-            #endregion
-
             radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
 
             Limpiar();

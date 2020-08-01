@@ -98,7 +98,6 @@ namespace Sistema.Presentacion
                         FrmPrincipal frmPrincipal = container.GetInstance<FrmPrincipal>();
                         frmPrincipal.IdUsuario = usuario.UsuarioId;
                         frmPrincipal.IdRol = usuario.RolId;
-                        frmPrincipal.Rol = usuario.Rol.Nombre;
                         frmPrincipal.Nombre = usuario.Nombre;
                         frmPrincipal.Estado = usuario.Estado;
 

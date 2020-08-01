@@ -1,4 +1,6 @@
-﻿using Sistema.Entidades;
+﻿using Sistema.Datos.Helpers;
+using Sistema.Datos.Services;
+using Sistema.Entidades;
 using Sistema.Negocio.ClienteFacturaLogic;
 using Sistema.Negocio.ClienteLogic;
 using Sistema.Negocio.FacturaLogic;
@@ -22,19 +24,25 @@ namespace Sistema.Presentacion
     {
         private readonly SimpleInjector.Container container;
         private readonly IFormOpener formOpener;
+        private readonly IDataBaseBackupGenerator backupGenerator;
+        private readonly ISqlConnectionProvider sqlConnectionProvider;
+        private DialogResult option;
+        private bool yaEstaCerrado;
+        public static string DirectorioBackupDb;
 
         public int IdUsuario { get; set; }
         public int? IdRol { get; set; }
         public string Nombre { get; set; }
-        public string Rol { get; set; }
         public bool Estado { get; set; }
 
-        public FrmPrincipal(SimpleInjector.Container container, IFormOpener formOpener)
+        public FrmPrincipal(SimpleInjector.Container container, IFormOpener formOpener, IDataBaseBackupGenerator backupGenerator, ISqlConnectionProvider sqlConnectionProvider)
         {
             RadControl.EnableDpiScaling = false;
             InitializeComponent();
             this.container = container;
             this.formOpener = formOpener;
+            this.backupGenerator = backupGenerator;
+            this.sqlConnectionProvider = sqlConnectionProvider;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -104,18 +112,45 @@ namespace Sistema.Presentacion
 
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult option;
-            option = MessageBox.Show("¿Desea salir del sistema?", "Sistema de gestión de Facturas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            if (option == DialogResult.OK)
+            if (!yaEstaCerrado)
             {
-                Application.Exit();
+                option = MessageBox.Show("¿Desea salir del sistema?", "Sistema de gestión de Facturas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (option == DialogResult.OK)
+                {
+                    Application.Exit();
+                }
             }
         }
 
         private void menuItemSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            option = MessageBox.Show("¿Desea salir del sistema?", "Sistema de gestión de Facturas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (option == DialogResult.OK)
+            {
+                yaEstaCerrado = true;
+
+                Application.Exit();
+            }
+        }
+
+        private void radMenuItem3_Click(object sender, EventArgs e)
+        {
+            string databaseName = sqlConnectionProvider.ObtenerNombreDeLaDatabase();
+
+            string backupQuery = $"BACKUP DATABASE [{databaseName}] TO  DISK = N'{DirectorioBackupDb}\\Backup_SistemaFacturas_{DateTime.Now.ToString("G")}\\.bak' WITH NOFORMAT, NOINIT,  NAME = N'{databaseName}-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10";
+
+            bool backupExitoso = backupGenerator.GenerarBackup(backupQuery);
+
+            if (backupExitoso)
+            {
+                MessageBox.Show($"Copia de seguridad generada\n{DirectorioBackupDb}\\Backup_SistemaFacturas_{DateTime.Now.ToString("G")}\\.bak");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo realizar la copia de seguridad de la base de datos");
+            }
         }
     }
 }

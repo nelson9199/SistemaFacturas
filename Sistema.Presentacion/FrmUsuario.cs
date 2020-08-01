@@ -83,7 +83,7 @@ namespace Sistema.Presentacion
                     usuario.Estado
                 });
 
-                lblTotal.Text = "Total reistros: " + gridUsuarios.RowCount.ToString();
+                lblTotal.Text = "Total registros: " + gridUsuarios.RowCount.ToString();
 
                 if (gridUsuarios.ColumnCount > 1)
                 {
@@ -254,12 +254,6 @@ namespace Sistema.Presentacion
 
         private async void FrmUsuario_Load(object sender, EventArgs e)
         {
-            #region LayoutControlConfigurations    
-
-            radLayoutControl1.AllowCustomize = false;
-
-            #endregion
-
             radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
 
             Limpiar();
@@ -396,8 +390,8 @@ namespace Sistema.Presentacion
 
                 txtDireccion.Text = gridUsuarios.CurrentRow.Cells["Direccion"].Value?.ToString();
 
-                txtUsuario.Text = gridUsuarios.CurrentRow.Cells["Email"].Value?.ToString();
-                emailAnt = gridUsuarios.CurrentRow.Cells["Email"].Value?.ToString();
+                txtUsuario.Text = gridUsuarios.CurrentRow.Cells["Username"].Value?.ToString();
+                emailAnt = gridUsuarios.CurrentRow.Cells["Username"].Value?.ToString();
 
                 txtTelefono.Text = gridUsuarios.CurrentRow.Cells["Telefono"].Value?.ToString();
 

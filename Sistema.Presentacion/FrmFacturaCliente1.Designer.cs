@@ -39,29 +39,16 @@
             this.txtRutaFac = new Telerik.WinControls.UI.RadTextBox();
             this.tabForm = new Telerik.WinControls.UI.RadTabbedFormControl();
             this.tabListado = new Telerik.WinControls.UI.RadTabbedFormControlTab();
-            this.radLayoutControl1 = new Telerik.WinControls.UI.RadLayoutControl();
+            this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.gridFacturas = new Telerik.WinControls.UI.RadGridView();
+            this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
+            this.chkSeleccionar = new Telerik.WinControls.UI.RadCheckBox();
+            this.btnEliminar = new Telerik.WinControls.UI.RadButton();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.toggleFiltrar = new Telerik.WinControls.UI.RadToggleSwitch();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNomClientne = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.chkSeleccionar = new Telerik.WinControls.UI.RadCheckBox();
-            this.btnEliminar = new Telerik.WinControls.UI.RadButton();
-            this.layoutControlItem1 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlLabelItem2 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlItem2 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlItem3 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlLabelItem4 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlItem4 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlLabelItem6 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlLabelItem7 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlItem5 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlItem6 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlItem7 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlLabelItem9 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlLabelItem11 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlLabelItem12 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlLabelItem13 = new Telerik.WinControls.UI.LayoutControlLabelItem();
             this.tabManteniminento = new Telerik.WinControls.UI.RadTabbedFormControlTab();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.btnActualizar = new Telerik.WinControls.UI.RadButton();
@@ -93,13 +80,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabForm)).BeginInit();
             this.tabForm.SuspendLayout();
             this.tabListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLayoutControl1)).BeginInit();
-            this.radLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
+            this.radPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleFiltrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
+            this.radPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkSeleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
+            this.radPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleFiltrar)).BeginInit();
             this.tabManteniminento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -148,10 +139,10 @@
             this.tabForm.MaximizeButton = false;
             this.tabForm.MinimizeButton = false;
             this.tabForm.Name = "tabForm";
-            this.tabForm.SelectedTab = this.tabListado;
+            this.tabForm.SelectedTab = this.tabManteniminento;
             this.tabForm.ShowNewTabButton = false;
             this.tabForm.ShowTabCloseButton = false;
-            this.tabForm.Size = new System.Drawing.Size(1195, 629);
+            this.tabForm.Size = new System.Drawing.Size(1198, 605);
             this.tabForm.TabHeight = 32;
             this.tabForm.TabIndex = 0;
             this.tabForm.TabSpacing = -1;
@@ -160,47 +151,28 @@
             // 
             // tabListado
             // 
-            this.tabListado.Controls.Add(this.radLayoutControl1);
+            this.tabListado.Controls.Add(this.radPanel4);
+            this.tabListado.Controls.Add(this.radPanel3);
+            this.tabListado.Controls.Add(this.radPanel2);
             this.tabListado.Location = new System.Drawing.Point(1, 37);
             this.tabListado.Name = "tabListado";
-            this.tabListado.Size = new System.Drawing.Size(1193, 591);
+            this.tabListado.Size = new System.Drawing.Size(1196, 567);
             this.tabListado.Text = "Listado";
             // 
-            // radLayoutControl1
+            // radPanel4
             // 
-            this.radLayoutControl1.Controls.Add(this.gridFacturas);
-            this.radLayoutControl1.Controls.Add(this.toggleFiltrar);
-            this.radLayoutControl1.Controls.Add(this.label2);
-            this.radLayoutControl1.Controls.Add(this.lblNomClientne);
-            this.radLayoutControl1.Controls.Add(this.lblTotal);
-            this.radLayoutControl1.Controls.Add(this.chkSeleccionar);
-            this.radLayoutControl1.Controls.Add(this.btnEliminar);
-            this.radLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLayoutControl1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.layoutControlItem1,
-            this.layoutControlLabelItem2,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlLabelItem4,
-            this.layoutControlItem4,
-            this.layoutControlLabelItem6,
-            this.layoutControlLabelItem7,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlLabelItem9,
-            this.layoutControlLabelItem11,
-            this.layoutControlLabelItem12,
-            this.layoutControlLabelItem13});
-            this.radLayoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.radLayoutControl1.Name = "radLayoutControl1";
-            this.radLayoutControl1.Size = new System.Drawing.Size(1193, 591);
-            this.radLayoutControl1.TabIndex = 0;
-            this.radLayoutControl1.ThemeName = "MaterialTeal";
+            this.radPanel4.Controls.Add(this.gridFacturas);
+            this.radPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radPanel4.Location = new System.Drawing.Point(0, 40);
+            this.radPanel4.Name = "radPanel4";
+            this.radPanel4.Size = new System.Drawing.Size(1196, 458);
+            this.radPanel4.TabIndex = 3;
+            this.radPanel4.ThemeName = "MaterialTeal";
             // 
             // gridFacturas
             // 
-            this.gridFacturas.Location = new System.Drawing.Point(4, 30);
+            this.gridFacturas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridFacturas.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
@@ -220,179 +192,102 @@
             gridViewCheckBoxColumn1,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
+            this.gridFacturas.MasterTemplate.EnablePaging = true;
             this.gridFacturas.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gridFacturas.Name = "gridFacturas";
-            this.gridFacturas.Size = new System.Drawing.Size(1168, 429);
-            this.gridFacturas.TabIndex = 3;
+            this.gridFacturas.Size = new System.Drawing.Size(1196, 458);
+            this.gridFacturas.TabIndex = 17;
             this.gridFacturas.ThemeName = "MaterialTeal";
             this.gridFacturas.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridFacturas_CellFormatting);
             this.gridFacturas.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridFacturas_CellDoubleClick);
             this.gridFacturas.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.gridFacturas_CommandCellClick);
             // 
-            // toggleFiltrar
+            // radPanel3
             // 
-            this.toggleFiltrar.Location = new System.Drawing.Point(96, 4);
-            this.toggleFiltrar.Name = "toggleFiltrar";
-            this.toggleFiltrar.Size = new System.Drawing.Size(40, 20);
-            this.toggleFiltrar.TabIndex = 11;
-            this.toggleFiltrar.ThemeName = "MaterialTeal";
-            this.toggleFiltrar.Value = false;
-            this.toggleFiltrar.ValueChanged += new System.EventHandler(this.toggleFiltrar_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 22);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Filtrar";
-            // 
-            // lblNomClientne
-            // 
-            this.lblNomClientne.AutoSize = true;
-            this.lblNomClientne.Location = new System.Drawing.Point(795, 3);
-            this.lblNomClientne.Name = "lblNomClientne";
-            this.lblNomClientne.Size = new System.Drawing.Size(135, 22);
-            this.lblNomClientne.TabIndex = 12;
-            this.lblNomClientne.Text = "Nombre Cliente";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 491);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(133, 22);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "Total Registros:";
+            this.radPanel3.Controls.Add(this.chkSeleccionar);
+            this.radPanel3.Controls.Add(this.btnEliminar);
+            this.radPanel3.Controls.Add(this.lblTotal);
+            this.radPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.radPanel3.Location = new System.Drawing.Point(0, 498);
+            this.radPanel3.Name = "radPanel3";
+            this.radPanel3.Size = new System.Drawing.Size(1196, 69);
+            this.radPanel3.TabIndex = 2;
+            this.radPanel3.ThemeName = "MaterialTeal";
             // 
             // chkSeleccionar
             // 
-            this.chkSeleccionar.Location = new System.Drawing.Point(201, 492);
+            this.chkSeleccionar.Location = new System.Drawing.Point(265, 24);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(101, 19);
-            this.chkSeleccionar.TabIndex = 6;
+            this.chkSeleccionar.TabIndex = 14;
             this.chkSeleccionar.Text = "Seleccionar";
             this.chkSeleccionar.ThemeName = "MaterialTeal";
             this.chkSeleccionar.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkSeleccionar_ToggleStateChanged);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(316, 491);
+            this.btnEliminar.Location = new System.Drawing.Point(408, 19);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(95, 22);
-            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Size = new System.Drawing.Size(138, 36);
+            this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.ThemeName = "MaterialTeal";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // layoutControlItem1
+            // lblTotal
             // 
-            this.layoutControlItem1.AssociatedControl = this.gridFacturas;
-            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 26, 1174, 435);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Text = "";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(47, 26);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(135, 22);
+            this.lblTotal.TabIndex = 13;
+            this.lblTotal.Text = "Total Registros:";
             // 
-            // layoutControlLabelItem2
+            // radPanel2
             // 
-            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(138, 0, 653, 26);
-            this.layoutControlLabelItem2.DrawText = false;
-            this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
+            this.radPanel2.Controls.Add(this.toggleFiltrar);
+            this.radPanel2.Controls.Add(this.label2);
+            this.radPanel2.Controls.Add(this.lblNomClientne);
+            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radPanel2.Location = new System.Drawing.Point(0, 0);
+            this.radPanel2.Name = "radPanel2";
+            this.radPanel2.Size = new System.Drawing.Size(1196, 40);
+            this.radPanel2.TabIndex = 0;
+            this.radPanel2.ThemeName = "MaterialTeal";
             // 
-            // layoutControlItem2
+            // toggleFiltrar
             // 
-            this.layoutControlItem2.AssociatedControl = this.toggleFiltrar;
-            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(92, 0, 46, 26);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.toggleFiltrar.Location = new System.Drawing.Point(111, 10);
+            this.toggleFiltrar.Name = "toggleFiltrar";
+            this.toggleFiltrar.Size = new System.Drawing.Size(40, 20);
+            this.toggleFiltrar.TabIndex = 17;
+            this.toggleFiltrar.ThemeName = "MaterialTeal";
+            this.toggleFiltrar.Value = false;
             // 
-            // layoutControlItem3
+            // label2
             // 
-            this.layoutControlItem3.AssociatedControl = this.label2;
-            this.layoutControlItem3.Bounds = new System.Drawing.Rectangle(46, 0, 46, 26);
-            this.layoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 22);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Filtrar";
             // 
-            // layoutControlLabelItem4
+            // lblNomClientne
             // 
-            this.layoutControlLabelItem4.Bounds = new System.Drawing.Rectangle(0, 0, 46, 26);
-            this.layoutControlLabelItem4.DrawText = false;
-            this.layoutControlLabelItem4.Name = "layoutControlLabelItem4";
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AssociatedControl = this.lblNomClientne;
-            this.layoutControlItem4.Bounds = new System.Drawing.Rectangle(791, 0, 292, 26);
-            this.layoutControlItem4.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Text = "layoutControlItem4";
-            // 
-            // layoutControlLabelItem6
-            // 
-            this.layoutControlLabelItem6.Bounds = new System.Drawing.Rectangle(1083, 0, 91, 26);
-            this.layoutControlLabelItem6.DrawText = false;
-            this.layoutControlLabelItem6.Name = "layoutControlLabelItem6";
-            // 
-            // layoutControlLabelItem7
-            // 
-            this.layoutControlLabelItem7.Bounds = new System.Drawing.Rectangle(413, 487, 761, 28);
-            this.layoutControlLabelItem7.DrawText = false;
-            this.layoutControlLabelItem7.Name = "layoutControlLabelItem7";
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.AssociatedControl = this.lblTotal;
-            this.layoutControlItem5.Bounds = new System.Drawing.Rectangle(46, 487, 105, 28);
-            this.layoutControlItem5.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Text = "layoutControlItem5";
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.AssociatedControl = this.chkSeleccionar;
-            this.layoutControlItem6.Bounds = new System.Drawing.Rectangle(197, 487, 115, 28);
-            this.layoutControlItem6.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Text = "layoutControlItem6";
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.AssociatedControl = this.btnEliminar;
-            this.layoutControlItem7.Bounds = new System.Drawing.Rectangle(312, 487, 101, 28);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Text = "layoutControlItem7";
-            // 
-            // layoutControlLabelItem9
-            // 
-            this.layoutControlLabelItem9.Bounds = new System.Drawing.Rectangle(0, 487, 46, 28);
-            this.layoutControlLabelItem9.DrawText = false;
-            this.layoutControlLabelItem9.Name = "layoutControlLabelItem9";
-            // 
-            // layoutControlLabelItem11
-            // 
-            this.layoutControlLabelItem11.Bounds = new System.Drawing.Rectangle(151, 487, 46, 28);
-            this.layoutControlLabelItem11.DrawText = false;
-            this.layoutControlLabelItem11.Name = "layoutControlLabelItem11";
-            // 
-            // layoutControlLabelItem12
-            // 
-            this.layoutControlLabelItem12.Bounds = new System.Drawing.Rectangle(0, 461, 1174, 26);
-            this.layoutControlLabelItem12.DrawText = false;
-            this.layoutControlLabelItem12.Name = "layoutControlLabelItem12";
-            // 
-            // layoutControlLabelItem13
-            // 
-            this.layoutControlLabelItem13.Bounds = new System.Drawing.Rectangle(0, 515, 1174, 57);
-            this.layoutControlLabelItem13.DrawText = false;
-            this.layoutControlLabelItem13.Name = "layoutControlLabelItem13";
+            this.lblNomClientne.AutoSize = true;
+            this.lblNomClientne.Location = new System.Drawing.Point(801, 8);
+            this.lblNomClientne.Name = "lblNomClientne";
+            this.lblNomClientne.Size = new System.Drawing.Size(137, 22);
+            this.lblNomClientne.TabIndex = 18;
+            this.lblNomClientne.Text = "Nombre Cliente";
             // 
             // tabManteniminento
             // 
             this.tabManteniminento.Controls.Add(this.radPanel1);
             this.tabManteniminento.Location = new System.Drawing.Point(1, 37);
             this.tabManteniminento.Name = "tabManteniminento";
-            this.tabManteniminento.Size = new System.Drawing.Size(1193, 591);
+            this.tabManteniminento.Size = new System.Drawing.Size(1196, 567);
             this.tabManteniminento.Text = "Matenimiento";
             // 
             // radPanel1
@@ -412,7 +307,7 @@
             this.radPanel1.Controls.Add(this.txtNumFactura);
             this.radPanel1.Controls.Add(this.label4);
             this.radPanel1.Controls.Add(this.label1);
-            this.radPanel1.Location = new System.Drawing.Point(38, 29);
+            this.radPanel1.Location = new System.Drawing.Point(40, 15);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Padding = new System.Windows.Forms.Padding(25);
             this.radPanel1.Size = new System.Drawing.Size(1116, 537);
@@ -640,7 +535,7 @@
             // FrmFacturaCliente1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1195, 629);
+            this.ClientSize = new System.Drawing.Size(1198, 605);
             this.Controls.Add(this.tabForm);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -658,14 +553,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabForm)).EndInit();
             this.tabForm.ResumeLayout(false);
             this.tabListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radLayoutControl1)).EndInit();
-            this.radLayoutControl1.ResumeLayout(false);
-            this.radLayoutControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
+            this.radPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleFiltrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
+            this.radPanel3.ResumeLayout(false);
+            this.radPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
+            this.radPanel2.ResumeLayout(false);
+            this.radPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleFiltrar)).EndInit();
             this.tabManteniminento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
@@ -696,32 +596,9 @@
         private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem8;
         private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem5;
         private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem3;
-        private Telerik.WinControls.UI.RadLayoutControl radLayoutControl1;
-        private Telerik.WinControls.UI.RadGridView gridFacturas;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Telerik.WinControls.UI.RadValidationProvider radValidationProvider1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem2;
-        private Telerik.WinControls.UI.RadToggleSwitch toggleFiltrar;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem2;
-        private System.Windows.Forms.Label label2;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem3;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem4;
-        private System.Windows.Forms.Label lblNomClientne;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem4;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem6;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem7;
-        private System.Windows.Forms.Label lblTotal;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem5;
-        private Telerik.WinControls.UI.RadCheckBox chkSeleccionar;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem6;
-        private Telerik.WinControls.UI.RadButton btnEliminar;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem7;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem9;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem11;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem12;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem13;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.RadTextBox txtNumFactura;
         private System.Windows.Forms.Label label1;
@@ -740,5 +617,15 @@
         private Telerik.WinControls.UI.RadButton btnActualizar;
         private Telerik.WinControls.UI.RadTextBox txtIdFac;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.UI.RadPanel radPanel2;
+        private Telerik.WinControls.UI.RadPanel radPanel4;
+        private Telerik.WinControls.UI.RadPanel radPanel3;
+        private Telerik.WinControls.UI.RadCheckBox chkSeleccionar;
+        private Telerik.WinControls.UI.RadButton btnEliminar;
+        private System.Windows.Forms.Label lblTotal;
+        private Telerik.WinControls.UI.RadGridView gridFacturas;
+        private Telerik.WinControls.UI.RadToggleSwitch toggleFiltrar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNomClientne;
     }
 }

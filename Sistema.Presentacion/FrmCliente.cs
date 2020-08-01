@@ -6,12 +6,8 @@ using Sistema.Presentacion.Helpers;
 using Sistema.Presentacion.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -30,7 +26,7 @@ namespace Sistema.Presentacion
         private readonly IFormOpener formOpener;
         private readonly IClienteFacturaAccesRepo clienteFacturaAcces;
         private readonly IFacturaAccesRepo<Factura> facturaAccesRepo;
-        private string Directorio = "D:\\Facturas\\";
+        public static string Directorio = "";
 
         public FrmCliente(IClienteAccesRepo<Cliente> clienteAcces, SimpleInjector.Container container, IFormOpener formOpener, IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo)
         {
@@ -72,7 +68,7 @@ namespace Sistema.Presentacion
             try
             {
                 gridClientes.DataSource = await clienteAcces.Listar();
-                lblTotal.Text = "Total reistros: " + gridClientes.RowCount.ToString();
+                lblTotal.Text = "Total registros: " + gridClientes.RowCount.ToString();
             }
             catch (Exception ex)
             {
@@ -206,11 +202,6 @@ namespace Sistema.Presentacion
 
         private async void FrmCliente_Load(object sender, EventArgs e)
         {
-            #region LayoutControlConfigurations    
-
-            radLayoutControl1.AllowCustomize = false;
-
-            #endregion
 
             radValidationProvider1.ValidationMode = ValidationMode.Programmatically;
 

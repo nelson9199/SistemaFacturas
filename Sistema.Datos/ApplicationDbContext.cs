@@ -15,7 +15,12 @@ namespace Sistema.Datos
 {
     public class ApplicationDbContext : DbContext
     {
-        private AppConfigReader connectionStringSettings = AppConfigReader.ObtenerInstancia();
+        private AppConfigReader connectionStringSettings;
+
+        public ApplicationDbContext()
+        {
+            connectionStringSettings = AppConfigReader.ObtenerInstancia();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

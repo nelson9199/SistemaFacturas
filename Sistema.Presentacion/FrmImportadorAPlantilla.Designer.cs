@@ -78,7 +78,7 @@
             this.radButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButton2.Location = new System.Drawing.Point(638, 159);
             this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(239, 42);
+            this.radButton2.Size = new System.Drawing.Size(252, 42);
             this.radButton2.TabIndex = 0;
             this.radButton2.Text = "Cargar Plantilla ATS Excel";
             this.radButton2.ThemeName = "Material";

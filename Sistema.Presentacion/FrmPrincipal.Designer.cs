@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.menuItemAccesos = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
@@ -52,6 +53,8 @@
             this.documentContainer2 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.stLabelStatus = new Telerik.WinControls.UI.RadLabelElement();
+            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
@@ -188,7 +191,7 @@
             // 
             this.commandBarButton2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton2.DisplayName = "commandBarButton2";
-            this.commandBarButton2.Image = global::Sistema.Presentacion.Properties.Resources.Banned_User;
+            this.commandBarButton2.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton2.Image")));
             this.commandBarButton2.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.commandBarButton2.Name = "commandBarButton2";
             this.commandBarButton2.Text = "commandBarButton2";
@@ -215,7 +218,8 @@
             this.menuItemCliente,
             this.menuItemAccesos,
             this.menuItemHerramienta,
-            this.menuItemSalir});
+            this.menuItemSalir,
+            this.radMenuItem1});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Size = new System.Drawing.Size(1263, 37);
@@ -282,6 +286,20 @@
             this.stLabelStatus.Text = "Desarrollado por X-Development";
             this.stLabelStatus.TextWrap = true;
             // 
+            // radMenuItem1
+            // 
+            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem3});
+            this.radMenuItem1.Name = "radMenuItem1";
+            this.radMenuItem1.Text = "Base de datos";
+            // 
+            // radMenuItem3
+            // 
+            this.radMenuItem3.Image = global::Sistema.Presentacion.Properties.Resources.database_save;
+            this.radMenuItem3.Name = "radMenuItem3";
+            this.radMenuItem3.Text = "Generar copia de seguridad";
+            this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -338,5 +356,7 @@
         private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer2;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
         private Telerik.WinControls.UI.RadLabelElement stLabelStatus;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
     }
 }
