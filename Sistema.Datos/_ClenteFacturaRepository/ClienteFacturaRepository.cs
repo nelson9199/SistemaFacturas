@@ -23,7 +23,7 @@ namespace Sistema.Datos.ClenteFacturaRepository
             try
             {
                 context.Add(objInsertar);
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro en Cliente Facturas";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo ingresar el registro en Cliente Facturas";
 
             }
             catch (Exception ex)

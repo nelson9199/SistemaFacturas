@@ -8,9 +8,6 @@ namespace Sistema.Entidades.Configurations
     {
         public void Configure(EntityTypeBuilder<Factura> builder)
         {
-            builder.HasIndex(x => x.NumeroFactura)
-                .IsUnique(true);
-
             builder.HasData(new Factura() { FacturaId = 1, ArchivoFactura = "archivo", FechaEmision = DateTime.Today, NumeroFactura = "001", Estado = "Por pagar" });
         }
     }

@@ -12,7 +12,7 @@ namespace Sistema.Negocio._UsuarioLogic
         Task<List<T>> Listar();
         Task<string> Insertar(T objInsertar);
         Task<string> Actualizar(T objActualizar, string numDocuAnt, string emailAnt);
-        Task<string> Eliminar(int id);
+        Task<string> Eliminar(int id, string nombreRol);
         Task<(T, string)> Login(string username, string password);
     }
 }

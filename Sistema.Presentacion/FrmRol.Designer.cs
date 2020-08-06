@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRol));
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.radLayoutControl1 = new Telerik.WinControls.UI.RadLayoutControl();
             this.gridRoles = new Telerik.WinControls.UI.RadGridView();
@@ -71,11 +72,12 @@
             this.gridRoles.MasterTemplate.AllowDeleteRow = false;
             this.gridRoles.MasterTemplate.AllowRowHeaderContextMenu = false;
             this.gridRoles.MasterTemplate.EnableGrouping = false;
-            this.gridRoles.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.gridRoles.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.gridRoles.Name = "gridRoles";
             this.gridRoles.Size = new System.Drawing.Size(550, 330);
             this.gridRoles.TabIndex = 4;
             this.gridRoles.ThemeName = "Material";
+            this.gridRoles.ContextMenuOpening += new Telerik.WinControls.UI.ContextMenuOpeningEventHandler(this.gridRoles_ContextMenuOpening);
             // 
             // lblTotal
             // 
@@ -118,6 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(558, 364);
             this.Controls.Add(this.radLayoutControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmRol";
             // 

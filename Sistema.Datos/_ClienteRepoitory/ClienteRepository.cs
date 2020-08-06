@@ -39,7 +39,7 @@ namespace Sistema.Datos.ClienteRepository
 
                 context.Entry(entrada).State = EntityState.Modified;
 
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo actualizar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo actualizar el registro";
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace Sistema.Datos.ClienteRepository
                 }
 
                 context.Entry(cliente).State = EntityState.Deleted;
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo borrar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo borrar el registro";
 
             }
             catch (Exception ex)
@@ -80,7 +80,7 @@ namespace Sistema.Datos.ClienteRepository
             {
 
                 context.Add(objInsertar);
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo ingresar el registro";
 
             }
             catch (Exception ex)
@@ -155,7 +155,7 @@ namespace Sistema.Datos.ClienteRepository
 
                 entrada.Property(x => x.Estado).IsModified = true;
 
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo activar al cliente";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo activar al cliente";
 
             }
             catch (Exception ex)
@@ -186,7 +186,7 @@ namespace Sistema.Datos.ClienteRepository
 
                 entrada.Property(x => x.Estado).IsModified = true;
 
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar al cliente";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo desactivar al cliente";
 
             }
             catch (Exception ex)

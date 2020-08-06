@@ -16,7 +16,7 @@ namespace Sistema.Negocio.FacturaLogic
             this.facturaRepository = facturaRepository;
         }
 
-        public async Task<string> Actualizar(Factura objActualizar, string numFacAnt)
+        public async Task<string> Actualizar(Factura objActualizar, string numFacAnt, int idCliente)
         {
             if (numFacAnt.Equals(objActualizar.NumeroFactura))
             {
@@ -24,7 +24,7 @@ namespace Sistema.Negocio.FacturaLogic
             }
             else
             {
-                bool existeCodigoFac = await facturaRepository.ExisteCodigoFactura(objActualizar.NumeroFactura);
+                bool existeCodigoFac = await facturaRepository.ExisteNumeroFactura(objActualizar.NumeroFactura, idCliente);
 
                 if (existeCodigoFac == true)
                 {
@@ -39,9 +39,9 @@ namespace Sistema.Negocio.FacturaLogic
             return await facturaRepository.Eliminar(id);
         }
 
-        public async Task<string> Insertar(Factura objInsertar)
+        public async Task<string> Insertar(Factura objInsertar, int idClietne)
         {
-            bool existeCodigoFac = await facturaRepository.ExisteCodigoFactura(objInsertar.NumeroFactura);
+            bool existeCodigoFac = await facturaRepository.ExisteNumeroFactura(objInsertar.NumeroFactura, idClietne);
 
             if (existeCodigoFac == true)
             {

@@ -15,5 +15,6 @@ namespace Sistema.Datos._UsuariosRepository
         Task<bool> ExisteNumDocumento(string numDocumento);
         Task<bool> ExisteUsername(string username);
         Task<(T, string)> Login(string username, string password);
+        Task<bool> ExisteUnUnicoAdmin();
     }
 }

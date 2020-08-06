@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.label4 = new System.Windows.Forms.Label();
             this.txtClave = new Telerik.WinControls.UI.RadButtonTextBox();
@@ -162,6 +163,9 @@
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmLogin";
             // 
             // 
@@ -170,6 +174,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesión";
             this.ThemeName = "Material";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLogin_FormClosed);
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAcceder)).EndInit();

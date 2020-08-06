@@ -89,5 +89,10 @@ namespace Sistema.Presentacion
 
             EstilosGridView();
         }
+
+        private void gridRoles_ContextMenuOpening(object sender, Telerik.WinControls.UI.ContextMenuOpeningEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }

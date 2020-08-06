@@ -49,12 +49,12 @@
             this.menuItemCliente = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.menuItemDb = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
             this.documentContainer2 = new Telerik.WinControls.UI.Docking.DocumentContainer();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.stLabelStatus = new Telerik.WinControls.UI.RadLabelElement();
-            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
@@ -138,7 +138,7 @@
             // 
             // commandBarStripElement2
             // 
-            this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
+            this.commandBarStripElement2.DisplayName = "Barra de Herramientas";
             this.commandBarStripElement2.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton3,
             this.commandBarButton4,
@@ -147,24 +147,30 @@
             // 
             // commandBarButton3
             // 
-            this.commandBarButton3.DisplayName = "commandBarButton3";
+            this.commandBarButton3.DisplayName = "Botón Importador Xml a plantilla ATS";
             this.commandBarButton3.Image = global::Sistema.Presentacion.Properties.Resources.import_icon;
             this.commandBarButton3.Name = "commandBarButton3";
-            this.commandBarButton3.Text = "commandBarButton3";
+            this.commandBarButton3.Text = "Botón Importado Xml a plantilla ATS";
+            this.commandBarButton3.ToolTipText = "Importar Xml a plantilla ATS Excel";
+            this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click);
             // 
             // commandBarButton4
             // 
-            this.commandBarButton4.DisplayName = "commandBarButton4";
+            this.commandBarButton4.DisplayName = "Botón convertidor  Xml a Excel";
             this.commandBarButton4.Image = global::Sistema.Presentacion.Properties.Resources.table_import_icon;
             this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "commandBarButton4";
+            this.commandBarButton4.Text = "Botón convertidor  Xml a Excel";
+            this.commandBarButton4.ToolTipText = "Importar Xml a nuevo Excel";
+            this.commandBarButton4.Click += new System.EventHandler(this.commandBarButton4_Click);
             // 
             // cBClientes
             // 
-            this.cBClientes.DisplayName = "commandBarButton5";
+            this.cBClientes.DisplayName = "Boton Clientes";
             this.cBClientes.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
             this.cBClientes.Name = "cBClientes";
-            this.cBClientes.Text = "commandBarButton5";
+            this.cBClientes.Text = "Botón Clientes";
+            this.cBClientes.ToolTipText = "Clientes";
+            this.cBClientes.Click += new System.EventHandler(this.cBClientes_Click);
             // 
             // commandBarStripElement1
             // 
@@ -218,13 +224,27 @@
             this.menuItemCliente,
             this.menuItemAccesos,
             this.menuItemHerramienta,
-            this.menuItemSalir,
-            this.radMenuItem1});
+            this.menuItemDb,
+            this.menuItemSalir});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Size = new System.Drawing.Size(1263, 37);
             this.radMenu1.TabIndex = 0;
             this.radMenu1.ThemeName = "Material";
+            // 
+            // menuItemDb
+            // 
+            this.menuItemDb.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem3});
+            this.menuItemDb.Name = "menuItemDb";
+            this.menuItemDb.Text = "Base de datos";
+            // 
+            // radMenuItem3
+            // 
+            this.radMenuItem3.Image = global::Sistema.Presentacion.Properties.Resources.database_save;
+            this.radMenuItem3.Name = "radMenuItem3";
+            this.radMenuItem3.Text = "Generar copia de seguridad";
+            this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
             // 
             // radDock1
             // 
@@ -286,20 +306,6 @@
             this.stLabelStatus.Text = "Desarrollado por X-Development";
             this.stLabelStatus.TextWrap = true;
             // 
-            // radMenuItem1
-            // 
-            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem3});
-            this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "Base de datos";
-            // 
-            // radMenuItem3
-            // 
-            this.radMenuItem3.Image = global::Sistema.Presentacion.Properties.Resources.database_save;
-            this.radMenuItem3.Name = "radMenuItem3";
-            this.radMenuItem3.Text = "Generar copia de seguridad";
-            this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -308,6 +314,7 @@
             this.Controls.Add(this.radDock1);
             this.Controls.Add(this.radCommandBar1);
             this.Controls.Add(this.radMenu1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
             // 
@@ -316,7 +323,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Escritorio";
             this.ThemeName = "Material";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipal_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
@@ -356,7 +363,7 @@
         private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer2;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
         private Telerik.WinControls.UI.RadLabelElement stLabelStatus;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadMenuItem menuItemDb;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
     }
 }

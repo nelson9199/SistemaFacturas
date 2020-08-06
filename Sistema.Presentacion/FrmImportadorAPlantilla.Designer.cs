@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmImportadorAPlantilla));
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
@@ -101,7 +102,7 @@
             this.txtPlantilla.Location = new System.Drawing.Point(519, 93);
             this.txtPlantilla.Name = "txtPlantilla";
             this.txtPlantilla.ReadOnly = true;
-            this.txtPlantilla.Size = new System.Drawing.Size(446, 36);
+            this.txtPlantilla.Size = new System.Drawing.Size(446, 41);
             this.txtPlantilla.TabIndex = 1;
             this.txtPlantilla.ThemeName = "Material";
             // 
@@ -111,7 +112,7 @@
             this.txtXml.Location = new System.Drawing.Point(27, 93);
             this.txtXml.Name = "txtXml";
             this.txtXml.ReadOnly = true;
-            this.txtXml.Size = new System.Drawing.Size(452, 36);
+            this.txtXml.Size = new System.Drawing.Size(452, 41);
             this.txtXml.TabIndex = 1;
             this.txtXml.ThemeName = "Material";
             // 
@@ -125,6 +126,10 @@
             this.Controls.Add(this.radButton2);
             this.Controls.Add(this.radButton3);
             this.Controls.Add(this.radButton1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmImportadorAPlantilla";
             // 
             // 

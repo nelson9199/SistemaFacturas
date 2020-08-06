@@ -112,5 +112,15 @@ namespace Sistema.Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

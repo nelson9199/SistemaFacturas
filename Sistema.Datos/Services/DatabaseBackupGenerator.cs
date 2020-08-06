@@ -20,7 +20,7 @@ namespace Sistema.Datos.Services
             this.sqlConnectionInstance = sqlConnectionInstance;
         }
 
-        public bool GenerarBackup(string backupQuery)
+        public string GenerarBackup(string backupQuery)
         {
             SqlConnection cn = sqlConnectionInstance.ObtenerInstanciaSqlConnection(connectionStringSettings["DefaultConnection"].ConnectionString);
 
@@ -38,12 +38,12 @@ namespace Sistema.Datos.Services
                     command.ExecuteNonQuery();
                     cn.Close();
 
-                    return true;
+                    return "OK";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return ex.Message;
             }
         }
     }

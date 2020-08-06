@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.Windows.Documents.Spreadsheet.Model.Workbook workbook1 = new Telerik.Windows.Documents.Spreadsheet.Model.Workbook();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule1 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.Windows.Documents.Spreadsheet.Model.Workbook workbook2 = new Telerik.Windows.Documents.Spreadsheet.Model.Workbook();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule2 = new Telerik.WinControls.UI.RadValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacturaCliente1));
             this.txtNumFactura = new Telerik.WinControls.UI.RadTextBox();
             this.txtRutaFac = new Telerik.WinControls.UI.RadTextBox();
             this.tabForm = new Telerik.WinControls.UI.RadTabbedFormControl();
@@ -115,7 +116,7 @@
             this.txtNumFactura.Size = new System.Drawing.Size(291, 41);
             this.txtNumFactura.TabIndex = 1;
             this.txtNumFactura.ThemeName = "MaterialTeal";
-            this.radValidationProvider1.SetValidationRule(this.txtNumFactura, radValidationRule1);
+            this.radValidationProvider1.SetValidationRule(this.txtNumFactura, radValidationRule2);
             this.txtNumFactura.TextChanging += new Telerik.WinControls.TextChangingEventHandler(this.txtNumFactura_TextChanging);
             // 
             // txtRutaFac
@@ -127,7 +128,7 @@
             this.txtRutaFac.Size = new System.Drawing.Size(351, 41);
             this.txtRutaFac.TabIndex = 3;
             this.txtRutaFac.ThemeName = "MaterialTeal";
-            this.radValidationProvider1.SetValidationRule(this.txtRutaFac, radValidationRule1);
+            this.radValidationProvider1.SetValidationRule(this.txtRutaFac, radValidationRule2);
             // 
             // tabForm
             // 
@@ -139,7 +140,7 @@
             this.tabForm.MaximizeButton = false;
             this.tabForm.MinimizeButton = false;
             this.tabForm.Name = "tabForm";
-            this.tabForm.SelectedTab = this.tabManteniminento;
+            this.tabForm.SelectedTab = this.tabListado;
             this.tabForm.ShowNewTabButton = false;
             this.tabForm.ShowTabCloseButton = false;
             this.tabForm.Size = new System.Drawing.Size(1198, 605);
@@ -148,6 +149,7 @@
             this.tabForm.TabSpacing = -1;
             this.tabForm.Text = "Facturas";
             this.tabForm.ThemeName = "MaterialTeal";
+            this.tabForm.SelectedTabChanged += new System.EventHandler(this.tabForm_SelectedTabChanged);
             // 
             // tabListado
             // 
@@ -178,22 +180,22 @@
             // 
             this.gridFacturas.MasterTemplate.AllowAddNewRow = false;
             this.gridFacturas.MasterTemplate.AllowColumnReorder = false;
-            gridViewCheckBoxColumn1.HeaderText = "Seleccionar";
-            gridViewCheckBoxColumn1.Name = "seleccionar";
-            gridViewCommandColumn1.DefaultText = "Abrir";
-            gridViewCommandColumn1.HeaderText = "";
-            gridViewCommandColumn1.Name = "abrir";
-            gridViewCommandColumn1.UseDefaultText = true;
-            gridViewCommandColumn2.DefaultText = "Guardar Como";
-            gridViewCommandColumn2.HeaderText = "";
-            gridViewCommandColumn2.Name = "guardarComo";
-            gridViewCommandColumn2.UseDefaultText = true;
+            gridViewCheckBoxColumn2.HeaderText = "Seleccionar";
+            gridViewCheckBoxColumn2.Name = "seleccionar";
+            gridViewCommandColumn3.DefaultText = "Abrir";
+            gridViewCommandColumn3.HeaderText = "";
+            gridViewCommandColumn3.Name = "abrir";
+            gridViewCommandColumn3.UseDefaultText = true;
+            gridViewCommandColumn4.DefaultText = "Guardar Como";
+            gridViewCommandColumn4.HeaderText = "";
+            gridViewCommandColumn4.Name = "guardarComo";
+            gridViewCommandColumn4.UseDefaultText = true;
             this.gridFacturas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewCheckBoxColumn1,
-            gridViewCommandColumn1,
-            gridViewCommandColumn2});
+            gridViewCheckBoxColumn2,
+            gridViewCommandColumn3,
+            gridViewCommandColumn4});
             this.gridFacturas.MasterTemplate.EnablePaging = true;
-            this.gridFacturas.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.gridFacturas.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.gridFacturas.Name = "gridFacturas";
             this.gridFacturas.Size = new System.Drawing.Size(1196, 458);
             this.gridFacturas.TabIndex = 17;
@@ -201,6 +203,7 @@
             this.gridFacturas.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridFacturas_CellFormatting);
             this.gridFacturas.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridFacturas_CellDoubleClick);
             this.gridFacturas.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.gridFacturas_CommandCellClick);
+            this.gridFacturas.ContextMenuOpening += new Telerik.WinControls.UI.ContextMenuOpeningEventHandler(this.gridFacturas_ContextMenuOpening);
             // 
             // radPanel3
             // 
@@ -263,6 +266,7 @@
             this.toggleFiltrar.TabIndex = 17;
             this.toggleFiltrar.ThemeName = "MaterialTeal";
             this.toggleFiltrar.Value = false;
+            this.toggleFiltrar.ValueChanged += new System.EventHandler(this.toggleFiltrar_ValueChanged);
             // 
             // label2
             // 
@@ -379,10 +383,10 @@
             this.radSpreadsheet1.TabIndex = 1;
             this.radSpreadsheet1.ThemeName = "MaterialTeal";
             this.radSpreadsheet1.Visible = false;
-            workbook1.ActiveTabIndex = -1;
-            workbook1.Name = "Book1";
-            workbook1.WorkbookContentChangedInterval = System.TimeSpan.Parse("00:00:00.0300000");
-            this.radSpreadsheet1.Workbook = workbook1;
+            workbook2.ActiveTabIndex = -1;
+            workbook2.Name = "Book1";
+            workbook2.WorkbookContentChangedInterval = System.TimeSpan.Parse("00:00:00.0300000");
+            this.radSpreadsheet1.Workbook = workbook2;
             // 
             // webBrowser1
             // 
@@ -523,20 +527,21 @@
             // 
             // radValidationProvider1
             // 
-            radValidationRule1.Controls.Add(this.txtNumFactura);
-            radValidationRule1.Controls.Add(this.txtRutaFac);
-            radValidationRule1.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
-            radValidationRule1.ToolTipText = "No puede dejar vacio este campo";
-            radValidationRule1.ToolTipTitle = "Validación Fallida";
-            radValidationRule1.Value = "";
+            radValidationRule2.Controls.Add(this.txtNumFactura);
+            radValidationRule2.Controls.Add(this.txtRutaFac);
+            radValidationRule2.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
+            radValidationRule2.ToolTipText = "No puede dejar vacio este campo";
+            radValidationRule2.ToolTipTitle = "Validación Fallida";
+            radValidationRule2.Value = "";
             this.radValidationProvider1.ValidationRules.AddRange(new Telerik.WinControls.Data.FilterDescriptor[] {
-            radValidationRule1});
+            radValidationRule2});
             // 
             // FrmFacturaCliente1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1198, 605);
             this.Controls.Add(this.tabForm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmFacturaCliente1";

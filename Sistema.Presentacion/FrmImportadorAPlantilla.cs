@@ -27,22 +27,44 @@ namespace Sistema.Presentacion
             MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void KillBackgroudProcess(string processName)
+        {
+            foreach (var process in Process.GetProcessesByName(processName))
+            {
+                if (string.IsNullOrEmpty(process.MainWindowTitle))
+                {
+                    process.Kill();
+                }
+            }
+        }
+
         private void radButton1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.FileName = "";
-
-            openFileDialog1.Filter = "Archivos xml (*.xml)|*.xml";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                xmlFile = openFileDialog1.FileName;
+                KillBackgroudProcess("excel");
 
-                txtXml.Text = Path.GetFileName(openFileDialog1.FileName);
+                openFileDialog1.FileName = "";
+
+                openFileDialog1.Filter = "Archivos xml (*.xml)|*.xml";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    xmlFile = openFileDialog1.FileName;
+
+                    txtXml.Text = Path.GetFileName(openFileDialog1.FileName);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void radButton2_Click(object sender, EventArgs e)
         {
+
             if (txtXml.Text == "" || txtPlantilla.Text == "")
             {
                 MensajeError("Debe seleccionar el Archivo Xml y la plantilla Excel ATS antes de hacer la importacion");
@@ -52,7 +74,7 @@ namespace Sistema.Presentacion
             {
                 try
                 {
-                    this.SendToBack();
+                    KillBackgroudProcess("excel");
 
                     Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
                     Workbook excelWorkBook = xApp.Workbooks.Open(excelFile, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
@@ -93,16 +115,27 @@ namespace Sistema.Presentacion
 
         private void radButton3_Click(object sender, EventArgs e)
         {
-            openFileDialog2.FileName = "";
-
-            openFileDialog2.Filter = "Archivos Excel(*.xls, *.xlsx)|*.xls;*.xlsx";
-
-            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            try
             {
-                excelFile = openFileDialog2.FileName;
+                KillBackgroudProcess("excel");
 
-                txtPlantilla.Text = Path.GetFileName(openFileDialog2.FileName);
+                openFileDialog2.FileName = "";
+
+                openFileDialog2.Filter = "Archivos Excel(*.xls, *.xlsx)|*.xls;*.xlsx";
+
+                if (openFileDialog2.ShowDialog() == DialogResult.OK)
+                {
+                    excelFile = openFileDialog2.FileName;
+
+                    txtPlantilla.Text = Path.GetFileName(openFileDialog2.FileName);
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void txtFiles_TextChanged(object sender, EventArgs e)
@@ -112,12 +145,14 @@ namespace Sistema.Presentacion
 
         private void FrmConvertidorAExcel_FormClosed(object sender, FormClosedEventArgs e)
         {
-            foreach (var process in Process.GetProcessesByName("excel"))
+            try
             {
-                if (string.IsNullOrEmpty(process.MainWindowTitle))
-                {
-                    process.Kill();
-                }
+                KillBackgroudProcess("excel");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

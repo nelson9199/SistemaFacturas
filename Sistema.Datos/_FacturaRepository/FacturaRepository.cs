@@ -5,6 +5,8 @@ using Sistema.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,7 +43,7 @@ namespace Sistema.Datos.FacturaRepository
 
                 context.Entry(entrada).State = EntityState.Modified;
 
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo actualizar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo actualizar el registro";
 
             }
             catch (Exception ex)
@@ -65,7 +67,7 @@ namespace Sistema.Datos.FacturaRepository
                 }
 
                 context.Entry(factura).State = EntityState.Deleted;
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo borrar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo borrar el registro";
 
             }
             catch (Exception ex)
@@ -75,14 +77,28 @@ namespace Sistema.Datos.FacturaRepository
             return respuesta;
         }
 
-        public async Task<bool> ExisteCodigoFactura(string numFactura)
+        public async Task<bool> ExisteNumeroFactura(string numFactura, int idCliente)
         {
             try
             {
-                bool extiste = await context.Facturas.AnyAsync(x => x.NumeroFactura == numFactura);
-                return extiste;
+                var clienteFacturas = await context.ClienteFacturas.Include(x => x.Factura).Where(x => x.ClienteId == idCliente).ToListAsync();
 
+                var facturas = clienteFacturas.Select(x => x.Factura).ToList();
+
+                foreach (var item in clienteFacturas)
+                {
+                    foreach (var factura in facturas)
+                    {
+                        if (item.ClienteId == idCliente && factura.NumeroFactura == numFactura)
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
             }
+
             catch (Exception ex)
             {
                 throw ex;
@@ -96,7 +112,7 @@ namespace Sistema.Datos.FacturaRepository
             try
             {
                 context.Add(objInsertar);
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo ingresar el registro";
 
             }
             catch (Exception ex)

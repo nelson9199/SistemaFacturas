@@ -17,6 +17,7 @@ using Sistema.Negocio.FacturaLogic;
 using Sistema.Negocio.RolLogic;
 using Sistema.Presentacion.Services;
 using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -24,6 +25,7 @@ namespace Sistema.Presentacion
 {
     static class Program
     {
+        private static string wizardRunOne;
         private static Container container;
         /// <summary>
         /// The main entry point for the application.
@@ -34,7 +36,17 @@ namespace Sistema.Presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
-            Application.Run(container.GetInstance<FrmWizard>());
+
+            wizardRunOne = ConfigurationManager.AppSettings["WizardRunOnce"];
+
+            if (wizardRunOne == "false")
+            {
+                Application.Run(container.GetInstance<FrmWizard>());
+            }
+            else if (wizardRunOne == "True")
+            {
+                Application.Run(container.GetInstance<FrmLogin>());
+            }
         }
 
         private static void Bootstrap()
@@ -112,6 +124,7 @@ namespace Sistema.Presentacion
 
             container.Register<IFormOpener, FormOpener>(Lifestyle.Singleton);
             container.Register<IDataBaseBackupGenerator, DatabaseBackupGenerator>(Lifestyle.Singleton);
+            container.Register<ISqlConnectionProvider, SqlConnectionProvider>(Lifestyle.Singleton);
 
             // Optionally verify the container.
             container.Verify();

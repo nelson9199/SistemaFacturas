@@ -481,6 +481,7 @@ namespace Sistema.Presentacion
                 if (option == DialogResult.OK)
                 {
                     int usuarioId;
+                    string nombreRol;
                     string respuesta;
 
                     foreach (var fila in gridUsuarios.Rows)
@@ -489,7 +490,9 @@ namespace Sistema.Presentacion
                         {
                             usuarioId = Convert.ToInt32(fila.Cells[2].Value);
 
-                            respuesta = await usuarioAccess.Eliminar(usuarioId);
+                            nombreRol = fila.Cells[3].Value?.ToString();
+
+                            respuesta = await usuarioAccess.Eliminar(usuarioId, nombreRol);
 
                             if (respuesta.Equals("OK"))
                             {
@@ -594,6 +597,23 @@ namespace Sistema.Presentacion
             {
                 Limpiar();
             }
+        }
+
+        private void toggleFiltrar_ValueChanged(object sender, EventArgs e)
+        {
+            if (toggleFiltrar.Value == true)
+            {
+                gridUsuarios.EnableFiltering = true;
+            }
+            else
+            {
+                gridUsuarios.EnableFiltering = false;
+            }
+        }
+
+        private void gridUsuarios_ContextMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

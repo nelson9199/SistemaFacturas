@@ -7,6 +7,6 @@ namespace Sistema.Datos.Services
 {
     public interface IDataBaseBackupGenerator
     {
-        bool GenerarBackup(string backupQuery);
+        string GenerarBackup(string backupQuery);
     }
 }

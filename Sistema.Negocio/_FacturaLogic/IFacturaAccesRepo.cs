@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Sistema.Negocio.FacturaLogic
 {
-    public interface IFacturaAccesRepo<T> : ICrd<T>
+    public interface IFacturaAccesRepo<T>
     {
-        Task<string> Actualizar(T objActualizar, string numFacAnt);
-
+        Task<List<T>> Listar();
+        Task<string> Insertar(T objInsertar, int idCliente);
+        Task<string> Eliminar(int id);
+        Task<string> Actualizar(T objActualizar, string numFacAnt, int idCliente);
         Factura ObtenerIdUltimaFactura();
-
         Task<Factura> ObtenerFacturaPorId(int id);
     }
 }

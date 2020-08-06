@@ -6,6 +6,7 @@ using Sistema.Presentacion.Helpers;
 using Sistema.Presentacion.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace Sistema.Presentacion
         private readonly IFormOpener formOpener;
         private readonly IClienteFacturaAccesRepo clienteFacturaAcces;
         private readonly IFacturaAccesRepo<Factura> facturaAccesRepo;
-        public static string Directorio = "";
+        private static string Directorio = ConfigurationManager.AppSettings["FacturaFolder"];
 
         public FrmCliente(IClienteAccesRepo<Cliente> clienteAcces, SimpleInjector.Container container, IFormOpener formOpener, IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo)
         {
@@ -529,6 +530,11 @@ namespace Sistema.Presentacion
             {
                 Limpiar();
             }
+        }
+
+        private void gridClientes_ContextMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

@@ -31,50 +31,86 @@ namespace Sistema.Presentacion
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "Archivos xml (*.xml)|*.xml";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                txtFilePath.Text = "";
+                KillBackgroudProcess("excel");
 
-                foreach (var item in openFileDialog1.FileNames)
+                openFileDialog1.FileName = "";
+                openFileDialog1.Filter = "Archivos xml (*.xml)|*.xml";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    rutas.Add(item);
+                    rutas.Clear();
 
-                    txtFilePath.Text += Path.GetFileName(item) + ",  ";
+                    txtFilePath.Text = "";
+
+                    foreach (var item in openFileDialog1.FileNames)
+                    {
+                        rutas.Add(item);
+
+                        txtFilePath.Text += Path.GetFileName(item) + ",  ";
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
-        private void radButton2_Click(object sender, EventArgs e)
+        private void KillBackgroudProcess(string processName)
         {
-            if (txtFilePath.Text == "")
-            {
-                MensajeError("Debe cargar un archivo Xml para poder exportar a Excel");
-                return;
-            }
-            else
-            {
-                foreach (var item in rutas)
-                {
-                    Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
-                    Workbook excelWorkBook = xApp.Workbooks.OpenXML(item, Type.Missing, XlXmlLoadOption.xlXmlLoadImportToList);
-                }
-
-                rutas.Clear();
-            }
-        }
-
-        private void FrmConvertidorXmlAExcel_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            foreach (var process in Process.GetProcessesByName("excel"))
+            foreach (var process in Process.GetProcessesByName(processName))
             {
                 if (string.IsNullOrEmpty(process.MainWindowTitle))
                 {
                     process.Kill();
                 }
             }
+        }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KillBackgroudProcess("excel");
+
+                if (txtFilePath.Text == "")
+                {
+                    MensajeError("Debe cargar un archivo Xml para poder exportar a Excel");
+                    return;
+                }
+                else
+                {
+                    foreach (var item in rutas)
+                    {
+                        Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
+                        Workbook excelWorkBook = xApp.Workbooks.OpenXML(item, Type.Missing, XlXmlLoadOption.xlXmlLoadImportToList);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void FrmConvertidorXmlAExcel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                KillBackgroudProcess("excel");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

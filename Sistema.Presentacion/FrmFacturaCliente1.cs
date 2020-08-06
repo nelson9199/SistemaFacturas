@@ -1,10 +1,12 @@
-﻿using Sistema.Entidades;
+﻿using Castle.Core.Internal;
+using Sistema.Entidades;
 using Sistema.Negocio.ClienteFacturaLogic;
 using Sistema.Negocio.FacturaLogic;
 using Sistema.Presentacion.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -32,7 +34,7 @@ namespace Sistema.Presentacion
         private string rutaFacAnt = "";
         private string RutaOrigen;
         private string RutaDestino;
-        public static string Directorio = "";
+        private static string Directorio = ConfigurationManager.AppSettings["FacturaFolder"];
 
         public FrmFacturaCliente1(IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo, SimpleInjector.Container container)
         {
@@ -97,7 +99,7 @@ namespace Sistema.Presentacion
         {
             try
             {
-                List<ClienteFacturas> clientesFacturas = await clienteFacturaAcces.Listar(ClienteId);
+                var clientesFacturas = await clienteFacturaAcces.Listar(ClienteId);
 
                 gridFacturas.DataSource = clientesFacturas.Select(x => new
                 {
@@ -110,6 +112,12 @@ namespace Sistema.Presentacion
                 });
                 lblTotal.Text = "Total registros: " + gridFacturas.RowCount.ToString();
                 lblNomClientne.Text = "Facturas pertenecientes a: " + NombreCliente;
+
+                if (gridFacturas.ColumnCount > 3)
+                {
+                    EstilosGirdView();
+                }
+
             }
             catch (Exception ex)
             {
@@ -371,11 +379,11 @@ namespace Sistema.Presentacion
                         return;
                     }
 
-                    string respuesta = await facturaAccesRepo.Insertar(ObtenerDatosFacturas());
+                    string respuesta = await facturaAccesRepo.Insertar(ObtenerDatosFacturas(), ClienteId);
 
                     if (respuesta.Equals("OK"))
                     {
-                        RutaDestino = Directorio + txtRutaFac.Text;
+                        RutaDestino = Path.Combine(Directorio, txtRutaFac.Text);
                         //El metodo Copy me permite copiar un file desde una ruta de origen a otro file nuevo en un ruta de destino
                         File.Copy(RutaOrigen, RutaDestino);
 
@@ -527,11 +535,11 @@ namespace Sistema.Presentacion
 
                     factura.FacturaId = Convert.ToInt32(txtIdFac.Text);
 
-                    string respuesta = await facturaAccesRepo.Actualizar(factura, numFacAnt);
+                    string respuesta = await facturaAccesRepo.Actualizar(factura, numFacAnt, ClienteId);
 
                     if (respuesta.Equals("OK"))
                     {
-                        RutaDestino = Directorio + txtRutaFac.Text;
+                        RutaDestino = Path.Combine(Directorio, txtRutaFac.Text);
                         //El metodo Copy me permite copiar un file desde una ruta de origen a otro file nuevo en un ruta de destino
                         if (txtRutaFac.Text != rutaFacAnt)
                         {
@@ -599,5 +607,17 @@ namespace Sistema.Presentacion
             }
         }
 
+        private void tabForm_SelectedTabChanged(object sender, EventArgs e)
+        {
+            if (tabForm.SelectedTab == tabListado)
+            {
+                Limpiar();
+            }
+        }
+
+        private void gridFacturas_ContextMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }

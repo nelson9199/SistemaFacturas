@@ -9,7 +9,7 @@ namespace Sistema.Datos.FacturaRepository
 {
     public interface IFacturaRepository<T> : ICrud<T>
     {
-        Task<bool> ExisteCodigoFactura(string numFactura);
+        Task<bool> ExisteNumeroFactura(string numFactura, int idCliente);
 
         Factura ObtenerIdUltimaFactura();
 

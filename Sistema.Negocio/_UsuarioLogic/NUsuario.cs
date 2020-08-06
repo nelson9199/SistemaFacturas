@@ -63,9 +63,25 @@ namespace Sistema.Negocio._UsuarioLogic
             return await usuarioRepository.Desactivar(id);
         }
 
-        public async Task<string> Eliminar(int id)
+        public async Task<string> Eliminar(int id, string nombreRol)
         {
-            return await usuarioRepository.Eliminar(id);
+            bool quedaUnUnicoAdmi = await usuarioRepository.ExisteUnUnicoAdmin();
+
+            if (quedaUnUnicoAdmi == true)
+            {
+                if (nombreRol == "Usuario Común")
+                {
+                    return await usuarioRepository.Eliminar(id);
+                }
+                else
+                {
+                    return "No se puede eliminar el único Usuario Administrador que queda en el Sistema";
+                }
+            }
+            else
+            {
+                return await usuarioRepository.Eliminar(id);
+            }
         }
 
         public async Task<string> Insertar(Usuario objInsertar)

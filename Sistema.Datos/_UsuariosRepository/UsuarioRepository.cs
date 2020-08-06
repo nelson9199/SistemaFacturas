@@ -90,7 +90,7 @@ namespace Sistema.Datos._UsuariosRepository
 
                 context.Entry(entrada).State = EntityState.Modified;
 
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo actualizar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo actualizar el registro";
             }
             catch (Exception ex)
             {
@@ -118,7 +118,7 @@ namespace Sistema.Datos._UsuariosRepository
 
                 entrada.Property(x => x.Estado).IsModified = true;
 
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo desactivar al usuario";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo desactivar al usuario";
             }
             catch (Exception ex)
             {
@@ -142,7 +142,7 @@ namespace Sistema.Datos._UsuariosRepository
                 }
 
                 context.Entry(usuario).State = EntityState.Deleted;
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo borrar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo borrar el registro";
 
             }
             catch (Exception ex)
@@ -203,7 +203,7 @@ namespace Sistema.Datos._UsuariosRepository
                 objInsertar.Salt = saltText;
 
                 context.Add(objInsertar);
-                respuesta = await context.SaveChangesAsync() == 1 ? "OK" : "No se pudo ingresar el registro";
+                respuesta = await context.SaveChangesAsync() > 0 ? "OK" : "No se pudo ingresar el registro";
 
             }
             catch (Exception ex)
@@ -257,6 +257,17 @@ namespace Sistema.Datos._UsuariosRepository
                 throw ex;
             }
 
+        }
+
+        public async Task<bool> ExisteUnUnicoAdmin()
+        {
+            var listaUsuarios = await context.Usuarios.ToListAsync();
+
+            if ((listaUsuarios.Where(x => x.RolId == 1).ToList().Count == 1))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
 using Sistema.Datos.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sistema.Datos.Services
 {

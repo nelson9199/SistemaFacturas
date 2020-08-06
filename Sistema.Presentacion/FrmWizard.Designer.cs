@@ -32,15 +32,14 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWizard));
-            Telerik.WinControls.UI.RadValidationRule radValidationRule7 = new Telerik.WinControls.UI.RadValidationRule();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule8 = new Telerik.WinControls.UI.RadValidationRule();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule9 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule1 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule2 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule3 = new Telerik.WinControls.UI.RadValidationRule();
+            this.txtNumDoc = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.txtClave = new Telerik.WinControls.UI.RadButtonTextBox();
             this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
             this.txtUsuario = new Telerik.WinControls.UI.RadTextBox();
             this.txtNombre = new Telerik.WinControls.UI.RadTextBox();
-            this.txtPasaporte = new Telerik.WinControls.UI.RadTextBox();
-            this.txtNumDoc = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.dropTipoDocu = new Telerik.WinControls.UI.RadDropDownList();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.wizardPage1 = new Telerik.WinControls.UI.WizardPage();
@@ -55,8 +54,8 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnRegistrar = new Telerik.WinControls.UI.RadButton();
+            this.panelUsuario = new System.Windows.Forms.Panel();
+            this.btnInsertar = new Telerik.WinControls.UI.RadButton();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblClave = new System.Windows.Forms.Label();
@@ -81,14 +80,12 @@
             this.wizardPage3 = new Telerik.WinControls.UI.WizardPage();
             this.wizardPage2 = new Telerik.WinControls.UI.WizardPage();
             this.wizardWelcomePage1 = new Telerik.WinControls.UI.WizardWelcomePage();
-            this.radOpenFolderDialog1 = new Telerik.WinControls.UI.RadOpenFolderDialog();
             this.radValidationProvider1 = new Telerik.WinControls.UI.RadValidationProvider(this.components);
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumDoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPasaporte)).BeginInit();
-            this.txtPasaporte.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumDoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropTipoDocu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWizard1)).BeginInit();
             this.radWizard1.SuspendLayout();
@@ -100,8 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrar)).BeginInit();
+            this.panelUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInsertar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
@@ -119,6 +116,21 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
+            // txtNumDoc
+            // 
+            this.txtNumDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNumDoc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumDoc.Location = new System.Drawing.Point(497, 207);
+            this.txtNumDoc.Mask = "9999999999";
+            this.txtNumDoc.MaskType = Telerik.WinControls.UI.MaskType.Standard;
+            this.txtNumDoc.Name = "txtNumDoc";
+            this.txtNumDoc.Size = new System.Drawing.Size(200, 46);
+            this.txtNumDoc.TabIndex = 41;
+            this.txtNumDoc.TabStop = false;
+            this.txtNumDoc.Text = "__________";
+            this.txtNumDoc.ThemeName = "Material";
+            this.radValidationProvider1.SetValidationRule(this.txtNumDoc, radValidationRule1);
+            // 
             // txtClave
             // 
             this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -131,7 +143,7 @@
             this.txtClave.Size = new System.Drawing.Size(268, 52);
             this.txtClave.TabIndex = 29;
             this.txtClave.ThemeName = "Material";
-            this.radValidationProvider1.SetValidationRule(this.txtClave, radValidationRule7);
+            this.radValidationProvider1.SetValidationRule(this.txtClave, radValidationRule1);
             this.txtClave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtClave_MouseDown);
             this.txtClave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtClave_MouseUp);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtClave.GetChildAt(0).GetChildAt(1))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -157,7 +169,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(299, 46);
             this.txtUsuario.TabIndex = 18;
             this.txtUsuario.ThemeName = "Material";
-            this.radValidationProvider1.SetValidationRule(this.txtUsuario, radValidationRule7);
+            this.radValidationProvider1.SetValidationRule(this.txtUsuario, radValidationRule1);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtUsuario.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtUsuario.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
             // 
@@ -171,39 +183,9 @@
             this.txtNombre.Size = new System.Drawing.Size(243, 46);
             this.txtNombre.TabIndex = 36;
             this.txtNombre.ThemeName = "Material";
-            this.radValidationProvider1.SetValidationRule(this.txtNombre, radValidationRule7);
+            this.radValidationProvider1.SetValidationRule(this.txtNombre, radValidationRule1);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtNombre.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtNombre.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
-            // 
-            // txtPasaporte
-            // 
-            this.txtPasaporte.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPasaporte.Controls.Add(this.txtNumDoc);
-            this.txtPasaporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasaporte.Location = new System.Drawing.Point(499, 206);
-            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
-            this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Size = new System.Drawing.Size(198, 46);
-            this.txtPasaporte.TabIndex = 39;
-            this.txtPasaporte.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.txtPasaporte, radValidationRule7);
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtPasaporte.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtPasaporte.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
-            // 
-            // txtNumDoc
-            // 
-            this.txtNumDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNumDoc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumDoc.Location = new System.Drawing.Point(3, 0);
-            this.txtNumDoc.Mask = "9999999999";
-            this.txtNumDoc.MaskType = Telerik.WinControls.UI.MaskType.Standard;
-            this.txtNumDoc.Name = "txtNumDoc";
-            this.txtNumDoc.Size = new System.Drawing.Size(200, 46);
-            this.txtNumDoc.TabIndex = 38;
-            this.txtNumDoc.TabStop = false;
-            this.txtNumDoc.Text = "__________";
-            this.txtNumDoc.ThemeName = "Material";
-            this.radValidationProvider1.SetValidationRule(this.txtNumDoc, null);
             // 
             // dropTipoDocu
             // 
@@ -220,7 +202,7 @@
             this.dropTipoDocu.TabIndex = 37;
             this.dropTipoDocu.Text = "Seleccionar (*)";
             this.dropTipoDocu.ThemeName = "Material";
-            this.radValidationProvider1.SetValidationRule(this.dropTipoDocu, radValidationRule8);
+            this.radValidationProvider1.SetValidationRule(this.dropTipoDocu, radValidationRule2);
             // 
             // wizardPage1
             // 
@@ -247,7 +229,7 @@
             this.radWizard1.CompletionPage = this.wizardCompletionPage1;
             this.radWizard1.Controls.Add(this.pictureBox2);
             this.radWizard1.Controls.Add(this.panel5);
-            this.radWizard1.Controls.Add(this.panel4);
+            this.radWizard1.Controls.Add(this.panelUsuario);
             this.radWizard1.Controls.Add(this.panel6);
             this.radWizard1.Controls.Add(this.panel2);
             this.radWizard1.Controls.Add(this.panel1);
@@ -264,9 +246,23 @@
             this.radWizard1.TabIndex = 0;
             this.radWizard1.ThemeName = "Material";
             this.radWizard1.WelcomePage = this.wizardWelcomePage1;
+            this.radWizard1.Finish += new System.EventHandler(this.radWizard1_Finish);
+            this.radWizard1.Cancel += new System.EventHandler(this.radWizard1_Cancel);
+            this.radWizard1.SelectedPageChanging += new Telerik.WinControls.UI.SelectedPageChangingEventHandler(this.radWizard1_SelectedPageChanging);
             ((Telerik.WinControls.UI.WizardPageHeaderElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Icon = global::Sistema.Presentacion.Properties.Resources.cuenta;
             ((Telerik.WinControls.UI.WizardTextElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            ((Telerik.WinControls.UI.WizardTextElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(0))).Text = "Configuraciones Iniciales";
+            ((Telerik.WinControls.UI.WizardTextElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(0))).Text = "Registrar Usuario";
+            ((Telerik.WinControls.UI.Wizard97CommandArea)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).IsWelcomePage = false;
+            ((Telerik.WinControls.UI.Wizard97CommandArea)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).IsCompletionPage = false;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).CanFocus = false;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).BackColor2 = System.Drawing.Color.White;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).BackColor3 = System.Drawing.Color.White;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).ImageOpacity = 0D;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).BorderBottomColor = System.Drawing.Color.White;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).BorderBottomShadowColor = System.Drawing.Color.White;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).Text = "";
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).Enabled = true;
+            ((Telerik.WinControls.UI.BaseWizardElement)(this.radWizard1.GetChildAt(0).GetChildAt(0).GetChildAt(3).GetChildAt(3))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             // 
             // wizardCompletionPage1
             // 
@@ -364,38 +360,39 @@
             this.radLabel1.Text = "Bienvenido al Sistema de Gestión de Facturas";
             this.radLabel1.ThemeName = "Material";
             // 
-            // panel4
+            // panelUsuario
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.btnRegistrar);
-            this.panel4.Controls.Add(this.txtPasaporte);
-            this.panel4.Controls.Add(this.txtClave);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.lblClave);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.txtUsuario);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.txtRol);
-            this.panel4.Controls.Add(this.txtNombre);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.dropTipoDocu);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.radLabel9);
-            this.panel4.Location = new System.Drawing.Point(0, 41);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(25);
-            this.panel4.Size = new System.Drawing.Size(952, 510);
-            this.panel4.TabIndex = 3;
+            this.panelUsuario.BackColor = System.Drawing.Color.White;
+            this.panelUsuario.Controls.Add(this.txtNumDoc);
+            this.panelUsuario.Controls.Add(this.btnInsertar);
+            this.panelUsuario.Controls.Add(this.txtClave);
+            this.panelUsuario.Controls.Add(this.label4);
+            this.panelUsuario.Controls.Add(this.pictureBox1);
+            this.panelUsuario.Controls.Add(this.lblClave);
+            this.panelUsuario.Controls.Add(this.label3);
+            this.panelUsuario.Controls.Add(this.txtUsuario);
+            this.panelUsuario.Controls.Add(this.label8);
+            this.panelUsuario.Controls.Add(this.txtRol);
+            this.panelUsuario.Controls.Add(this.txtNombre);
+            this.panelUsuario.Controls.Add(this.label1);
+            this.panelUsuario.Controls.Add(this.dropTipoDocu);
+            this.panelUsuario.Controls.Add(this.label5);
+            this.panelUsuario.Controls.Add(this.radLabel9);
+            this.panelUsuario.Location = new System.Drawing.Point(0, 41);
+            this.panelUsuario.Name = "panelUsuario";
+            this.panelUsuario.Padding = new System.Windows.Forms.Padding(25);
+            this.panelUsuario.Size = new System.Drawing.Size(952, 510);
+            this.panelUsuario.TabIndex = 3;
             // 
-            // btnRegistrar
+            // btnInsertar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(746, 419);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(178, 41);
-            this.btnRegistrar.TabIndex = 40;
-            this.btnRegistrar.Text = "Registrar Usuario";
-            this.btnRegistrar.ThemeName = "Material";
+            this.btnInsertar.Location = new System.Drawing.Point(746, 419);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(178, 41);
+            this.btnInsertar.TabIndex = 40;
+            this.btnInsertar.Text = "Registrar Usuario";
+            this.btnInsertar.ThemeName = "Material";
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // label4
             // 
@@ -443,9 +440,8 @@
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(276, 289);
+            this.label8.Location = new System.Drawing.Point(276, 293);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 23);
             this.label8.TabIndex = 32;
@@ -454,12 +450,14 @@
             // txtRol
             // 
             this.txtRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtRol.AutoSize = false;
+            this.txtRol.Enabled = false;
             this.txtRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(340, 270);
+            this.txtRol.Location = new System.Drawing.Point(340, 277);
             this.txtRol.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtRol.Name = "txtRol";
             this.txtRol.ReadOnly = true;
-            this.txtRol.Size = new System.Drawing.Size(235, 46);
+            this.txtRol.Size = new System.Drawing.Size(235, 48);
             this.txtRol.TabIndex = 36;
             this.txtRol.Text = "Administrador";
             this.txtRol.ThemeName = "Material";
@@ -484,7 +482,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(272, 221);
+            this.label5.Location = new System.Drawing.Point(272, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(219, 23);
             this.label5.TabIndex = 31;
@@ -650,7 +648,7 @@
             // 
             // wizardPage2
             // 
-            this.wizardPage2.ContentArea = this.panel4;
+            this.wizardPage2.ContentArea = this.panelUsuario;
             this.wizardPage2.Header = "RegistrarUsuario";
             this.wizardPage2.Name = "wizardPage2";
             this.wizardPage2.Title = "Registrar Usuario";
@@ -670,49 +668,49 @@
             // 
             // radValidationProvider1
             // 
-            radValidationRule7.Controls.Add(this.txtClave);
-            radValidationRule7.Controls.Add(this.txtUsuario);
-            radValidationRule7.Controls.Add(this.txtNombre);
-            radValidationRule7.Controls.Add(this.txtPasaporte);
-            radValidationRule7.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
-            radValidationRule7.ToolTipText = "Esta campo no puede estar vacio!";
-            radValidationRule7.ToolTipTitle = "Validación Fallida";
-            radValidationRule7.Value = "";
-            radValidationRule8.Controls.Add(this.dropTipoDocu);
-            radValidationRule8.Operator = Telerik.WinControls.Data.FilterOperator.IsNotEqualTo;
-            radValidationRule8.ToolTipText = "Debe seleccionar un valor";
-            radValidationRule8.ToolTipTitle = "Validación Fallida";
-            radValidationRule8.Value = "Seleccionar (*)";
-            radValidationRule9.Controls.Add(this.dropTipoDocu);
-            radValidationRule9.ToolTipText = "La Cédula debe tener 10 digitos";
-            radValidationRule9.ToolTipTitle = "Validación Fallida";
-            radValidationRule9.Value = "_";
+            radValidationRule1.Controls.Add(this.txtNumDoc);
+            radValidationRule1.Controls.Add(this.txtClave);
+            radValidationRule1.Controls.Add(this.txtUsuario);
+            radValidationRule1.Controls.Add(this.txtNombre);
+            radValidationRule1.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
+            radValidationRule1.ToolTipText = "Esta campo no puede estar vacio!";
+            radValidationRule1.ToolTipTitle = "Validación Fallida";
+            radValidationRule1.Value = "";
+            radValidationRule2.Controls.Add(this.dropTipoDocu);
+            radValidationRule2.Operator = Telerik.WinControls.Data.FilterOperator.IsNotEqualTo;
+            radValidationRule2.ToolTipText = "Debe seleccionar un valor";
+            radValidationRule2.ToolTipTitle = "Validación Fallida";
+            radValidationRule2.Value = "Seleccionar (*)";
+            radValidationRule3.Controls.Add(this.dropTipoDocu);
+            radValidationRule3.Operator = Telerik.WinControls.Data.FilterOperator.NotContains;
+            radValidationRule3.ToolTipText = "La Cédula debe tener 10 digitos";
+            radValidationRule3.ToolTipTitle = "Validación Fallida";
+            radValidationRule3.Value = "_";
             this.radValidationProvider1.ValidationRules.AddRange(new Telerik.WinControls.Data.FilterDescriptor[] {
-            radValidationRule7,
-            radValidationRule8,
-            radValidationRule9});
+            radValidationRule1,
+            radValidationRule2,
+            radValidationRule3});
             // 
             // FrmWizard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(952, 611);
             this.Controls.Add(this.radWizard1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmWizard";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmWizard";
+            this.Text = "Coniguraciones Iniciales";
             this.ThemeName = "Material";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmWizard_FormClosed);
             this.Load += new System.EventHandler(this.FrmWizard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPasaporte)).EndInit();
-            this.txtPasaporte.ResumeLayout(false);
-            this.txtPasaporte.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropTipoDocu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWizard1)).EndInit();
             this.radWizard1.ResumeLayout(false);
@@ -726,9 +724,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrar)).EndInit();
+            this.panelUsuario.ResumeLayout(false);
+            this.panelUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInsertar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
@@ -755,7 +753,7 @@
         private Telerik.WinControls.UI.WizardCompletionPage wizardCompletionPage1;
         private System.Windows.Forms.Panel panel3;
         private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelUsuario;
         private Telerik.WinControls.UI.WizardPage wizardPage2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
@@ -778,7 +776,6 @@
         private Telerik.WinControls.UI.RadTextBox txtFolderDbBak;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel radLabel7;
-        private Telerik.WinControls.UI.RadOpenFolderDialog radOpenFolderDialog1;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private System.Windows.Forms.Label label4;
         private Telerik.WinControls.UI.RadButtonTextBox txtClave;
@@ -791,13 +788,13 @@
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadDropDownList dropTipoDocu;
         private System.Windows.Forms.Label label5;
-        private Telerik.WinControls.UI.RadMaskedEditBox txtNumDoc;
         private Telerik.WinControls.UI.RadValidationProvider radValidationProvider1;
         private Telerik.WinControls.UI.RadTextBox txtRol;
-        private Telerik.WinControls.UI.RadTextBox txtPasaporte;
-        private Telerik.WinControls.UI.RadButton btnRegistrar;
+        private Telerik.WinControls.UI.RadButton btnInsertar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Telerik.WinControls.UI.RadLabel radLabel11;
         private Telerik.WinControls.UI.RadLabel radLabel10;
+        private Telerik.WinControls.UI.RadMaskedEditBox txtNumDoc;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
