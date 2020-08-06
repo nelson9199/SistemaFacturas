@@ -135,7 +135,7 @@
             // 
             this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtClave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(401, 408);
+            this.txtClave.Location = new System.Drawing.Point(401, 412);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.RightButtonItems.AddRange(new Telerik.WinControls.RadItem[] {
@@ -163,7 +163,7 @@
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(370, 332);
+            this.txtUsuario.Location = new System.Drawing.Point(370, 336);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(299, 46);
@@ -177,7 +177,7 @@
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(390, 73);
+            this.txtNombre.Location = new System.Drawing.Point(390, 71);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(243, 46);
@@ -196,7 +196,7 @@
             radListDataItem2.Text = " Cédula";
             this.dropTipoDocu.Items.Add(radListDataItem1);
             this.dropTipoDocu.Items.Add(radListDataItem2);
-            this.dropTipoDocu.Location = new System.Drawing.Point(462, 148);
+            this.dropTipoDocu.Location = new System.Drawing.Point(462, 147);
             this.dropTipoDocu.Name = "dropTipoDocu";
             this.dropTipoDocu.Size = new System.Drawing.Size(235, 38);
             this.dropTipoDocu.TabIndex = 37;
@@ -386,7 +386,7 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(746, 419);
+            this.btnInsertar.Location = new System.Drawing.Point(746, 423);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(178, 41);
             this.btnInsertar.TabIndex = 40;
@@ -399,7 +399,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(272, 355);
+            this.label4.Location = new System.Drawing.Point(272, 359);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 23);
             this.label4.TabIndex = 15;
@@ -420,7 +420,7 @@
             this.lblClave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(271, 437);
+            this.lblClave.Location = new System.Drawing.Point(271, 441);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(124, 23);
             this.lblClave.TabIndex = 14;
@@ -431,7 +431,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(271, 94);
+            this.label3.Location = new System.Drawing.Point(271, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 25);
             this.label3.TabIndex = 34;
@@ -441,7 +441,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(276, 295);
+            this.label8.Location = new System.Drawing.Point(276, 294);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 23);
             this.label8.TabIndex = 32;
@@ -453,7 +453,7 @@
             this.txtRol.AutoSize = false;
             this.txtRol.Enabled = false;
             this.txtRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(340, 279);
+            this.txtRol.Location = new System.Drawing.Point(340, 278);
             this.txtRol.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtRol.Name = "txtRol";
             this.txtRol.ReadOnly = true;
@@ -471,7 +471,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 156);
+            this.label1.Location = new System.Drawing.Point(272, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 33;

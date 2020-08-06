@@ -1,8 +1,10 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -12,6 +14,15 @@ namespace Sistema.Presentacion
     {
         private string xmlFile;
         private string excelFile;
+        private List<string> rutas = new List<string>();
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern System.IntPtr FindWindow(string lpClassName, string lpWindowName);
+
 
         public FrmImportadorAPlantilla()
         {
@@ -74,9 +85,14 @@ namespace Sistema.Presentacion
             {
                 try
                 {
-                    KillBackgroudProcess("excel");
-
                     Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
+
+                    xApp.Visible = true;
+                    xApp.WindowState = XlWindowState.xlMaximized;
+                    string caption = xApp.Caption;
+                    IntPtr handler = FindWindow(null, caption);
+                    SetForegroundWindow(handler);
+
                     Workbook excelWorkBook = xApp.Workbooks.Open(excelFile, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
                     var ds = new DataSet();

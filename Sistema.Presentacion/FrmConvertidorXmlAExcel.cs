@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -15,6 +16,13 @@ namespace Sistema.Presentacion
     public partial class FrmConvertidorXmlAExcel : Telerik.WinControls.UI.RadForm
     {
         private List<string> rutas = new List<string>();
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern System.IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         public FrmConvertidorXmlAExcel()
         {
@@ -75,7 +83,6 @@ namespace Sistema.Presentacion
         {
             try
             {
-                KillBackgroudProcess("excel");
 
                 if (txtFilePath.Text == "")
                 {
@@ -87,6 +94,12 @@ namespace Sistema.Presentacion
                     foreach (var item in rutas)
                     {
                         Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.Application();
+                        xApp.Visible = true;
+                        xApp.WindowState = XlWindowState.xlMaximized;
+                        string caption = xApp.Caption;
+                        IntPtr handler = FindWindow(null, caption);
+                        SetForegroundWindow(handler);
+
                         Workbook excelWorkBook = xApp.Workbooks.OpenXML(item, Type.Missing, XlXmlLoadOption.xlXmlLoadImportToList);
                     }
                 }

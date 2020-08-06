@@ -121,7 +121,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1263, 48);
+            this.radCommandBar1.Size = new System.Drawing.Size(1263, 73);
             this.radCommandBar1.TabIndex = 1;
             this.radCommandBar1.ThemeName = "Material";
             // 
@@ -165,7 +165,7 @@
             // 
             // cBClientes
             // 
-            this.cBClientes.DisplayName = "Boton Clientes";
+            this.cBClientes.DisplayName = "Botón Clientes";
             this.cBClientes.Image = global::Sistema.Presentacion.Properties.Resources.cliente_m;
             this.cBClientes.Name = "cBClientes";
             this.cBClientes.Text = "Botón Clientes";
@@ -252,7 +252,7 @@
             this.radDock1.Controls.Add(this.documentContainer2);
             this.radDock1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDock1.IsCleanUpTarget = true;
-            this.radDock1.Location = new System.Drawing.Point(0, 85);
+            this.radDock1.Location = new System.Drawing.Point(0, 110);
             this.radDock1.MainDocumentContainer = this.documentContainer2;
             this.radDock1.Name = "radDock1";
             this.radDock1.Padding = new System.Windows.Forms.Padding(0);
@@ -261,7 +261,7 @@
             // 
             this.radDock1.RootElement.BorderHighlightColor = System.Drawing.Color.White;
             this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1263, 540);
+            this.radDock1.Size = new System.Drawing.Size(1263, 515);
             this.radDock1.SplitterWidth = 8;
             this.radDock1.TabIndex = 5;
             this.radDock1.TabStop = false;
