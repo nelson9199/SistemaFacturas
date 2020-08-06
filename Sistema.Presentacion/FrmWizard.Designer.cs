@@ -441,7 +441,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(276, 293);
+            this.label8.Location = new System.Drawing.Point(276, 295);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 23);
             this.label8.TabIndex = 32;
@@ -453,7 +453,7 @@
             this.txtRol.AutoSize = false;
             this.txtRol.Enabled = false;
             this.txtRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(340, 277);
+            this.txtRol.Location = new System.Drawing.Point(340, 279);
             this.txtRol.Margin = new System.Windows.Forms.Padding(5, 17, 17, 17);
             this.txtRol.Name = "txtRol";
             this.txtRol.ReadOnly = true;
@@ -491,7 +491,7 @@
             // radLabel9
             // 
             this.radLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.Location = new System.Drawing.Point(276, 28);
+            this.radLabel9.Location = new System.Drawing.Point(276, 23);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(375, 33);
             this.radLabel9.TabIndex = 6;
@@ -698,12 +698,14 @@
             this.Controls.Add(this.radWizard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmWizard";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Coniguraciones Iniciales";
+            this.Text = "Configuraciones Iniciales";
             this.ThemeName = "Material";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmWizard_FormClosed);
             this.Load += new System.EventHandler(this.FrmWizard_Load);

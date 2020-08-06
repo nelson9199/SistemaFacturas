@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule6 = new Telerik.WinControls.UI.RadValidationRule();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule7 = new Telerik.WinControls.UI.RadValidationRule();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule8 = new Telerik.WinControls.UI.RadValidationRule();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule9 = new Telerik.WinControls.UI.RadValidationRule();
-            Telerik.WinControls.UI.RadValidationRule radValidationRule10 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule1 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule2 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule3 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule4 = new Telerik.WinControls.UI.RadValidationRule();
+            Telerik.WinControls.UI.RadValidationRule radValidationRule5 = new Telerik.WinControls.UI.RadValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
             this.txtClave = new Telerik.WinControls.UI.RadButtonTextBox();
             this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
@@ -65,6 +65,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.tabMantenimiento = new Telerik.WinControls.UI.RadTabbedFormControlTab();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.btnActualizar = new Telerik.WinControls.UI.RadButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtUserId = new Telerik.WinControls.UI.RadTextBox();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -73,7 +74,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnInsertar = new Telerik.WinControls.UI.RadButton();
-            this.btnActualizar = new Telerik.WinControls.UI.RadButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDireccion = new Telerik.WinControls.UI.RadTextBox();
@@ -113,12 +113,12 @@
             this.tabMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsertar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDireccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radValidationProvider1)).BeginInit();
@@ -137,7 +137,7 @@
             this.txtClave.Size = new System.Drawing.Size(308, 52);
             this.txtClave.TabIndex = 29;
             this.txtClave.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.txtClave, radValidationRule6);
+            this.radValidationProvider1.SetValidationRule(this.txtClave, radValidationRule1);
             this.txtClave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtClave_MouseDown);
             this.txtClave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtClave_MouseUp);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtClave.GetChildAt(0).GetChildAt(1))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -162,7 +162,7 @@
             this.txtPasaporte.Size = new System.Drawing.Size(293, 46);
             this.txtPasaporte.TabIndex = 18;
             this.txtPasaporte.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.txtPasaporte, radValidationRule6);
+            this.radValidationProvider1.SetValidationRule(this.txtPasaporte, radValidationRule1);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtPasaporte.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtPasaporte.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
             // 
@@ -179,7 +179,7 @@
             this.txtNumDoc.TabStop = false;
             this.txtNumDoc.Text = "__________";
             this.txtNumDoc.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.txtNumDoc, radValidationRule6);
+            this.radValidationProvider1.SetValidationRule(this.txtNumDoc, radValidationRule1);
             // 
             // txtNombre
             // 
@@ -191,7 +191,7 @@
             this.txtNombre.Size = new System.Drawing.Size(335, 46);
             this.txtNombre.TabIndex = 18;
             this.txtNombre.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.txtNombre, radValidationRule6);
+            this.radValidationProvider1.SetValidationRule(this.txtNombre, radValidationRule1);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtNombre.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtNombre.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
             // 
@@ -200,14 +200,14 @@
             this.dropRoles.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dropRoles.AutoSize = false;
             this.dropRoles.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem5.Text = "Seleccionar (*)";
-            this.dropRoles.Items.Add(radListDataItem5);
+            radListDataItem1.Text = "Seleccionar (*)";
+            this.dropRoles.Items.Add(radListDataItem1);
             this.dropRoles.Location = new System.Drawing.Point(104, 255);
             this.dropRoles.Name = "dropRoles";
             this.dropRoles.Size = new System.Drawing.Size(324, 38);
             this.dropRoles.TabIndex = 20;
             this.dropRoles.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.dropRoles, radValidationRule6);
+            this.radValidationProvider1.SetValidationRule(this.dropRoles, radValidationRule1);
             // 
             // txtUsuario
             // 
@@ -219,7 +219,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(335, 46);
             this.txtUsuario.TabIndex = 18;
             this.txtUsuario.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.txtUsuario, radValidationRule6);
+            this.radValidationProvider1.SetValidationRule(this.txtUsuario, radValidationRule1);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtUsuario.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtUsuario.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
             // 
@@ -228,19 +228,19 @@
             this.dropTipoDocu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dropTipoDocu.AutoSize = false;
             this.dropTipoDocu.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "Seleccionar (*)";
-            radListDataItem6.Text = " Cédula";
-            radListDataItem7.Text = " Pasaporte";
-            this.dropTipoDocu.Items.Add(radListDataItem1);
-            this.dropTipoDocu.Items.Add(radListDataItem6);
-            this.dropTipoDocu.Items.Add(radListDataItem7);
+            radListDataItem2.Text = "Seleccionar (*)";
+            radListDataItem3.Text = " Cédula";
+            radListDataItem4.Text = " Pasaporte";
+            this.dropTipoDocu.Items.Add(radListDataItem2);
+            this.dropTipoDocu.Items.Add(radListDataItem3);
+            this.dropTipoDocu.Items.Add(radListDataItem4);
             this.dropTipoDocu.Location = new System.Drawing.Point(250, 100);
             this.dropTipoDocu.Name = "dropTipoDocu";
             this.dropTipoDocu.Size = new System.Drawing.Size(332, 38);
             this.dropTipoDocu.TabIndex = 20;
             this.dropTipoDocu.Text = "Seleccionar (*)";
             this.dropTipoDocu.ThemeName = "MaterialBlueGrey";
-            this.radValidationProvider1.SetValidationRule(this.dropTipoDocu, radValidationRule7);
+            this.radValidationProvider1.SetValidationRule(this.dropTipoDocu, radValidationRule2);
             this.dropTipoDocu.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.dropTipoDocu_SelectedIndexChanged);
             // 
             // txtTelefono
@@ -312,12 +312,12 @@
             // 
             this.gridUsuarios.MasterTemplate.AllowAddNewRow = false;
             this.gridUsuarios.MasterTemplate.AllowColumnReorder = false;
-            gridViewCheckBoxColumn2.HeaderText = "Seleccionar";
-            gridViewCheckBoxColumn2.Name = "seleccionar";
+            gridViewCheckBoxColumn1.HeaderText = "Seleccionar";
+            gridViewCheckBoxColumn1.Name = "seleccionar";
             this.gridUsuarios.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewCheckBoxColumn2});
+            gridViewCheckBoxColumn1});
             this.gridUsuarios.MasterTemplate.EnablePaging = true;
-            this.gridUsuarios.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gridUsuarios.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gridUsuarios.Name = "gridUsuarios";
             this.gridUsuarios.Size = new System.Drawing.Size(1345, 342);
             this.gridUsuarios.TabIndex = 5;
@@ -465,6 +465,17 @@
             this.radPanel1.TabIndex = 29;
             this.radPanel1.ThemeName = "Material";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnActualizar.Location = new System.Drawing.Point(445, 415);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(212, 43);
+            this.btnActualizar.TabIndex = 24;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.ThemeName = "MaterialBlueGrey";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtUserId);
@@ -562,17 +573,6 @@
             this.btnInsertar.ThemeName = "MaterialBlueGrey";
             this.btnInsertar.Visible = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnActualizar.Location = new System.Drawing.Point(445, 415);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(212, 43);
-            this.btnActualizar.TabIndex = 24;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.ThemeName = "MaterialBlueGrey";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label3
             // 
@@ -676,38 +676,38 @@
             // 
             // radValidationProvider1
             // 
-            radValidationRule6.Controls.Add(this.txtClave);
-            radValidationRule6.Controls.Add(this.txtPasaporte);
-            radValidationRule6.Controls.Add(this.txtNumDoc);
-            radValidationRule6.Controls.Add(this.txtNombre);
-            radValidationRule6.Controls.Add(this.dropRoles);
-            radValidationRule6.Controls.Add(this.txtUsuario);
-            radValidationRule6.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
-            radValidationRule6.ToolTipText = "Este campo no puede estar vacio!";
-            radValidationRule6.ToolTipTitle = "Validación Fallida";
-            radValidationRule6.Value = "";
-            radValidationRule7.Controls.Add(this.dropTipoDocu);
-            radValidationRule7.Operator = Telerik.WinControls.Data.FilterOperator.IsNotEqualTo;
-            radValidationRule7.ToolTipText = "Debe seleccionar un elemento!";
-            radValidationRule7.ToolTipTitle = "Validación Fallida";
-            radValidationRule7.Value = "Seleccionar (*)";
-            radValidationRule8.Controls.Add(this.txtNumDoc);
-            radValidationRule8.Operator = Telerik.WinControls.Data.FilterOperator.NotContains;
-            radValidationRule8.ToolTipText = "La Cédula debe tener 10 digitos!";
-            radValidationRule8.ToolTipTitle = "Validación Fallida";
-            radValidationRule8.Value = "_";
-            radValidationRule9.ToolTipText = "No es un emal válido!";
-            radValidationRule9.ToolTipTitle = "Validación Fallida";
-            radValidationRule9.Value = "@";
-            radValidationRule10.ToolTipText = "No es un emal válido!";
-            radValidationRule10.ToolTipTitle = "Validación Fallida";
-            radValidationRule10.Value = ".";
+            radValidationRule1.Controls.Add(this.txtClave);
+            radValidationRule1.Controls.Add(this.txtPasaporte);
+            radValidationRule1.Controls.Add(this.txtNumDoc);
+            radValidationRule1.Controls.Add(this.txtNombre);
+            radValidationRule1.Controls.Add(this.dropRoles);
+            radValidationRule1.Controls.Add(this.txtUsuario);
+            radValidationRule1.Operator = Telerik.WinControls.Data.FilterOperator.IsNotLike;
+            radValidationRule1.ToolTipText = "Este campo no puede estar vacio!";
+            radValidationRule1.ToolTipTitle = "Validación Fallida";
+            radValidationRule1.Value = "";
+            radValidationRule2.Controls.Add(this.dropTipoDocu);
+            radValidationRule2.Operator = Telerik.WinControls.Data.FilterOperator.IsNotEqualTo;
+            radValidationRule2.ToolTipText = "Debe seleccionar un elemento!";
+            radValidationRule2.ToolTipTitle = "Validación Fallida";
+            radValidationRule2.Value = "Seleccionar (*)";
+            radValidationRule3.Controls.Add(this.txtNumDoc);
+            radValidationRule3.Operator = Telerik.WinControls.Data.FilterOperator.NotContains;
+            radValidationRule3.ToolTipText = "La Cédula debe tener 10 digitos!";
+            radValidationRule3.ToolTipTitle = "Validación Fallida";
+            radValidationRule3.Value = "_";
+            radValidationRule4.ToolTipText = "No es un emal válido!";
+            radValidationRule4.ToolTipTitle = "Validación Fallida";
+            radValidationRule4.Value = "@";
+            radValidationRule5.ToolTipText = "No es un emal válido!";
+            radValidationRule5.ToolTipTitle = "Validación Fallida";
+            radValidationRule5.Value = ".";
             this.radValidationProvider1.ValidationRules.AddRange(new Telerik.WinControls.Data.FilterDescriptor[] {
-            radValidationRule6,
-            radValidationRule7,
-            radValidationRule8,
-            radValidationRule9,
-            radValidationRule10});
+            radValidationRule1,
+            radValidationRule2,
+            radValidationRule3,
+            radValidationRule4,
+            radValidationRule5});
             // 
             // FrmUsuario
             // 
@@ -756,6 +756,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserId)).EndInit();
@@ -763,7 +764,6 @@
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsertar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDireccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radValidationProvider1)).EndInit();

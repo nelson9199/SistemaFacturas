@@ -41,7 +41,7 @@ namespace Sistema.Presentacion
 
             if (wizardRunOne == "false")
             {
-                Application.Run(container.GetInstance<FrmWizard>());
+                Application.Run(container.GetInstance<FrmPrincipal>());
             }
             else if (wizardRunOne == "True")
             {

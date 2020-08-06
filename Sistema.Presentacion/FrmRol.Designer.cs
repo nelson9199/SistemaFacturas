@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRol));
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.radLayoutControl1 = new Telerik.WinControls.UI.RadLayoutControl();
@@ -72,7 +72,7 @@
             this.gridRoles.MasterTemplate.AllowDeleteRow = false;
             this.gridRoles.MasterTemplate.AllowRowHeaderContextMenu = false;
             this.gridRoles.MasterTemplate.EnableGrouping = false;
-            this.gridRoles.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.gridRoles.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gridRoles.Name = "gridRoles";
             this.gridRoles.Size = new System.Drawing.Size(550, 330);
             this.gridRoles.TabIndex = 4;

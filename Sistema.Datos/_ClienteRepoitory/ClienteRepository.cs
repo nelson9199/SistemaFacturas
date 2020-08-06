@@ -110,7 +110,7 @@ namespace Sistema.Datos.ClienteRepository
             try
             {
 
-                bool extiste = await context.Clientes.AnyAsync(x => x.NumeroDocumento == numDocumento);
+                bool extiste = await context.Clientes?.AnyAsync(x => x.NumeroDocumento == numDocumento);
                 return extiste;
 
             }

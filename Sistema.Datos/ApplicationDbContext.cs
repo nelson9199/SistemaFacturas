@@ -15,16 +15,16 @@ namespace Sistema.Datos
 {
     public class ApplicationDbContext : DbContext
     {
-        private AppConfigReader connectionStringSettings;
+        //private AppConfigReader connectionStringSettings;
 
-        public ApplicationDbContext()
-        {
-            connectionStringSettings = AppConfigReader.ObtenerInstancia();
-        }
+        //public ApplicationDbContext()
+        //{
+        //    connectionStringSettings = AppConfigReader.ObtenerInstancia();
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionStringSettings["DefaultConnection"].ConnectionString);
+            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
         }
 
