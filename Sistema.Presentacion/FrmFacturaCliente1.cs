@@ -34,7 +34,8 @@ namespace Sistema.Presentacion
         private string rutaFacAnt = "";
         private string RutaOrigen;
         private string RutaDestino;
-        private static string Directorio = ConfigurationManager.AppSettings["FacturaFolder"];
+        private AppConfigReaderP appConfigReader = AppConfigReaderP.ObtenerInstancia();
+        private string directorio;
 
         public FrmFacturaCliente1(IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo, SimpleInjector.Container container)
         {
@@ -44,6 +45,7 @@ namespace Sistema.Presentacion
             this.clienteFacturaAcces = clienteFacturaAcces;
             this.facturaAccesRepo = facturaAccesRepo;
             this.container = container;
+            directorio = appConfigReader.ObtenerAppSettingsValue("FacturaFolder");
         }
 
         public int ClienteId { get; set; }
@@ -233,7 +235,7 @@ namespace Sistema.Presentacion
 
         private void gridFacturas_CommandCellClick(object sender, GridViewCellEventArgs e)
         {
-            var filePath = Path.Combine(Directorio, gridFacturas.CurrentRow.Cells[8].Value?.ToString());
+            var filePath = Path.Combine(directorio, gridFacturas.CurrentRow.Cells[8].Value?.ToString());
             try
             {
                 if (e.ColumnIndex == 1)
@@ -373,7 +375,7 @@ namespace Sistema.Presentacion
                 }
                 else
                 {
-                    if (File.Exists(Path.Combine(Directorio, txtRutaFac.Text)))
+                    if (File.Exists(Path.Combine(directorio, txtRutaFac.Text)))
                     {
                         MessageBox.Show("Ya existe un archivo con el mismo nombre. Cargue una factura con nombre de archivo diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         return;
@@ -383,7 +385,7 @@ namespace Sistema.Presentacion
 
                     if (respuesta.Equals("OK"))
                     {
-                        RutaDestino = Path.Combine(Directorio, txtRutaFac.Text);
+                        RutaDestino = Path.Combine(directorio, txtRutaFac.Text);
                         //El metodo Copy me permite copiar un file desde una ruta de origen a otro file nuevo en un ruta de destino
                         File.Copy(RutaOrigen, RutaDestino);
 
@@ -479,7 +481,7 @@ namespace Sistema.Presentacion
                 txtRutaFac.Text = gridFacturas.CurrentRow.Cells["ArchivoFactura"].Value?.ToString();
                 rutaFacAnt = gridFacturas.CurrentRow.Cells["ArchivoFactura"].Value?.ToString();
 
-                var rutaFile = Path.Combine(Directorio, txtRutaFac.Text);
+                var rutaFile = Path.Combine(directorio, txtRutaFac.Text);
 
                 if (Path.GetExtension(rutaFile) == ".xml")
                 {
@@ -523,7 +525,7 @@ namespace Sistema.Presentacion
                 }
                 else
                 {
-                    var filePath = Path.Combine(Directorio, txtRutaFac.Text);
+                    var filePath = Path.Combine(directorio, txtRutaFac.Text);
 
                     if (File.Exists(filePath) && RutaOrigen != "" && rutaFacAnt != txtRutaFac.Text)
                     {
@@ -539,11 +541,11 @@ namespace Sistema.Presentacion
 
                     if (respuesta.Equals("OK"))
                     {
-                        RutaDestino = Path.Combine(Directorio, txtRutaFac.Text);
+                        RutaDestino = Path.Combine(directorio, txtRutaFac.Text);
                         //El metodo Copy me permite copiar un file desde una ruta de origen a otro file nuevo en un ruta de destino
                         if (txtRutaFac.Text != rutaFacAnt)
                         {
-                            File.Delete(Path.Combine(Directorio, rutaFacAnt));
+                            File.Delete(Path.Combine(directorio, rutaFacAnt));
                             File.Copy(RutaOrigen, RutaDestino);
                         }
 
@@ -588,7 +590,7 @@ namespace Sistema.Presentacion
 
                             if (respuesta.Equals("OK"))
                             {
-                                File.Delete(Path.Combine(Directorio, fila.Cells[8].Value?.ToString()));
+                                File.Delete(Path.Combine(directorio, fila.Cells[8].Value?.ToString()));
 
                                 MensajeOk("Se elimió la factura con número: " + fila.Cells[5].Value?.ToString());
                             }

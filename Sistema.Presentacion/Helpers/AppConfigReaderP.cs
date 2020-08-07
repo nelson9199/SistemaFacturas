@@ -5,15 +5,15 @@ using System.Text;
 
 namespace Sistema.Presentacion.Helpers
 {
-    public class AppConfigReader
+    public class AppConfigReaderP
     {
-        private static AppConfigReader instancia = null;
+        private static AppConfigReaderP instancia = null;
 
-        public static AppConfigReader ObtenerInstancia()
+        public static AppConfigReaderP ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new AppConfigReader();
+                instancia = new AppConfigReaderP();
             }
 
             return instancia;
@@ -31,6 +31,17 @@ namespace Sistema.Presentacion.Helpers
 
                 return connectionStringsSection.ConnectionStrings[index];
             }
+        }
+
+        public string ObtenerAppSettingsValue(string appSettingKey)
+        {
+            var ExecAppPath = this.GetType().Assembly.Location;
+
+            var config = ConfigurationManager.OpenExeConfiguration(ExecAppPath);
+
+            string appSettingValue = config.AppSettings.Settings[appSettingKey].Value;
+
+            return appSettingValue;
         }
     }
 

@@ -177,6 +177,8 @@ namespace Sistema.Presentacion
 
             txtPasaporte.Visible = false;
             txtNumDoc.Visible = true;
+
+            dropRoles.Enabled = true;
         }
 
         private Usuario ObtenerDatosUsuarios()
@@ -419,6 +421,11 @@ namespace Sistema.Presentacion
                     txtNumDoc.Visible = true;
                 }
 
+                if (gridUsuarios.RowCount == 1)
+                {
+                    dropRoles.Enabled = false;
+                }
+
                 tabForm.SelectedTab = tabMantenimiento;
             }
             catch (Exception ex)
@@ -563,6 +570,7 @@ namespace Sistema.Presentacion
                 {
                     int usuarioId;
                     string respuesta;
+                    string nombreRol;
 
                     foreach (var fila in gridUsuarios.Rows)
                     {
@@ -570,7 +578,9 @@ namespace Sistema.Presentacion
                         {
                             usuarioId = Convert.ToInt32(fila.Cells[2].Value);
 
-                            respuesta = await usuarioAccess.Desactivar(usuarioId);
+                            nombreRol = fila.Cells[3].Value?.ToString();
+
+                            respuesta = await usuarioAccess.Desactivar(usuarioId, nombreRol);
 
                             if (respuesta.Equals("OK"))
                             {

@@ -1,4 +1,5 @@
-﻿using Sistema.Entidades;
+﻿using Sistema.Datos.Helpers;
+using Sistema.Entidades;
 using Sistema.Negocio.ClienteFacturaLogic;
 using Sistema.Negocio.ClienteLogic;
 using Sistema.Negocio.FacturaLogic;
@@ -6,7 +7,6 @@ using Sistema.Presentacion.Helpers;
 using Sistema.Presentacion.Services;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
@@ -27,7 +27,8 @@ namespace Sistema.Presentacion
         private readonly IFormOpener formOpener;
         private readonly IClienteFacturaAccesRepo clienteFacturaAcces;
         private readonly IFacturaAccesRepo<Factura> facturaAccesRepo;
-        private static string Directorio = ConfigurationManager.AppSettings["FacturaFolder"];
+        private AppConfigReaderP appConfigReader = AppConfigReaderP.ObtenerInstancia();
+        private string directorio;
 
         public FrmCliente(IClienteAccesRepo<Cliente> clienteAcces, SimpleInjector.Container container, IFormOpener formOpener, IClienteFacturaAccesRepo clienteFacturaAcces, IFacturaAccesRepo<Factura> facturaAccesRepo)
         {
@@ -38,6 +39,7 @@ namespace Sistema.Presentacion
             this.formOpener = formOpener;
             this.clienteFacturaAcces = clienteFacturaAcces;
             this.facturaAccesRepo = facturaAccesRepo;
+            directorio = appConfigReader.ObtenerAppSettingsValue("FacturaFolder");
         }
 
         private void MensajeError(string mensaje)
@@ -419,7 +421,7 @@ namespace Sistema.Presentacion
                             foreach (var item in facturaCliente)
                             {
                                 var facturaAEliminar = await facturaAccesRepo.ObtenerFacturaPorId(item.FacturaId);
-                                File.Delete(Path.Combine(Directorio, facturaAEliminar.ArchivoFactura));
+                                File.Delete(Path.Combine(directorio, facturaAEliminar.ArchivoFactura));
                                 await facturaAccesRepo.Eliminar(item.FacturaId);
                             }
 

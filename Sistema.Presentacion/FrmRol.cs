@@ -77,12 +77,6 @@ namespace Sistema.Presentacion
 
         private async void FrmRol_Load(object sender, EventArgs e)
         {
-            #region LayoutControlConfigurations    
-
-            radLayoutControl1.AllowCustomize = false;
-
-            #endregion
-
             ShowLoading();
             await Listar();
             HideLoanding();

@@ -31,39 +31,52 @@
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRol));
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
-            this.radLayoutControl1 = new Telerik.WinControls.UI.RadLayoutControl();
-            this.gridRoles = new Telerik.WinControls.UI.RadGridView();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.layoutControlItem1 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlLabelItem2 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            this.layoutControlItem2 = new Telerik.WinControls.UI.LayoutControlItem();
-            this.layoutControlLabelItem3 = new Telerik.WinControls.UI.LayoutControlLabelItem();
-            ((System.ComponentModel.ISupportInitialize)(this.radLayoutControl1)).BeginInit();
-            this.radLayoutControl1.SuspendLayout();
+            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.gridRoles = new Telerik.WinControls.UI.RadGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
+            this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRoles.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radLayoutControl1
+            // radPanel1
             // 
-            this.radLayoutControl1.Controls.Add(this.gridRoles);
-            this.radLayoutControl1.Controls.Add(this.lblTotal);
-            this.radLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLayoutControl1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.layoutControlItem1,
-            this.layoutControlLabelItem2,
-            this.layoutControlItem2,
-            this.layoutControlLabelItem3});
-            this.radLayoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.radLayoutControl1.Name = "radLayoutControl1";
-            this.radLayoutControl1.Size = new System.Drawing.Size(558, 364);
-            this.radLayoutControl1.TabIndex = 0;
-            this.radLayoutControl1.ThemeName = "Material";
+            this.radPanel1.Controls.Add(this.lblTotal);
+            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.radPanel1.Location = new System.Drawing.Point(0, 290);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(558, 74);
+            this.radPanel1.TabIndex = 0;
+            this.radPanel1.ThemeName = "Material";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(24, 3);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(135, 22);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "Total Registros:";
+            // 
+            // radPanel2
+            // 
+            this.radPanel2.Controls.Add(this.gridRoles);
+            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radPanel2.Location = new System.Drawing.Point(0, 0);
+            this.radPanel2.Name = "radPanel2";
+            this.radPanel2.Size = new System.Drawing.Size(558, 290);
+            this.radPanel2.TabIndex = 1;
+            this.radPanel2.ThemeName = "Material";
             // 
             // gridRoles
             // 
-            this.gridRoles.Location = new System.Drawing.Point(4, 4);
+            this.gridRoles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridRoles.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
@@ -74,52 +87,17 @@
             this.gridRoles.MasterTemplate.EnableGrouping = false;
             this.gridRoles.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.gridRoles.Name = "gridRoles";
-            this.gridRoles.Size = new System.Drawing.Size(550, 330);
-            this.gridRoles.TabIndex = 4;
+            this.gridRoles.Size = new System.Drawing.Size(558, 290);
+            this.gridRoles.TabIndex = 6;
             this.gridRoles.ThemeName = "Material";
             this.gridRoles.ContextMenuOpening += new Telerik.WinControls.UI.ContextMenuOpeningEventHandler(this.gridRoles_ContextMenuOpening);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(50, 339);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(133, 22);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "Total Registros:";
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.AssociatedControl = this.gridRoles;
-            this.layoutControlItem1.Bounds = new System.Drawing.Rectangle(0, 0, 556, 336);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Text = "";
-            // 
-            // layoutControlLabelItem2
-            // 
-            this.layoutControlLabelItem2.Bounds = new System.Drawing.Rectangle(183, 336, 373, 26);
-            this.layoutControlLabelItem2.DrawText = false;
-            this.layoutControlLabelItem2.Name = "layoutControlLabelItem2";
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.AssociatedControl = this.lblTotal;
-            this.layoutControlItem2.Bounds = new System.Drawing.Rectangle(46, 336, 137, 26);
-            this.layoutControlItem2.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center;
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Text = "layoutControlItem2";
-            // 
-            // layoutControlLabelItem3
-            // 
-            this.layoutControlLabelItem3.Bounds = new System.Drawing.Rectangle(0, 336, 46, 26);
-            this.layoutControlLabelItem3.DrawText = false;
-            this.layoutControlLabelItem3.Name = "layoutControlLabelItem3";
             // 
             // FrmRol
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(558, 364);
-            this.Controls.Add(this.radLayoutControl1);
+            this.Controls.Add(this.radPanel2);
+            this.Controls.Add(this.radPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmRol";
@@ -131,9 +109,11 @@
             this.Text = "Roles";
             this.ThemeName = "Material";
             this.Load += new System.EventHandler(this.FrmRol_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radLayoutControl1)).EndInit();
-            this.radLayoutControl1.ResumeLayout(false);
-            this.radLayoutControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            this.radPanel1.ResumeLayout(false);
+            this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
+            this.radPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridRoles.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRoles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -144,12 +124,9 @@
         #endregion
 
         private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
-        private Telerik.WinControls.UI.RadLayoutControl radLayoutControl1;
-        private Telerik.WinControls.UI.RadGridView gridRoles;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem1;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem2;
+        private Telerik.WinControls.UI.RadPanel radPanel1;
         private System.Windows.Forms.Label lblTotal;
-        private Telerik.WinControls.UI.LayoutControlItem layoutControlItem2;
-        private Telerik.WinControls.UI.LayoutControlLabelItem layoutControlLabelItem3;
+        private Telerik.WinControls.UI.RadPanel radPanel2;
+        private Telerik.WinControls.UI.RadGridView gridRoles;
     }
 }
