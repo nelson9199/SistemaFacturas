@@ -428,10 +428,9 @@ namespace Sistema.Presentacion
 
                 tabForm.SelectedTab = tabMantenimiento;
             }
-            catch (Exception ex)
+            catch
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No hay ningún registro que selecionar");
             }
         }
 

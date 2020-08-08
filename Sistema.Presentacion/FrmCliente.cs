@@ -352,9 +352,9 @@ namespace Sistema.Presentacion
                 radTabbedFormControl1.SelectedTab = radTabbedFormControlTab2;
 
             }
-            catch (Exception ex)
+            catch
             {
-                MensajeError(ex.Message);
+                MessageBox.Show("No hay ningún registro que selecionar"); ;
             }
         }
 
